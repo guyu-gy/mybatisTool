@@ -1,0 +1,315 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class GoodsSupplyQuotation {
+    private String id;
+
+    private String goodsSupplyId;
+
+    private String quotationCompanyId;
+
+    private String quotationUserId;
+
+    private Long deliveryMode;
+
+    private Date planDepartureDate;
+
+    private Date planArrivalDate;
+
+    private Long transportMode;
+
+    private String transportChargeId;
+
+    private Date createTime;
+
+    private Long quotationStatus;
+
+    private String principalUserId;
+
+    private String logisticsPipelineId;
+
+    private String deliveryOutletsId;
+
+    private String arrivalOutletsId;
+
+    private String sendAddressId;
+
+    private String recieveAddressId;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String comment;
+
+    private String authCode;
+
+    private String principalCompanyId;
+
+    private String senderId;
+
+    private String consigneeId;
+
+    private String vehiclesId;
+
+    private String appkey;
+
+    private String traderUserId;
+
+    private Long isSubstitute;
+
+    private Long modifyTimes;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getGoodsSupplyId() {
+        return goodsSupplyId;
+    }
+
+    public void setGoodsSupplyId(String goodsSupplyId) {
+        this.goodsSupplyId = goodsSupplyId == null ? null : goodsSupplyId.trim();
+    }
+
+    public String getQuotationCompanyId() {
+        return quotationCompanyId;
+    }
+
+    public void setQuotationCompanyId(String quotationCompanyId) {
+        this.quotationCompanyId = quotationCompanyId == null ? null : quotationCompanyId.trim();
+    }
+
+    public String getQuotationUserId() {
+        return quotationUserId;
+    }
+
+    public void setQuotationUserId(String quotationUserId) {
+        this.quotationUserId = quotationUserId == null ? null : quotationUserId.trim();
+    }
+
+    public Long getDeliveryMode() {
+        return deliveryMode;
+    }
+
+    public void setDeliveryMode(Long deliveryMode) {
+        this.deliveryMode = deliveryMode;
+    }
+
+    public Date getPlanDepartureDate() {
+        return planDepartureDate;
+    }
+
+    public void setPlanDepartureDate(Date planDepartureDate) {
+        this.planDepartureDate = planDepartureDate;
+    }
+
+    public Date getPlanArrivalDate() {
+        return planArrivalDate;
+    }
+
+    public void setPlanArrivalDate(Date planArrivalDate) {
+        this.planArrivalDate = planArrivalDate;
+    }
+
+    public Long getTransportMode() {
+        return transportMode;
+    }
+
+    public void setTransportMode(Long transportMode) {
+        this.transportMode = transportMode;
+    }
+
+    public String getTransportChargeId() {
+        return transportChargeId;
+    }
+
+    public void setTransportChargeId(String transportChargeId) {
+        this.transportChargeId = transportChargeId == null ? null : transportChargeId.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getQuotationStatus() {
+        return quotationStatus;
+    }
+
+    public void setQuotationStatus(Long quotationStatus) {
+        this.quotationStatus = quotationStatus;
+    }
+
+    public String getPrincipalUserId() {
+        return principalUserId;
+    }
+
+    public void setPrincipalUserId(String principalUserId) {
+        this.principalUserId = principalUserId == null ? null : principalUserId.trim();
+    }
+
+    public String getLogisticsPipelineId() {
+        return logisticsPipelineId;
+    }
+
+    public void setLogisticsPipelineId(String logisticsPipelineId) {
+        this.logisticsPipelineId = logisticsPipelineId == null ? null : logisticsPipelineId.trim();
+    }
+
+    public String getDeliveryOutletsId() {
+        return deliveryOutletsId;
+    }
+
+    public void setDeliveryOutletsId(String deliveryOutletsId) {
+        this.deliveryOutletsId = deliveryOutletsId == null ? null : deliveryOutletsId.trim();
+    }
+
+    public String getArrivalOutletsId() {
+        return arrivalOutletsId;
+    }
+
+    public void setArrivalOutletsId(String arrivalOutletsId) {
+        this.arrivalOutletsId = arrivalOutletsId == null ? null : arrivalOutletsId.trim();
+    }
+
+    public String getSendAddressId() {
+        return sendAddressId;
+    }
+
+    public void setSendAddressId(String sendAddressId) {
+        this.sendAddressId = sendAddressId == null ? null : sendAddressId.trim();
+    }
+
+    public String getRecieveAddressId() {
+        return recieveAddressId;
+    }
+
+    public void setRecieveAddressId(String recieveAddressId) {
+        this.recieveAddressId = recieveAddressId == null ? null : recieveAddressId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode == null ? null : authCode.trim();
+    }
+
+    public String getPrincipalCompanyId() {
+        return principalCompanyId;
+    }
+
+    public void setPrincipalCompanyId(String principalCompanyId) {
+        this.principalCompanyId = principalCompanyId == null ? null : principalCompanyId.trim();
+    }
+
+    public String getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(String senderId) {
+        this.senderId = senderId == null ? null : senderId.trim();
+    }
+
+    public String getConsigneeId() {
+        return consigneeId;
+    }
+
+    public void setConsigneeId(String consigneeId) {
+        this.consigneeId = consigneeId == null ? null : consigneeId.trim();
+    }
+
+    public String getVehiclesId() {
+        return vehiclesId;
+    }
+
+    public void setVehiclesId(String vehiclesId) {
+        this.vehiclesId = vehiclesId == null ? null : vehiclesId.trim();
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public String getTraderUserId() {
+        return traderUserId;
+    }
+
+    public void setTraderUserId(String traderUserId) {
+        this.traderUserId = traderUserId == null ? null : traderUserId.trim();
+    }
+
+    public Long getIsSubstitute() {
+        return isSubstitute;
+    }
+
+    public void setIsSubstitute(Long isSubstitute) {
+        this.isSubstitute = isSubstitute;
+    }
+
+    public Long getModifyTimes() {
+        return modifyTimes;
+    }
+
+    public void setModifyTimes(Long modifyTimes) {
+        this.modifyTimes = modifyTimes;
+    }
+}

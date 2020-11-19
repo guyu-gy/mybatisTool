@@ -1,0 +1,53 @@
+package com.xiaoniu56.model.defaults;
+
+public class SubjectInit {
+    private String id;
+
+    private String subjectName;
+
+    private String subjectCode;
+
+    private Long companyType;
+
+    private Long accountDirection;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName == null ? null : subjectName.trim();
+    }
+
+    public String getSubjectCode() {
+        return subjectCode;
+    }
+
+    public void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode == null ? null : subjectCode.trim();
+    }
+
+    public Long getCompanyType() {
+        return companyType;
+    }
+
+    public void setCompanyType(Long companyType) {
+        this.companyType = companyType;
+    }
+
+    public Long getAccountDirection() {
+        return accountDirection;
+    }
+
+    public void setAccountDirection(Long accountDirection) {
+        this.accountDirection = accountDirection;
+    }
+}

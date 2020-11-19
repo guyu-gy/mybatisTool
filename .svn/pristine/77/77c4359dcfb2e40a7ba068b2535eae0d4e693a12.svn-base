@@ -1,0 +1,185 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class TopicAttachment {
+    private Long id;
+
+    private Long dateline;
+
+    private String useIp;
+
+    private String fileId;
+
+    private Byte fileType;
+
+    private Long fileSize;
+
+    private String filePath;
+
+    private Byte thumb;
+
+    private Long shareTimes;
+
+    private Byte status;
+
+    private Long topicId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String fileName;
+
+    private Short usePort;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getDateline() {
+        return dateline;
+    }
+
+    public void setDateline(Long dateline) {
+        this.dateline = dateline;
+    }
+
+    public String getUseIp() {
+        return useIp;
+    }
+
+    public void setUseIp(String useIp) {
+        this.useIp = useIp == null ? null : useIp.trim();
+    }
+
+    public String getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(String fileId) {
+        this.fileId = fileId == null ? null : fileId.trim();
+    }
+
+    public Byte getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(Byte fileType) {
+        this.fileType = fileType;
+    }
+
+    public Long getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath == null ? null : filePath.trim();
+    }
+
+    public Byte getThumb() {
+        return thumb;
+    }
+
+    public void setThumb(Byte thumb) {
+        this.thumb = thumb;
+    }
+
+    public Long getShareTimes() {
+        return shareTimes;
+    }
+
+    public void setShareTimes(Long shareTimes) {
+        this.shareTimes = shareTimes;
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(Byte status) {
+        this.status = status;
+    }
+
+    public Long getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName == null ? null : fileName.trim();
+    }
+
+    public Short getUsePort() {
+        return usePort;
+    }
+
+    public void setUsePort(Short usePort) {
+        this.usePort = usePort;
+    }
+}

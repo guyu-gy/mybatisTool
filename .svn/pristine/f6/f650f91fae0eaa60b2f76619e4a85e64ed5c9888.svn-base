@@ -1,0 +1,95 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class SmsUp {
+    private String id;
+
+    private String recMobile;
+
+    private String upContend;
+
+    private Long status;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private String modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getRecMobile() {
+        return recMobile;
+    }
+
+    public void setRecMobile(String recMobile) {
+        this.recMobile = recMobile == null ? null : recMobile.trim();
+    }
+
+    public String getUpContend() {
+        return upContend;
+    }
+
+    public void setUpContend(String upContend) {
+        this.upContend = upContend == null ? null : upContend.trim();
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public String getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(String modifyTime) {
+        this.modifyTime = modifyTime == null ? null : modifyTime.trim();
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

@@ -1,0 +1,115 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Role {
+    private String id;
+
+    private String name;
+
+    private String decription;
+
+    private Long type;
+
+    private Long ver;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private String positionId;
+
+    private String departmentId;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getDecription() {
+        return decription;
+    }
+
+    public void setDecription(String decription) {
+        this.decription = decription == null ? null : decription.trim();
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public String getPositionId() {
+        return positionId;
+    }
+
+    public void setPositionId(String positionId) {
+        this.positionId = positionId == null ? null : positionId.trim();
+    }
+
+    public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId == null ? null : departmentId.trim();
+    }
+}

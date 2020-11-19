@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.ChargeTemplateMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.ChargeTemplate" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="company_id" property="companyId" jdbcType="CHAR" />
+    <result column="account_direction" property="accountDirection" jdbcType="BIGINT" />
+    <result column="enable_status" property="enableStatus" jdbcType="BIGINT" />
+    <result column="mininum" property="mininum" jdbcType="DECIMAL" />
+    <result column="odd_rule" property="oddRule" jdbcType="DECIMAL" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, company_id, account_direction, enable_status, mininum, odd_rule, creater, 
+    create_time, modifier, modify_time, ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.ChargeTemplateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_charge_template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_charge_template
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_charge_template
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.ChargeTemplateExample" >
+    delete from xn_m_charge_template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.ChargeTemplate" >
+    insert into xn_m_charge_template (id, name, company_id, account_direction, 
+      enable_status, mininum, odd_rule, 
+      creater, create_time, modifier, 
+      modify_time, ver)
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=CHAR}, #{companyId,jdbcType=CHAR}, #{accountDirection,jdbcType=BIGINT}, 
+      #{enableStatus,jdbcType=BIGINT}, #{mininum,jdbcType=DECIMAL}, #{oddRule,jdbcType=DECIMAL}, 
+      #{creater,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=CHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.ChargeTemplate" >
+    insert into xn_m_charge_template
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="accountDirection != null" >
+        account_direction,
+      </if>
+      <if test="enableStatus != null" >
+        enable_status,
+      </if>
+      <if test="mininum != null" >
+        mininum,
+      </if>
+      <if test="oddRule != null" >
+        odd_rule,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="accountDirection != null" >
+        #{accountDirection,jdbcType=BIGINT},
+      </if>
+      <if test="enableStatus != null" >
+        #{enableStatus,jdbcType=BIGINT},
+      </if>
+      <if test="mininum != null" >
+        #{mininum,jdbcType=DECIMAL},
+      </if>
+      <if test="oddRule != null" >
+        #{oddRule,jdbcType=DECIMAL},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.ChargeTemplateExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_charge_template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.ChargeTemplate" >
+    update xn_m_charge_template
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=CHAR},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="accountDirection != null" >
+        account_direction = #{accountDirection,jdbcType=BIGINT},
+      </if>
+      <if test="enableStatus != null" >
+        enable_status = #{enableStatus,jdbcType=BIGINT},
+      </if>
+      <if test="mininum != null" >
+        mininum = #{mininum,jdbcType=DECIMAL},
+      </if>
+      <if test="oddRule != null" >
+        odd_rule = #{oddRule,jdbcType=DECIMAL},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.ChargeTemplate" >
+    update xn_m_charge_template
+    set name = #{name,jdbcType=CHAR},
+      company_id = #{companyId,jdbcType=CHAR},
+      account_direction = #{accountDirection,jdbcType=BIGINT},
+      enable_status = #{enableStatus,jdbcType=BIGINT},
+      mininum = #{mininum,jdbcType=DECIMAL},
+      odd_rule = #{oddRule,jdbcType=DECIMAL},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

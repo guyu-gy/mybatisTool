@@ -1,0 +1,105 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class LogisticsOrderStatusHis {
+    private String id;
+
+    private String logisticsOrderId;
+
+    private String operateUserId;
+
+    private Long statusType;
+
+    private Date createTime;
+
+    private Long logisticsOrderStatus;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getLogisticsOrderId() {
+        return logisticsOrderId;
+    }
+
+    public void setLogisticsOrderId(String logisticsOrderId) {
+        this.logisticsOrderId = logisticsOrderId == null ? null : logisticsOrderId.trim();
+    }
+
+    public String getOperateUserId() {
+        return operateUserId;
+    }
+
+    public void setOperateUserId(String operateUserId) {
+        this.operateUserId = operateUserId == null ? null : operateUserId.trim();
+    }
+
+    public Long getStatusType() {
+        return statusType;
+    }
+
+    public void setStatusType(Long statusType) {
+        this.statusType = statusType;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getLogisticsOrderStatus() {
+        return logisticsOrderStatus;
+    }
+
+    public void setLogisticsOrderStatus(Long logisticsOrderStatus) {
+        this.logisticsOrderStatus = logisticsOrderStatus;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

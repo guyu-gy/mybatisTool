@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.VehiclesMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Vehicles" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="vehicle_code" property="vehicleCode" jdbcType="VARCHAR" />
+    <result column="driving_license_photo_id" property="drivingLicensePhotoId" jdbcType="CHAR" />
+    <result column="head_photo_id" property="headPhotoId" jdbcType="CHAR" />
+    <result column="profile_photo_id" property="profilePhotoId" jdbcType="CHAR" />
+    <result column="tail_photo_id" property="tailPhotoId" jdbcType="CHAR" />
+    <result column="enable_status" property="enableStatus" jdbcType="CHAR" />
+    <result column="contact_id" property="contactId" jdbcType="CHAR" />
+    <result column="gps_deviceid" property="gpsDeviceid" jdbcType="VARCHAR" />
+    <result column="vehicles_mode" property="vehiclesMode" jdbcType="BIGINT" />
+    <result column="vehicle_type" property="vehicleType" jdbcType="BIGINT" />
+    <result column="vehicle_length" property="vehicleLength" jdbcType="BIGINT" />
+    <result column="location_mode" property="locationMode" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="ship_zone" property="shipZone" jdbcType="BIGINT" />
+    <result column="is_valid" property="isValid" jdbcType="BIGINT" />
+    <result column="is_delete" property="isDelete" jdbcType="BIGINT" />
+    <result column="vehicle_tonnage" property="vehicleTonnage" jdbcType="CHAR" />
+    <result column="certification_state" property="certificationState" jdbcType="BIGINT" />
+    <result column="driver_id" property="driverId" jdbcType="CHAR" />
+    <result column="is_free" property="isFree" jdbcType="BIGINT" />
+    <result column="departure_point" property="departurePoint" jdbcType="BIGINT" />
+    <result column="vehicle_no" property="vehicleNo" jdbcType="CHAR" />
+    <result column="vehicle_version" property="vehicleVersion" jdbcType="CHAR" />
+    <result column="owner_id" property="ownerId" jdbcType="CHAR" />
+    <result column="dispatch_count" property="dispatchCount" jdbcType="BIGINT" />
+    <result column="current_point" property="currentPoint" jdbcType="BIGINT" />
+    <result column="current_point_time" property="currentPointTime" jdbcType="TIMESTAMP" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="tel_confirm" property="telConfirm" jdbcType="BIGINT" />
+    <result column="system_desc" property="systemDesc" jdbcType="VARCHAR" />
+    <result column="tare" property="tare" jdbcType="DECIMAL" />
+    <result column="relation_type" property="relationType" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, vehicle_code, driving_license_photo_id, head_photo_id, profile_photo_id, tail_photo_id, 
+    enable_status, contact_id, gps_deviceid, vehicles_mode, vehicle_type, vehicle_length, 
+    location_mode, creater, create_time, modifier, modify_time, ver, ship_zone, is_valid, 
+    is_delete, vehicle_tonnage, certification_state, driver_id, is_free, departure_point, 
+    vehicle_no, vehicle_version, owner_id, dispatch_count, current_point, current_point_time, 
+    appkey, tel_confirm, system_desc, tare, relation_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.VehiclesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_vehicles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_vehicles
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_vehicles
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.VehiclesExample" >
+    delete from xn_m_vehicles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Vehicles" >
+    insert into xn_m_vehicles (id, vehicle_code, driving_license_photo_id, 
+      head_photo_id, profile_photo_id, tail_photo_id, 
+      enable_status, contact_id, gps_deviceid, 
+      vehicles_mode, vehicle_type, vehicle_length, 
+      location_mode, creater, create_time, 
+      modifier, modify_time, ver, 
+      ship_zone, is_valid, is_delete, 
+      vehicle_tonnage, certification_state, driver_id, 
+      is_free, departure_point, vehicle_no, 
+      vehicle_version, owner_id, dispatch_count, 
+      current_point, current_point_time, appkey, 
+      tel_confirm, system_desc, tare, 
+      relation_type)
+    values (#{id,jdbcType=CHAR}, #{vehicleCode,jdbcType=VARCHAR}, #{drivingLicensePhotoId,jdbcType=CHAR}, 
+      #{headPhotoId,jdbcType=CHAR}, #{profilePhotoId,jdbcType=CHAR}, #{tailPhotoId,jdbcType=CHAR}, 
+      #{enableStatus,jdbcType=CHAR}, #{contactId,jdbcType=CHAR}, #{gpsDeviceid,jdbcType=VARCHAR}, 
+      #{vehiclesMode,jdbcType=BIGINT}, #{vehicleType,jdbcType=BIGINT}, #{vehicleLength,jdbcType=BIGINT}, 
+      #{locationMode,jdbcType=BIGINT}, #{creater,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, 
+      #{shipZone,jdbcType=BIGINT}, #{isValid,jdbcType=BIGINT}, #{isDelete,jdbcType=BIGINT}, 
+      #{vehicleTonnage,jdbcType=CHAR}, #{certificationState,jdbcType=BIGINT}, #{driverId,jdbcType=CHAR}, 
+      #{isFree,jdbcType=BIGINT}, #{departurePoint,jdbcType=BIGINT}, #{vehicleNo,jdbcType=CHAR}, 
+      #{vehicleVersion,jdbcType=CHAR}, #{ownerId,jdbcType=CHAR}, #{dispatchCount,jdbcType=BIGINT}, 
+      #{currentPoint,jdbcType=BIGINT}, #{currentPointTime,jdbcType=TIMESTAMP}, #{appkey,jdbcType=VARCHAR}, 
+      #{telConfirm,jdbcType=BIGINT}, #{systemDesc,jdbcType=VARCHAR}, #{tare,jdbcType=DECIMAL}, 
+      #{relationType,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Vehicles" >
+    insert into xn_m_vehicles
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="vehicleCode != null" >
+        vehicle_code,
+      </if>
+      <if test="drivingLicensePhotoId != null" >
+        driving_license_photo_id,
+      </if>
+      <if test="headPhotoId != null" >
+        head_photo_id,
+      </if>
+      <if test="profilePhotoId != null" >
+        profile_photo_id,
+      </if>
+      <if test="tailPhotoId != null" >
+        tail_photo_id,
+      </if>
+      <if test="enableStatus != null" >
+        enable_status,
+      </if>
+      <if test="contactId != null" >
+        contact_id,
+      </if>
+      <if test="gpsDeviceid != null" >
+        gps_deviceid,
+      </if>
+      <if test="vehiclesMode != null" >
+        vehicles_mode,
+      </if>
+      <if test="vehicleType != null" >
+        vehicle_type,
+      </if>
+      <if test="vehicleLength != null" >
+        vehicle_length,
+      </if>
+      <if test="locationMode != null" >
+        location_mode,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="shipZone != null" >
+        ship_zone,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="vehicleTonnage != null" >
+        vehicle_tonnage,
+      </if>
+      <if test="certificationState != null" >
+        certification_state,
+      </if>
+      <if test="driverId != null" >
+        driver_id,
+      </if>
+      <if test="isFree != null" >
+        is_free,
+      </if>
+      <if test="departurePoint != null" >
+        departure_point,
+      </if>
+      <if test="vehicleNo != null" >
+        vehicle_no,
+      </if>
+      <if test="vehicleVersion != null" >
+        vehicle_version,
+      </if>
+      <if test="ownerId != null" >
+        owner_id,
+      </if>
+      <if test="dispatchCount != null" >
+        dispatch_count,
+      </if>
+      <if test="currentPoint != null" >
+        current_point,
+      </if>
+      <if test="currentPointTime != null" >
+        current_point_time,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="telConfirm != null" >
+        tel_confirm,
+      </if>
+      <if test="systemDesc != null" >
+        system_desc,
+      </if>
+      <if test="tare != null" >
+        tare,
+      </if>
+      <if test="relationType != null" >
+        relation_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="vehicleCode != null" >
+        #{vehicleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicensePhotoId != null" >
+        #{drivingLicensePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="headPhotoId != null" >
+        #{headPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="profilePhotoId != null" >
+        #{profilePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="tailPhotoId != null" >
+        #{tailPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="enableStatus != null" >
+        #{enableStatus,jdbcType=CHAR},
+      </if>
+      <if test="contactId != null" >
+        #{contactId,jdbcType=CHAR},
+      </if>
+      <if test="gpsDeviceid != null" >
+        #{gpsDeviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclesMode != null" >
+        #{vehiclesMode,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleType != null" >
+        #{vehicleType,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleLength != null" >
+        #{vehicleLength,jdbcType=BIGINT},
+      </if>
+      <if test="locationMode != null" >
+        #{locationMode,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="shipZone != null" >
+        #{shipZone,jdbcType=BIGINT},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleTonnage != null" >
+        #{vehicleTonnage,jdbcType=CHAR},
+      </if>
+      <if test="certificationState != null" >
+        #{certificationState,jdbcType=BIGINT},
+      </if>
+      <if test="driverId != null" >
+        #{driverId,jdbcType=CHAR},
+      </if>
+      <if test="isFree != null" >
+        #{isFree,jdbcType=BIGINT},
+      </if>
+      <if test="departurePoint != null" >
+        #{departurePoint,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleNo != null" >
+        #{vehicleNo,jdbcType=CHAR},
+      </if>
+      <if test="vehicleVersion != null" >
+        #{vehicleVersion,jdbcType=CHAR},
+      </if>
+      <if test="ownerId != null" >
+        #{ownerId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchCount != null" >
+        #{dispatchCount,jdbcType=BIGINT},
+      </if>
+      <if test="currentPoint != null" >
+        #{currentPoint,jdbcType=BIGINT},
+      </if>
+      <if test="currentPointTime != null" >
+        #{currentPointTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="telConfirm != null" >
+        #{telConfirm,jdbcType=BIGINT},
+      </if>
+      <if test="systemDesc != null" >
+        #{systemDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="tare != null" >
+        #{tare,jdbcType=DECIMAL},
+      </if>
+      <if test="relationType != null" >
+        #{relationType,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.VehiclesExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_vehicles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Vehicles" >
+    update xn_m_vehicles
+    <set >
+      <if test="vehicleCode != null" >
+        vehicle_code = #{vehicleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicensePhotoId != null" >
+        driving_license_photo_id = #{drivingLicensePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="headPhotoId != null" >
+        head_photo_id = #{headPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="profilePhotoId != null" >
+        profile_photo_id = #{profilePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="tailPhotoId != null" >
+        tail_photo_id = #{tailPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="enableStatus != null" >
+        enable_status = #{enableStatus,jdbcType=CHAR},
+      </if>
+      <if test="contactId != null" >
+        contact_id = #{contactId,jdbcType=CHAR},
+      </if>
+      <if test="gpsDeviceid != null" >
+        gps_deviceid = #{gpsDeviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclesMode != null" >
+        vehicles_mode = #{vehiclesMode,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleType != null" >
+        vehicle_type = #{vehicleType,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleLength != null" >
+        vehicle_length = #{vehicleLength,jdbcType=BIGINT},
+      </if>
+      <if test="locationMode != null" >
+        location_mode = #{locationMode,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="shipZone != null" >
+        ship_zone = #{shipZone,jdbcType=BIGINT},
+      </if>
+      <if test="isValid != null" >
+        is_valid = #{isValid,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleTonnage != null" >
+        vehicle_tonnage = #{vehicleTonnage,jdbcType=CHAR},
+      </if>
+      <if test="certificationState != null" >
+        certification_state = #{certificationState,jdbcType=BIGINT},
+      </if>
+      <if test="driverId != null" >
+        driver_id = #{driverId,jdbcType=CHAR},
+      </if>
+      <if test="isFree != null" >
+        is_free = #{isFree,jdbcType=BIGINT},
+      </if>
+      <if test="departurePoint != null" >
+        departure_point = #{departurePoint,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleNo != null" >
+        vehicle_no = #{vehicleNo,jdbcType=CHAR},
+      </if>
+      <if test="vehicleVersion != null" >
+        vehicle_version = #{vehicleVersion,jdbcType=CHAR},
+      </if>
+      <if test="ownerId != null" >
+        owner_id = #{ownerId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchCount != null" >
+        dispatch_count = #{dispatchCount,jdbcType=BIGINT},
+      </if>
+      <if test="currentPoint != null" >
+        current_point = #{currentPoint,jdbcType=BIGINT},
+      </if>
+      <if test="currentPointTime != null" >
+        current_point_time = #{currentPointTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="telConfirm != null" >
+        tel_confirm = #{telConfirm,jdbcType=BIGINT},
+      </if>
+      <if test="systemDesc != null" >
+        system_desc = #{systemDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="tare != null" >
+        tare = #{tare,jdbcType=DECIMAL},
+      </if>
+      <if test="relationType != null" >
+        relation_type = #{relationType,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Vehicles" >
+    update xn_m_vehicles
+    set vehicle_code = #{vehicleCode,jdbcType=VARCHAR},
+      driving_license_photo_id = #{drivingLicensePhotoId,jdbcType=CHAR},
+      head_photo_id = #{headPhotoId,jdbcType=CHAR},
+      profile_photo_id = #{profilePhotoId,jdbcType=CHAR},
+      tail_photo_id = #{tailPhotoId,jdbcType=CHAR},
+      enable_status = #{enableStatus,jdbcType=CHAR},
+      contact_id = #{contactId,jdbcType=CHAR},
+      gps_deviceid = #{gpsDeviceid,jdbcType=VARCHAR},
+      vehicles_mode = #{vehiclesMode,jdbcType=BIGINT},
+      vehicle_type = #{vehicleType,jdbcType=BIGINT},
+      vehicle_length = #{vehicleLength,jdbcType=BIGINT},
+      location_mode = #{locationMode,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      ship_zone = #{shipZone,jdbcType=BIGINT},
+      is_valid = #{isValid,jdbcType=BIGINT},
+      is_delete = #{isDelete,jdbcType=BIGINT},
+      vehicle_tonnage = #{vehicleTonnage,jdbcType=CHAR},
+      certification_state = #{certificationState,jdbcType=BIGINT},
+      driver_id = #{driverId,jdbcType=CHAR},
+      is_free = #{isFree,jdbcType=BIGINT},
+      departure_point = #{departurePoint,jdbcType=BIGINT},
+      vehicle_no = #{vehicleNo,jdbcType=CHAR},
+      vehicle_version = #{vehicleVersion,jdbcType=CHAR},
+      owner_id = #{ownerId,jdbcType=CHAR},
+      dispatch_count = #{dispatchCount,jdbcType=BIGINT},
+      current_point = #{currentPoint,jdbcType=BIGINT},
+      current_point_time = #{currentPointTime,jdbcType=TIMESTAMP},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      tel_confirm = #{telConfirm,jdbcType=BIGINT},
+      system_desc = #{systemDesc,jdbcType=VARCHAR},
+      tare = #{tare,jdbcType=DECIMAL},
+      relation_type = #{relationType,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

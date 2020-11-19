@@ -1,0 +1,215 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Adv {
+    private String id;
+
+    private String advCode;
+
+    private String advDesc;
+
+    private Long advType;
+
+    private String deviceType;
+
+    private Long branchtype;
+
+    private Date beginTime;
+
+    private Date endTime;
+
+    private Long exeCount;
+
+    private String cityCode1;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String appkey;
+
+    private Long pollingTime;
+
+    private String cityCode2;
+
+    private String cityCode3;
+
+    private Long isValid;
+
+    private Long isDelete;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getAdvCode() {
+        return advCode;
+    }
+
+    public void setAdvCode(String advCode) {
+        this.advCode = advCode == null ? null : advCode.trim();
+    }
+
+    public String getAdvDesc() {
+        return advDesc;
+    }
+
+    public void setAdvDesc(String advDesc) {
+        this.advDesc = advDesc == null ? null : advDesc.trim();
+    }
+
+    public Long getAdvType() {
+        return advType;
+    }
+
+    public void setAdvType(Long advType) {
+        this.advType = advType;
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType == null ? null : deviceType.trim();
+    }
+
+    public Long getBranchtype() {
+        return branchtype;
+    }
+
+    public void setBranchtype(Long branchtype) {
+        this.branchtype = branchtype;
+    }
+
+    public Date getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Date beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Long getExeCount() {
+        return exeCount;
+    }
+
+    public void setExeCount(Long exeCount) {
+        this.exeCount = exeCount;
+    }
+
+    public String getCityCode1() {
+        return cityCode1;
+    }
+
+    public void setCityCode1(String cityCode1) {
+        this.cityCode1 = cityCode1 == null ? null : cityCode1.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public Long getPollingTime() {
+        return pollingTime;
+    }
+
+    public void setPollingTime(Long pollingTime) {
+        this.pollingTime = pollingTime;
+    }
+
+    public String getCityCode2() {
+        return cityCode2;
+    }
+
+    public void setCityCode2(String cityCode2) {
+        this.cityCode2 = cityCode2 == null ? null : cityCode2.trim();
+    }
+
+    public String getCityCode3() {
+        return cityCode3;
+    }
+
+    public void setCityCode3(String cityCode3) {
+        this.cityCode3 = cityCode3 == null ? null : cityCode3.trim();
+    }
+
+    public Long getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Long isValid) {
+        this.isValid = isValid;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+}

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Goods" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="total_goods_measuring_id" property="totalGoodsMeasuringId" jdbcType="CHAR" />
+    <result column="commissioned_goods_measuring_id" property="commissionedGoodsMeasuringId" jdbcType="CHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="valuation_mode" property="valuationMode" jdbcType="BIGINT" />
+    <result column="relate_goods_id" property="relateGoodsId" jdbcType="CHAR" />
+    <result column="model" property="model" jdbcType="VARCHAR" />
+    <result column="parent_id" property="parentId" jdbcType="CHAR" />
+    <result column="flag" property="flag" jdbcType="BIGINT" />
+    <result column="quantity_unit_id" property="quantityUnitId" jdbcType="BIGINT" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="length" property="length" jdbcType="DECIMAL" />
+    <result column="width" property="width" jdbcType="DECIMAL" />
+    <result column="height" property="height" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, total_goods_measuring_id, commissioned_goods_measuring_id, code, creater, 
+    create_time, modifier, modify_time, ver, valuation_mode, relate_goods_id, model, 
+    parent_id, flag, quantity_unit_id, weight, length, width, height
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.GoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_goods
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_goods
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.GoodsExample" >
+    delete from xn_m_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Goods" >
+    insert into xn_m_goods (id, name, total_goods_measuring_id, 
+      commissioned_goods_measuring_id, code, creater, 
+      create_time, modifier, modify_time, 
+      ver, valuation_mode, relate_goods_id, 
+      model, parent_id, flag, 
+      quantity_unit_id, weight, length, 
+      width, height)
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{totalGoodsMeasuringId,jdbcType=CHAR}, 
+      #{commissionedGoodsMeasuringId,jdbcType=CHAR}, #{code,jdbcType=VARCHAR}, #{creater,jdbcType=CHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{valuationMode,jdbcType=BIGINT}, #{relateGoodsId,jdbcType=CHAR}, 
+      #{model,jdbcType=VARCHAR}, #{parentId,jdbcType=CHAR}, #{flag,jdbcType=BIGINT}, 
+      #{quantityUnitId,jdbcType=BIGINT}, #{weight,jdbcType=DECIMAL}, #{length,jdbcType=DECIMAL}, 
+      #{width,jdbcType=DECIMAL}, #{height,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Goods" >
+    insert into xn_m_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="totalGoodsMeasuringId != null" >
+        total_goods_measuring_id,
+      </if>
+      <if test="commissionedGoodsMeasuringId != null" >
+        commissioned_goods_measuring_id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="valuationMode != null" >
+        valuation_mode,
+      </if>
+      <if test="relateGoodsId != null" >
+        relate_goods_id,
+      </if>
+      <if test="model != null" >
+        model,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+      <if test="quantityUnitId != null" >
+        quantity_unit_id,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="length != null" >
+        length,
+      </if>
+      <if test="width != null" >
+        width,
+      </if>
+      <if test="height != null" >
+        height,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="totalGoodsMeasuringId != null" >
+        #{totalGoodsMeasuringId,jdbcType=CHAR},
+      </if>
+      <if test="commissionedGoodsMeasuringId != null" >
+        #{commissionedGoodsMeasuringId,jdbcType=CHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="valuationMode != null" >
+        #{valuationMode,jdbcType=BIGINT},
+      </if>
+      <if test="relateGoodsId != null" >
+        #{relateGoodsId,jdbcType=CHAR},
+      </if>
+      <if test="model != null" >
+        #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=CHAR},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=BIGINT},
+      </if>
+      <if test="quantityUnitId != null" >
+        #{quantityUnitId,jdbcType=BIGINT},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="length != null" >
+        #{length,jdbcType=DECIMAL},
+      </if>
+      <if test="width != null" >
+        #{width,jdbcType=DECIMAL},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.GoodsExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Goods" >
+    update xn_m_goods
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="totalGoodsMeasuringId != null" >
+        total_goods_measuring_id = #{totalGoodsMeasuringId,jdbcType=CHAR},
+      </if>
+      <if test="commissionedGoodsMeasuringId != null" >
+        commissioned_goods_measuring_id = #{commissionedGoodsMeasuringId,jdbcType=CHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="valuationMode != null" >
+        valuation_mode = #{valuationMode,jdbcType=BIGINT},
+      </if>
+      <if test="relateGoodsId != null" >
+        relate_goods_id = #{relateGoodsId,jdbcType=CHAR},
+      </if>
+      <if test="model != null" >
+        model = #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=CHAR},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=BIGINT},
+      </if>
+      <if test="quantityUnitId != null" >
+        quantity_unit_id = #{quantityUnitId,jdbcType=BIGINT},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="length != null" >
+        length = #{length,jdbcType=DECIMAL},
+      </if>
+      <if test="width != null" >
+        width = #{width,jdbcType=DECIMAL},
+      </if>
+      <if test="height != null" >
+        height = #{height,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Goods" >
+    update xn_m_goods
+    set name = #{name,jdbcType=VARCHAR},
+      total_goods_measuring_id = #{totalGoodsMeasuringId,jdbcType=CHAR},
+      commissioned_goods_measuring_id = #{commissionedGoodsMeasuringId,jdbcType=CHAR},
+      code = #{code,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      valuation_mode = #{valuationMode,jdbcType=BIGINT},
+      relate_goods_id = #{relateGoodsId,jdbcType=CHAR},
+      model = #{model,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=CHAR},
+      flag = #{flag,jdbcType=BIGINT},
+      quantity_unit_id = #{quantityUnitId,jdbcType=BIGINT},
+      weight = #{weight,jdbcType=DECIMAL},
+      length = #{length,jdbcType=DECIMAL},
+      width = #{width,jdbcType=DECIMAL},
+      height = #{height,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

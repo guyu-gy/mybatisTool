@@ -1,0 +1,125 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class CompanyMerger {
+    private String id;
+
+    private String fromCompanyId;
+
+    private String fromCompanyName;
+
+    private String toCompanyId;
+
+    private String toCompanyName;
+
+    private String businessLicenceFileId;
+
+    private String comment;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getFromCompanyId() {
+        return fromCompanyId;
+    }
+
+    public void setFromCompanyId(String fromCompanyId) {
+        this.fromCompanyId = fromCompanyId == null ? null : fromCompanyId.trim();
+    }
+
+    public String getFromCompanyName() {
+        return fromCompanyName;
+    }
+
+    public void setFromCompanyName(String fromCompanyName) {
+        this.fromCompanyName = fromCompanyName == null ? null : fromCompanyName.trim();
+    }
+
+    public String getToCompanyId() {
+        return toCompanyId;
+    }
+
+    public void setToCompanyId(String toCompanyId) {
+        this.toCompanyId = toCompanyId == null ? null : toCompanyId.trim();
+    }
+
+    public String getToCompanyName() {
+        return toCompanyName;
+    }
+
+    public void setToCompanyName(String toCompanyName) {
+        this.toCompanyName = toCompanyName == null ? null : toCompanyName.trim();
+    }
+
+    public String getBusinessLicenceFileId() {
+        return businessLicenceFileId;
+    }
+
+    public void setBusinessLicenceFileId(String businessLicenceFileId) {
+        this.businessLicenceFileId = businessLicenceFileId == null ? null : businessLicenceFileId.trim();
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

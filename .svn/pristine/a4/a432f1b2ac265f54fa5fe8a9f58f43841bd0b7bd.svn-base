@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.ApplicableCompany;
+import com.xiaoniu56.model.defaults.ApplicableCompanyExample;
+import java.util.List;
+
+public interface ApplicableCompanyMapper {
+    int countByExample(ApplicableCompanyExample example);
+
+    int deleteByExample(ApplicableCompanyExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(ApplicableCompany record);
+
+    int insertSelective(ApplicableCompany record);
+
+    List<ApplicableCompany> selectByExample(ApplicableCompanyExample example);
+
+    ApplicableCompany selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(ApplicableCompany record);
+
+    int updateByPrimaryKey(ApplicableCompany record);
+}

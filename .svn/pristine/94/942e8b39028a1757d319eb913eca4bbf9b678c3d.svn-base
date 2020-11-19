@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.Event;
+import com.xiaoniu56.model.defaults.EventExample;
+import java.util.List;
+
+public interface EventMapper {
+    int countByExample(EventExample example);
+
+    int deleteByExample(EventExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(Event record);
+
+    int insertSelective(Event record);
+
+    List<Event> selectByExample(EventExample example);
+
+    Event selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(Event record);
+
+    int updateByPrimaryKey(Event record);
+}

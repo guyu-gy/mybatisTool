@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.AdvImgMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.AdvImg" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="file_id" property="fileId" jdbcType="CHAR" />
+    <result column="adv_id" property="advId" jdbcType="CHAR" />
+    <result column="is_valid" property="isValid" jdbcType="BIGINT" />
+    <result column="seq" property="seq" jdbcType="BIGINT" />
+    <result column="exe_count" property="exeCount" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="is_delete" property="isDelete" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, file_id, adv_id, is_valid, seq, exe_count, creater, create_time, modifier, modify_time, 
+    ver, is_delete
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.AdvImgExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_adv_img
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_adv_img
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_adv_img
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.AdvImgExample" >
+    delete from xn_m_adv_img
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.AdvImg" >
+    insert into xn_m_adv_img (id, file_id, adv_id, is_valid, 
+      seq, exe_count, creater, 
+      create_time, modifier, modify_time, 
+      ver, is_delete)
+    values (#{id,jdbcType=CHAR}, #{fileId,jdbcType=CHAR}, #{advId,jdbcType=CHAR}, #{isValid,jdbcType=BIGINT}, 
+      #{seq,jdbcType=BIGINT}, #{exeCount,jdbcType=BIGINT}, #{creater,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{isDelete,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.AdvImg" >
+    insert into xn_m_adv_img
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fileId != null" >
+        file_id,
+      </if>
+      <if test="advId != null" >
+        adv_id,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="seq != null" >
+        seq,
+      </if>
+      <if test="exeCount != null" >
+        exe_count,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="fileId != null" >
+        #{fileId,jdbcType=CHAR},
+      </if>
+      <if test="advId != null" >
+        #{advId,jdbcType=CHAR},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=BIGINT},
+      </if>
+      <if test="seq != null" >
+        #{seq,jdbcType=BIGINT},
+      </if>
+      <if test="exeCount != null" >
+        #{exeCount,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.AdvImgExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_adv_img
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.AdvImg" >
+    update xn_m_adv_img
+    <set >
+      <if test="fileId != null" >
+        file_id = #{fileId,jdbcType=CHAR},
+      </if>
+      <if test="advId != null" >
+        adv_id = #{advId,jdbcType=CHAR},
+      </if>
+      <if test="isValid != null" >
+        is_valid = #{isValid,jdbcType=BIGINT},
+      </if>
+      <if test="seq != null" >
+        seq = #{seq,jdbcType=BIGINT},
+      </if>
+      <if test="exeCount != null" >
+        exe_count = #{exeCount,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.AdvImg" >
+    update xn_m_adv_img
+    set file_id = #{fileId,jdbcType=CHAR},
+      adv_id = #{advId,jdbcType=CHAR},
+      is_valid = #{isValid,jdbcType=BIGINT},
+      seq = #{seq,jdbcType=BIGINT},
+      exe_count = #{exeCount,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      is_delete = #{isDelete,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

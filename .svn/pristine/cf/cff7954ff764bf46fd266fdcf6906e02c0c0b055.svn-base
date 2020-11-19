@@ -1,0 +1,536 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class LogisticsOrder {
+    private String id;
+
+    private String senderId;
+
+    private String senderCompanyId;
+
+    private String consigneeId;
+
+    private String consigneeCompanyId;
+
+    private String principalCompanyId;
+
+    private String carryCompanyId;
+
+    private Long deliveryMode;
+
+    private Long invoiceReqest;
+
+    private String comment;
+
+    private String principalUserId;
+
+    private Date createTime;
+
+    private String contractPriceId;
+
+    private String settlePriceId;
+
+    private String sendAddressId;
+
+    private String receiveAddressId;
+
+    private String code;
+
+    private String originId;
+
+    private Long orderOrigin;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String deliveryOutletsId;
+
+    private String arrivalOutletsId;
+
+    private String authCode;
+
+    private String carryUserId;
+
+    private String appkey;
+
+    private Long lft;
+
+    private Long rht;
+
+    private Long nodeVer;
+
+    private String parentLogisticsOrderId;
+
+    private Long isTotal;
+
+    private String loadingNeeds;
+
+    private Date deliveryDate;
+
+    private Date arrivalDate;
+
+    private BigDecimal distance;
+
+    private Long operateType;
+
+    private String executeResult;
+
+    private Long isDelete;
+
+    private Long transportMode;
+
+    private String rootOrderId;
+
+    private Long orderType;
+
+    private Long isSplit;
+
+    private String salesUserId;
+
+    private Date tradeTime;
+
+    private String signerCode;
+
+    private Long valuationMode;
+
+    private BigDecimal brokerageMoney;
+
+    private Long isDestination;
+
+    private Long isInstock;
+
+    private Long smsNotifyCount;
+
+    private String brokerageSubjectId;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(String senderId) {
+        this.senderId = senderId == null ? null : senderId.trim();
+    }
+
+    public String getSenderCompanyId() {
+        return senderCompanyId;
+    }
+
+    public void setSenderCompanyId(String senderCompanyId) {
+        this.senderCompanyId = senderCompanyId == null ? null : senderCompanyId.trim();
+    }
+
+    public String getConsigneeId() {
+        return consigneeId;
+    }
+
+    public void setConsigneeId(String consigneeId) {
+        this.consigneeId = consigneeId == null ? null : consigneeId.trim();
+    }
+
+    public String getConsigneeCompanyId() {
+        return consigneeCompanyId;
+    }
+
+    public void setConsigneeCompanyId(String consigneeCompanyId) {
+        this.consigneeCompanyId = consigneeCompanyId == null ? null : consigneeCompanyId.trim();
+    }
+
+    public String getPrincipalCompanyId() {
+        return principalCompanyId;
+    }
+
+    public void setPrincipalCompanyId(String principalCompanyId) {
+        this.principalCompanyId = principalCompanyId == null ? null : principalCompanyId.trim();
+    }
+
+    public String getCarryCompanyId() {
+        return carryCompanyId;
+    }
+
+    public void setCarryCompanyId(String carryCompanyId) {
+        this.carryCompanyId = carryCompanyId == null ? null : carryCompanyId.trim();
+    }
+
+    public Long getDeliveryMode() {
+        return deliveryMode;
+    }
+
+    public void setDeliveryMode(Long deliveryMode) {
+        this.deliveryMode = deliveryMode;
+    }
+
+    public Long getInvoiceReqest() {
+        return invoiceReqest;
+    }
+
+    public void setInvoiceReqest(Long invoiceReqest) {
+        this.invoiceReqest = invoiceReqest;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+
+    public String getPrincipalUserId() {
+        return principalUserId;
+    }
+
+    public void setPrincipalUserId(String principalUserId) {
+        this.principalUserId = principalUserId == null ? null : principalUserId.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getContractPriceId() {
+        return contractPriceId;
+    }
+
+    public void setContractPriceId(String contractPriceId) {
+        this.contractPriceId = contractPriceId == null ? null : contractPriceId.trim();
+    }
+
+    public String getSettlePriceId() {
+        return settlePriceId;
+    }
+
+    public void setSettlePriceId(String settlePriceId) {
+        this.settlePriceId = settlePriceId == null ? null : settlePriceId.trim();
+    }
+
+    public String getSendAddressId() {
+        return sendAddressId;
+    }
+
+    public void setSendAddressId(String sendAddressId) {
+        this.sendAddressId = sendAddressId == null ? null : sendAddressId.trim();
+    }
+
+    public String getReceiveAddressId() {
+        return receiveAddressId;
+    }
+
+    public void setReceiveAddressId(String receiveAddressId) {
+        this.receiveAddressId = receiveAddressId == null ? null : receiveAddressId.trim();
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code == null ? null : code.trim();
+    }
+
+    public String getOriginId() {
+        return originId;
+    }
+
+    public void setOriginId(String originId) {
+        this.originId = originId == null ? null : originId.trim();
+    }
+
+    public Long getOrderOrigin() {
+        return orderOrigin;
+    }
+
+    public void setOrderOrigin(Long orderOrigin) {
+        this.orderOrigin = orderOrigin;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getDeliveryOutletsId() {
+        return deliveryOutletsId;
+    }
+
+    public void setDeliveryOutletsId(String deliveryOutletsId) {
+        this.deliveryOutletsId = deliveryOutletsId == null ? null : deliveryOutletsId.trim();
+    }
+
+    public String getArrivalOutletsId() {
+        return arrivalOutletsId;
+    }
+
+    public void setArrivalOutletsId(String arrivalOutletsId) {
+        this.arrivalOutletsId = arrivalOutletsId == null ? null : arrivalOutletsId.trim();
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode == null ? null : authCode.trim();
+    }
+
+    public String getCarryUserId() {
+        return carryUserId;
+    }
+
+    public void setCarryUserId(String carryUserId) {
+        this.carryUserId = carryUserId == null ? null : carryUserId.trim();
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public Long getLft() {
+        return lft;
+    }
+
+    public void setLft(Long lft) {
+        this.lft = lft;
+    }
+
+    public Long getRht() {
+        return rht;
+    }
+
+    public void setRht(Long rht) {
+        this.rht = rht;
+    }
+
+    public Long getNodeVer() {
+        return nodeVer;
+    }
+
+    public void setNodeVer(Long nodeVer) {
+        this.nodeVer = nodeVer;
+    }
+
+    public String getParentLogisticsOrderId() {
+        return parentLogisticsOrderId;
+    }
+
+    public void setParentLogisticsOrderId(String parentLogisticsOrderId) {
+        this.parentLogisticsOrderId = parentLogisticsOrderId == null ? null : parentLogisticsOrderId.trim();
+    }
+
+    public Long getIsTotal() {
+        return isTotal;
+    }
+
+    public void setIsTotal(Long isTotal) {
+        this.isTotal = isTotal;
+    }
+
+    public String getLoadingNeeds() {
+        return loadingNeeds;
+    }
+
+    public void setLoadingNeeds(String loadingNeeds) {
+        this.loadingNeeds = loadingNeeds == null ? null : loadingNeeds.trim();
+    }
+
+    public Date getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public Date getArrivalDate() {
+        return arrivalDate;
+    }
+
+    public void setArrivalDate(Date arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
+
+    public BigDecimal getDistance() {
+        return distance;
+    }
+
+    public void setDistance(BigDecimal distance) {
+        this.distance = distance;
+    }
+
+    public Long getOperateType() {
+        return operateType;
+    }
+
+    public void setOperateType(Long operateType) {
+        this.operateType = operateType;
+    }
+
+    public String getExecuteResult() {
+        return executeResult;
+    }
+
+    public void setExecuteResult(String executeResult) {
+        this.executeResult = executeResult == null ? null : executeResult.trim();
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public Long getTransportMode() {
+        return transportMode;
+    }
+
+    public void setTransportMode(Long transportMode) {
+        this.transportMode = transportMode;
+    }
+
+    public String getRootOrderId() {
+        return rootOrderId;
+    }
+
+    public void setRootOrderId(String rootOrderId) {
+        this.rootOrderId = rootOrderId == null ? null : rootOrderId.trim();
+    }
+
+    public Long getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(Long orderType) {
+        this.orderType = orderType;
+    }
+
+    public Long getIsSplit() {
+        return isSplit;
+    }
+
+    public void setIsSplit(Long isSplit) {
+        this.isSplit = isSplit;
+    }
+
+    public String getSalesUserId() {
+        return salesUserId;
+    }
+
+    public void setSalesUserId(String salesUserId) {
+        this.salesUserId = salesUserId == null ? null : salesUserId.trim();
+    }
+
+    public Date getTradeTime() {
+        return tradeTime;
+    }
+
+    public void setTradeTime(Date tradeTime) {
+        this.tradeTime = tradeTime;
+    }
+
+    public String getSignerCode() {
+        return signerCode;
+    }
+
+    public void setSignerCode(String signerCode) {
+        this.signerCode = signerCode == null ? null : signerCode.trim();
+    }
+
+    public Long getValuationMode() {
+        return valuationMode;
+    }
+
+    public void setValuationMode(Long valuationMode) {
+        this.valuationMode = valuationMode;
+    }
+
+    public BigDecimal getBrokerageMoney() {
+        return brokerageMoney;
+    }
+
+    public void setBrokerageMoney(BigDecimal brokerageMoney) {
+        this.brokerageMoney = brokerageMoney;
+    }
+
+    public Long getIsDestination() {
+        return isDestination;
+    }
+
+    public void setIsDestination(Long isDestination) {
+        this.isDestination = isDestination;
+    }
+
+    public Long getIsInstock() {
+        return isInstock;
+    }
+
+    public void setIsInstock(Long isInstock) {
+        this.isInstock = isInstock;
+    }
+
+    public Long getSmsNotifyCount() {
+        return smsNotifyCount;
+    }
+
+    public void setSmsNotifyCount(Long smsNotifyCount) {
+        this.smsNotifyCount = smsNotifyCount;
+    }
+
+    public String getBrokerageSubjectId() {
+        return brokerageSubjectId;
+    }
+
+    public void setBrokerageSubjectId(String brokerageSubjectId) {
+        this.brokerageSubjectId = brokerageSubjectId == null ? null : brokerageSubjectId.trim();
+    }
+}

@@ -1,0 +1,146 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class Location {
+    private String id;
+
+    private String vehiclesId;
+
+    private Double longitude;
+
+    private Double dimension;
+
+    private Date createTime;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String dispatchBatchId;
+
+    private String deviceNo;
+
+    private Long locationMode;
+
+    private BigDecimal weight;
+
+    private BigDecimal tare;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getVehiclesId() {
+        return vehiclesId;
+    }
+
+    public void setVehiclesId(String vehiclesId) {
+        this.vehiclesId = vehiclesId == null ? null : vehiclesId.trim();
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Double getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(Double dimension) {
+        this.dimension = dimension;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getDispatchBatchId() {
+        return dispatchBatchId;
+    }
+
+    public void setDispatchBatchId(String dispatchBatchId) {
+        this.dispatchBatchId = dispatchBatchId == null ? null : dispatchBatchId.trim();
+    }
+
+    public String getDeviceNo() {
+        return deviceNo;
+    }
+
+    public void setDeviceNo(String deviceNo) {
+        this.deviceNo = deviceNo == null ? null : deviceNo.trim();
+    }
+
+    public Long getLocationMode() {
+        return locationMode;
+    }
+
+    public void setLocationMode(Long locationMode) {
+        this.locationMode = locationMode;
+    }
+
+    public BigDecimal getWeight() {
+        return weight;
+    }
+
+    public void setWeight(BigDecimal weight) {
+        this.weight = weight;
+    }
+
+    public BigDecimal getTare() {
+        return tare;
+    }
+
+    public void setTare(BigDecimal tare) {
+        this.tare = tare;
+    }
+}

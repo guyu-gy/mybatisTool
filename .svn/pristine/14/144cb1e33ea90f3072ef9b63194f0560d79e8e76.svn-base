@@ -1,0 +1,116 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class PrizesInventory {
+    private String id;
+
+    private String prizesId;
+
+    private String code;
+
+    private BigDecimal costPrice;
+
+    private Long status;
+
+    private Long isDelete;
+
+    private Long ver;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getPrizesId() {
+        return prizesId;
+    }
+
+    public void setPrizesId(String prizesId) {
+        this.prizesId = prizesId == null ? null : prizesId.trim();
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code == null ? null : code.trim();
+    }
+
+    public BigDecimal getCostPrice() {
+        return costPrice;
+    }
+
+    public void setCostPrice(BigDecimal costPrice) {
+        this.costPrice = costPrice;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+}

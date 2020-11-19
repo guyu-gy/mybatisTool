@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.GoodsSupplyQuotationMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.GoodsSupplyQuotation" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="goods_supply_id" property="goodsSupplyId" jdbcType="CHAR" />
+    <result column="quotation_company_id" property="quotationCompanyId" jdbcType="CHAR" />
+    <result column="quotation_user_id" property="quotationUserId" jdbcType="CHAR" />
+    <result column="delivery_mode" property="deliveryMode" jdbcType="BIGINT" />
+    <result column="plan_departure_date" property="planDepartureDate" jdbcType="TIMESTAMP" />
+    <result column="plan_arrival_date" property="planArrivalDate" jdbcType="TIMESTAMP" />
+    <result column="transport_mode" property="transportMode" jdbcType="BIGINT" />
+    <result column="transport_charge_id" property="transportChargeId" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="quotation_status" property="quotationStatus" jdbcType="BIGINT" />
+    <result column="principal_user_id" property="principalUserId" jdbcType="CHAR" />
+    <result column="logistics_pipeline_id" property="logisticsPipelineId" jdbcType="CHAR" />
+    <result column="delivery_outlets_id" property="deliveryOutletsId" jdbcType="CHAR" />
+    <result column="arrival_outlets_id" property="arrivalOutletsId" jdbcType="CHAR" />
+    <result column="send_address_id" property="sendAddressId" jdbcType="CHAR" />
+    <result column="recieve_address_id" property="recieveAddressId" jdbcType="CHAR" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="auth_code" property="authCode" jdbcType="CHAR" />
+    <result column="principal_company_id" property="principalCompanyId" jdbcType="CHAR" />
+    <result column="sender_id" property="senderId" jdbcType="CHAR" />
+    <result column="consignee_id" property="consigneeId" jdbcType="CHAR" />
+    <result column="vehicles_id" property="vehiclesId" jdbcType="CHAR" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="trader_user_id" property="traderUserId" jdbcType="CHAR" />
+    <result column="is_substitute" property="isSubstitute" jdbcType="BIGINT" />
+    <result column="modify_times" property="modifyTimes" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, goods_supply_id, quotation_company_id, quotation_user_id, delivery_mode, plan_departure_date, 
+    plan_arrival_date, transport_mode, transport_charge_id, create_time, quotation_status, 
+    principal_user_id, logistics_pipeline_id, delivery_outlets_id, arrival_outlets_id, 
+    send_address_id, recieve_address_id, creater, modifier, modify_time, ver, comment, 
+    auth_code, principal_company_id, sender_id, consignee_id, vehicles_id, appkey, trader_user_id, 
+    is_substitute, modify_times
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyQuotationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_goods_supply_quotation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_goods_supply_quotation
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_goods_supply_quotation
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyQuotationExample" >
+    delete from xn_m_goods_supply_quotation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyQuotation" >
+    insert into xn_m_goods_supply_quotation (id, goods_supply_id, quotation_company_id, 
+      quotation_user_id, delivery_mode, plan_departure_date, 
+      plan_arrival_date, transport_mode, transport_charge_id, 
+      create_time, quotation_status, principal_user_id, 
+      logistics_pipeline_id, delivery_outlets_id, arrival_outlets_id, 
+      send_address_id, recieve_address_id, creater, 
+      modifier, modify_time, ver, 
+      comment, auth_code, principal_company_id, 
+      sender_id, consignee_id, vehicles_id, 
+      appkey, trader_user_id, is_substitute, 
+      modify_times)
+    values (#{id,jdbcType=CHAR}, #{goodsSupplyId,jdbcType=CHAR}, #{quotationCompanyId,jdbcType=CHAR}, 
+      #{quotationUserId,jdbcType=CHAR}, #{deliveryMode,jdbcType=BIGINT}, #{planDepartureDate,jdbcType=TIMESTAMP}, 
+      #{planArrivalDate,jdbcType=TIMESTAMP}, #{transportMode,jdbcType=BIGINT}, #{transportChargeId,jdbcType=CHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{quotationStatus,jdbcType=BIGINT}, #{principalUserId,jdbcType=CHAR}, 
+      #{logisticsPipelineId,jdbcType=CHAR}, #{deliveryOutletsId,jdbcType=CHAR}, #{arrivalOutletsId,jdbcType=CHAR}, 
+      #{sendAddressId,jdbcType=CHAR}, #{recieveAddressId,jdbcType=CHAR}, #{creater,jdbcType=CHAR}, 
+      #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, 
+      #{comment,jdbcType=VARCHAR}, #{authCode,jdbcType=CHAR}, #{principalCompanyId,jdbcType=CHAR}, 
+      #{senderId,jdbcType=CHAR}, #{consigneeId,jdbcType=CHAR}, #{vehiclesId,jdbcType=CHAR}, 
+      #{appkey,jdbcType=VARCHAR}, #{traderUserId,jdbcType=CHAR}, #{isSubstitute,jdbcType=BIGINT}, 
+      #{modifyTimes,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyQuotation" >
+    insert into xn_m_goods_supply_quotation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="goodsSupplyId != null" >
+        goods_supply_id,
+      </if>
+      <if test="quotationCompanyId != null" >
+        quotation_company_id,
+      </if>
+      <if test="quotationUserId != null" >
+        quotation_user_id,
+      </if>
+      <if test="deliveryMode != null" >
+        delivery_mode,
+      </if>
+      <if test="planDepartureDate != null" >
+        plan_departure_date,
+      </if>
+      <if test="planArrivalDate != null" >
+        plan_arrival_date,
+      </if>
+      <if test="transportMode != null" >
+        transport_mode,
+      </if>
+      <if test="transportChargeId != null" >
+        transport_charge_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="quotationStatus != null" >
+        quotation_status,
+      </if>
+      <if test="principalUserId != null" >
+        principal_user_id,
+      </if>
+      <if test="logisticsPipelineId != null" >
+        logistics_pipeline_id,
+      </if>
+      <if test="deliveryOutletsId != null" >
+        delivery_outlets_id,
+      </if>
+      <if test="arrivalOutletsId != null" >
+        arrival_outlets_id,
+      </if>
+      <if test="sendAddressId != null" >
+        send_address_id,
+      </if>
+      <if test="recieveAddressId != null" >
+        recieve_address_id,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="authCode != null" >
+        auth_code,
+      </if>
+      <if test="principalCompanyId != null" >
+        principal_company_id,
+      </if>
+      <if test="senderId != null" >
+        sender_id,
+      </if>
+      <if test="consigneeId != null" >
+        consignee_id,
+      </if>
+      <if test="vehiclesId != null" >
+        vehicles_id,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="traderUserId != null" >
+        trader_user_id,
+      </if>
+      <if test="isSubstitute != null" >
+        is_substitute,
+      </if>
+      <if test="modifyTimes != null" >
+        modify_times,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="goodsSupplyId != null" >
+        #{goodsSupplyId,jdbcType=CHAR},
+      </if>
+      <if test="quotationCompanyId != null" >
+        #{quotationCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="quotationUserId != null" >
+        #{quotationUserId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryMode != null" >
+        #{deliveryMode,jdbcType=BIGINT},
+      </if>
+      <if test="planDepartureDate != null" >
+        #{planDepartureDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planArrivalDate != null" >
+        #{planArrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transportMode != null" >
+        #{transportMode,jdbcType=BIGINT},
+      </if>
+      <if test="transportChargeId != null" >
+        #{transportChargeId,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="quotationStatus != null" >
+        #{quotationStatus,jdbcType=BIGINT},
+      </if>
+      <if test="principalUserId != null" >
+        #{principalUserId,jdbcType=CHAR},
+      </if>
+      <if test="logisticsPipelineId != null" >
+        #{logisticsPipelineId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryOutletsId != null" >
+        #{deliveryOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="arrivalOutletsId != null" >
+        #{arrivalOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="sendAddressId != null" >
+        #{sendAddressId,jdbcType=CHAR},
+      </if>
+      <if test="recieveAddressId != null" >
+        #{recieveAddressId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="authCode != null" >
+        #{authCode,jdbcType=CHAR},
+      </if>
+      <if test="principalCompanyId != null" >
+        #{principalCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="senderId != null" >
+        #{senderId,jdbcType=CHAR},
+      </if>
+      <if test="consigneeId != null" >
+        #{consigneeId,jdbcType=CHAR},
+      </if>
+      <if test="vehiclesId != null" >
+        #{vehiclesId,jdbcType=CHAR},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="traderUserId != null" >
+        #{traderUserId,jdbcType=CHAR},
+      </if>
+      <if test="isSubstitute != null" >
+        #{isSubstitute,jdbcType=BIGINT},
+      </if>
+      <if test="modifyTimes != null" >
+        #{modifyTimes,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyQuotationExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_goods_supply_quotation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyQuotation" >
+    update xn_m_goods_supply_quotation
+    <set >
+      <if test="goodsSupplyId != null" >
+        goods_supply_id = #{goodsSupplyId,jdbcType=CHAR},
+      </if>
+      <if test="quotationCompanyId != null" >
+        quotation_company_id = #{quotationCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="quotationUserId != null" >
+        quotation_user_id = #{quotationUserId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryMode != null" >
+        delivery_mode = #{deliveryMode,jdbcType=BIGINT},
+      </if>
+      <if test="planDepartureDate != null" >
+        plan_departure_date = #{planDepartureDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planArrivalDate != null" >
+        plan_arrival_date = #{planArrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transportMode != null" >
+        transport_mode = #{transportMode,jdbcType=BIGINT},
+      </if>
+      <if test="transportChargeId != null" >
+        transport_charge_id = #{transportChargeId,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="quotationStatus != null" >
+        quotation_status = #{quotationStatus,jdbcType=BIGINT},
+      </if>
+      <if test="principalUserId != null" >
+        principal_user_id = #{principalUserId,jdbcType=CHAR},
+      </if>
+      <if test="logisticsPipelineId != null" >
+        logistics_pipeline_id = #{logisticsPipelineId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryOutletsId != null" >
+        delivery_outlets_id = #{deliveryOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="arrivalOutletsId != null" >
+        arrival_outlets_id = #{arrivalOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="sendAddressId != null" >
+        send_address_id = #{sendAddressId,jdbcType=CHAR},
+      </if>
+      <if test="recieveAddressId != null" >
+        recieve_address_id = #{recieveAddressId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="authCode != null" >
+        auth_code = #{authCode,jdbcType=CHAR},
+      </if>
+      <if test="principalCompanyId != null" >
+        principal_company_id = #{principalCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="senderId != null" >
+        sender_id = #{senderId,jdbcType=CHAR},
+      </if>
+      <if test="consigneeId != null" >
+        consignee_id = #{consigneeId,jdbcType=CHAR},
+      </if>
+      <if test="vehiclesId != null" >
+        vehicles_id = #{vehiclesId,jdbcType=CHAR},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="traderUserId != null" >
+        trader_user_id = #{traderUserId,jdbcType=CHAR},
+      </if>
+      <if test="isSubstitute != null" >
+        is_substitute = #{isSubstitute,jdbcType=BIGINT},
+      </if>
+      <if test="modifyTimes != null" >
+        modify_times = #{modifyTimes,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyQuotation" >
+    update xn_m_goods_supply_quotation
+    set goods_supply_id = #{goodsSupplyId,jdbcType=CHAR},
+      quotation_company_id = #{quotationCompanyId,jdbcType=CHAR},
+      quotation_user_id = #{quotationUserId,jdbcType=CHAR},
+      delivery_mode = #{deliveryMode,jdbcType=BIGINT},
+      plan_departure_date = #{planDepartureDate,jdbcType=TIMESTAMP},
+      plan_arrival_date = #{planArrivalDate,jdbcType=TIMESTAMP},
+      transport_mode = #{transportMode,jdbcType=BIGINT},
+      transport_charge_id = #{transportChargeId,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      quotation_status = #{quotationStatus,jdbcType=BIGINT},
+      principal_user_id = #{principalUserId,jdbcType=CHAR},
+      logistics_pipeline_id = #{logisticsPipelineId,jdbcType=CHAR},
+      delivery_outlets_id = #{deliveryOutletsId,jdbcType=CHAR},
+      arrival_outlets_id = #{arrivalOutletsId,jdbcType=CHAR},
+      send_address_id = #{sendAddressId,jdbcType=CHAR},
+      recieve_address_id = #{recieveAddressId,jdbcType=CHAR},
+      creater = #{creater,jdbcType=CHAR},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      comment = #{comment,jdbcType=VARCHAR},
+      auth_code = #{authCode,jdbcType=CHAR},
+      principal_company_id = #{principalCompanyId,jdbcType=CHAR},
+      sender_id = #{senderId,jdbcType=CHAR},
+      consignee_id = #{consigneeId,jdbcType=CHAR},
+      vehicles_id = #{vehiclesId,jdbcType=CHAR},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      trader_user_id = #{traderUserId,jdbcType=CHAR},
+      is_substitute = #{isSubstitute,jdbcType=BIGINT},
+      modify_times = #{modifyTimes,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

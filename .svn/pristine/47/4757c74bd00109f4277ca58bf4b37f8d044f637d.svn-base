@@ -1,0 +1,85 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class DispatchRating {
+    private String dispatchId;
+
+    private String ratingId;
+
+    private String driverId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getDispatchId() {
+        return dispatchId;
+    }
+
+    public void setDispatchId(String dispatchId) {
+        this.dispatchId = dispatchId == null ? null : dispatchId.trim();
+    }
+
+    public String getRatingId() {
+        return ratingId;
+    }
+
+    public void setRatingId(String ratingId) {
+        this.ratingId = ratingId == null ? null : ratingId.trim();
+    }
+
+    public String getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(String driverId) {
+        this.driverId = driverId == null ? null : driverId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

@@ -1,0 +1,23 @@
+package com.xiaoniu56.model.defaults;
+
+public class InfLogWithBLOBs extends InfLog {
+    private String infResult;
+
+    private String paramValue;
+
+    public String getInfResult() {
+        return infResult;
+    }
+
+    public void setInfResult(String infResult) {
+        this.infResult = infResult == null ? null : infResult.trim();
+    }
+
+    public String getParamValue() {
+        return paramValue;
+    }
+
+    public void setParamValue(String paramValue) {
+        this.paramValue = paramValue == null ? null : paramValue.trim();
+    }
+}

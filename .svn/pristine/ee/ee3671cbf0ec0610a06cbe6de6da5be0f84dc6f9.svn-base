@@ -1,0 +1,115 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class GoodsInventory {
+    private String id;
+
+    private String goodsId;
+
+    private String goodsMeasureId;
+
+    private String rootOrderId;
+
+    private String goodsOwnerCompanyId;
+
+    private String inStockTime;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId == null ? null : goodsId.trim();
+    }
+
+    public String getGoodsMeasureId() {
+        return goodsMeasureId;
+    }
+
+    public void setGoodsMeasureId(String goodsMeasureId) {
+        this.goodsMeasureId = goodsMeasureId == null ? null : goodsMeasureId.trim();
+    }
+
+    public String getRootOrderId() {
+        return rootOrderId;
+    }
+
+    public void setRootOrderId(String rootOrderId) {
+        this.rootOrderId = rootOrderId == null ? null : rootOrderId.trim();
+    }
+
+    public String getGoodsOwnerCompanyId() {
+        return goodsOwnerCompanyId;
+    }
+
+    public void setGoodsOwnerCompanyId(String goodsOwnerCompanyId) {
+        this.goodsOwnerCompanyId = goodsOwnerCompanyId == null ? null : goodsOwnerCompanyId.trim();
+    }
+
+    public String getInStockTime() {
+        return inStockTime;
+    }
+
+    public void setInStockTime(String inStockTime) {
+        this.inStockTime = inStockTime == null ? null : inStockTime.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

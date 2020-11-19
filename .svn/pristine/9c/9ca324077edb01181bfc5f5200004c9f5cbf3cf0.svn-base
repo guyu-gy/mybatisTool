@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.TopicMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Topic" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="author_id" property="authorId" jdbcType="CHAR" />
+    <result column="dateline" property="dateline" jdbcType="BIGINT" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="invisible" property="invisible" jdbcType="TINYINT" />
+    <result column="is_anonymous" property="isAnonymous" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="tags" property="tags" jdbcType="VARCHAR" />
+    <result column="fav_times" property="favTimes" jdbcType="INTEGER" />
+    <result column="like_times" property="likeTimes" jdbcType="INTEGER" />
+    <result column="share_times" property="shareTimes" jdbcType="INTEGER" />
+    <result column="post_times" property="postTimes" jdbcType="INTEGER" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="use_ip" property="useIp" jdbcType="VARCHAR" />
+    <result column="use_port" property="usePort" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, author_id, dateline, message, invisible, is_anonymous, status, tags, fav_times, 
+    like_times, share_times, post_times, creater, create_time, modifier, modify_time, 
+    ver, use_ip, use_port
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.TopicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_topic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_topic
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from xn_m_topic
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.TopicExample" >
+    delete from xn_m_topic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Topic" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into xn_m_topic (id, author_id, dateline, 
+      message, invisible, is_anonymous, 
+      status, tags, fav_times, 
+      like_times, share_times, post_times, 
+      creater, create_time, modifier, 
+      modify_time, ver, use_ip, 
+      use_port)
+    values (#{id,jdbcType=BIGINT}, #{authorId,jdbcType=CHAR}, #{dateline,jdbcType=BIGINT}, 
+      #{message,jdbcType=VARCHAR}, #{invisible,jdbcType=TINYINT}, #{isAnonymous,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{tags,jdbcType=VARCHAR}, #{favTimes,jdbcType=INTEGER}, 
+      #{likeTimes,jdbcType=INTEGER}, #{shareTimes,jdbcType=INTEGER}, #{postTimes,jdbcType=INTEGER}, 
+      #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, #{useIp,jdbcType=VARCHAR}, 
+      #{usePort,jdbcType=SMALLINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Topic" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into xn_m_topic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      id,
+      <if test="authorId != null" >
+        author_id,
+      </if>
+      <if test="dateline != null" >
+        dateline,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+      <if test="invisible != null" >
+        invisible,
+      </if>
+      <if test="isAnonymous != null" >
+        is_anonymous,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="tags != null" >
+        tags,
+      </if>
+      <if test="favTimes != null" >
+        fav_times,
+      </if>
+      <if test="likeTimes != null" >
+        like_times,
+      </if>
+      <if test="shareTimes != null" >
+        share_times,
+      </if>
+      <if test="postTimes != null" >
+        post_times,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="useIp != null" >
+        use_ip,
+      </if>
+      <if test="usePort != null" >
+        use_port,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{id,jdbcType=BIGINT},
+      <if test="authorId != null" >
+        #{authorId,jdbcType=CHAR},
+      </if>
+      <if test="dateline != null" >
+        #{dateline,jdbcType=BIGINT},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="invisible != null" >
+        #{invisible,jdbcType=TINYINT},
+      </if>
+      <if test="isAnonymous != null" >
+        #{isAnonymous,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="tags != null" >
+        #{tags,jdbcType=VARCHAR},
+      </if>
+      <if test="favTimes != null" >
+        #{favTimes,jdbcType=INTEGER},
+      </if>
+      <if test="likeTimes != null" >
+        #{likeTimes,jdbcType=INTEGER},
+      </if>
+      <if test="shareTimes != null" >
+        #{shareTimes,jdbcType=INTEGER},
+      </if>
+      <if test="postTimes != null" >
+        #{postTimes,jdbcType=INTEGER},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="useIp != null" >
+        #{useIp,jdbcType=VARCHAR},
+      </if>
+      <if test="usePort != null" >
+        #{usePort,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.TopicExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_topic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Topic" >
+    update xn_m_topic
+    <set >
+      <if test="authorId != null" >
+        author_id = #{authorId,jdbcType=CHAR},
+      </if>
+      <if test="dateline != null" >
+        dateline = #{dateline,jdbcType=BIGINT},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="invisible != null" >
+        invisible = #{invisible,jdbcType=TINYINT},
+      </if>
+      <if test="isAnonymous != null" >
+        is_anonymous = #{isAnonymous,jdbcType=TINYINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="tags != null" >
+        tags = #{tags,jdbcType=VARCHAR},
+      </if>
+      <if test="favTimes != null" >
+        fav_times = #{favTimes,jdbcType=INTEGER},
+      </if>
+      <if test="likeTimes != null" >
+        like_times = #{likeTimes,jdbcType=INTEGER},
+      </if>
+      <if test="shareTimes != null" >
+        share_times = #{shareTimes,jdbcType=INTEGER},
+      </if>
+      <if test="postTimes != null" >
+        post_times = #{postTimes,jdbcType=INTEGER},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="useIp != null" >
+        use_ip = #{useIp,jdbcType=VARCHAR},
+      </if>
+      <if test="usePort != null" >
+        use_port = #{usePort,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Topic" >
+    update xn_m_topic
+    set author_id = #{authorId,jdbcType=CHAR},
+      dateline = #{dateline,jdbcType=BIGINT},
+      message = #{message,jdbcType=VARCHAR},
+      invisible = #{invisible,jdbcType=TINYINT},
+      is_anonymous = #{isAnonymous,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      tags = #{tags,jdbcType=VARCHAR},
+      fav_times = #{favTimes,jdbcType=INTEGER},
+      like_times = #{likeTimes,jdbcType=INTEGER},
+      share_times = #{shareTimes,jdbcType=INTEGER},
+      post_times = #{postTimes,jdbcType=INTEGER},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      use_ip = #{useIp,jdbcType=VARCHAR},
+      use_port = #{usePort,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

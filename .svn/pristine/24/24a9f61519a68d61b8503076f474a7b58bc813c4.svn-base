@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.ApplicableRoute;
+import com.xiaoniu56.model.defaults.ApplicableRouteExample;
+import java.util.List;
+
+public interface ApplicableRouteMapper {
+    int countByExample(ApplicableRouteExample example);
+
+    int deleteByExample(ApplicableRouteExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(ApplicableRoute record);
+
+    int insertSelective(ApplicableRoute record);
+
+    List<ApplicableRoute> selectByExample(ApplicableRouteExample example);
+
+    ApplicableRoute selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(ApplicableRoute record);
+
+    int updateByPrimaryKey(ApplicableRoute record);
+}

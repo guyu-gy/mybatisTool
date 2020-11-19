@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.UserMessageMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.UserMessage" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="message_id" property="messageId" jdbcType="CHAR" />
+    <result column="readed_time" property="readedTime" jdbcType="TIMESTAMP" />
+    <result column="message_type" property="messageType" jdbcType="BIGINT" />
+    <result column="readed_status" property="readedStatus" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="CHAR" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="CHAR" />
+    <result column="ver" property="ver" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_id, message_id, readed_time, message_type, readed_status, creater, create_time, 
+    modifier, modify_time, ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.UserMessageExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_user_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_user_message
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_user_message
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.UserMessageExample" >
+    delete from xn_m_user_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.UserMessage" >
+    insert into xn_m_user_message (id, user_id, message_id, 
+      readed_time, message_type, readed_status, 
+      creater, create_time, modifier, 
+      modify_time, ver)
+    values (#{id,jdbcType=CHAR}, #{userId,jdbcType=CHAR}, #{messageId,jdbcType=CHAR}, 
+      #{readedTime,jdbcType=TIMESTAMP}, #{messageType,jdbcType=BIGINT}, #{readedStatus,jdbcType=BIGINT}, 
+      #{creater,jdbcType=CHAR}, #{createTime,jdbcType=CHAR}, #{modifier,jdbcType=CHAR}, 
+      #{modifyTime,jdbcType=CHAR}, #{ver,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.UserMessage" >
+    insert into xn_m_user_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="messageId != null" >
+        message_id,
+      </if>
+      <if test="readedTime != null" >
+        readed_time,
+      </if>
+      <if test="messageType != null" >
+        message_type,
+      </if>
+      <if test="readedStatus != null" >
+        readed_status,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="messageId != null" >
+        #{messageId,jdbcType=CHAR},
+      </if>
+      <if test="readedTime != null" >
+        #{readedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="messageType != null" >
+        #{messageType,jdbcType=BIGINT},
+      </if>
+      <if test="readedStatus != null" >
+        #{readedStatus,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=CHAR},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.UserMessageExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_user_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.UserMessage" >
+    update xn_m_user_message
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="messageId != null" >
+        message_id = #{messageId,jdbcType=CHAR},
+      </if>
+      <if test="readedTime != null" >
+        readed_time = #{readedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="messageType != null" >
+        message_type = #{messageType,jdbcType=BIGINT},
+      </if>
+      <if test="readedStatus != null" >
+        readed_status = #{readedStatus,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=CHAR},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.UserMessage" >
+    update xn_m_user_message
+    set user_id = #{userId,jdbcType=CHAR},
+      message_id = #{messageId,jdbcType=CHAR},
+      readed_time = #{readedTime,jdbcType=TIMESTAMP},
+      message_type = #{messageType,jdbcType=BIGINT},
+      readed_status = #{readedStatus,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=CHAR},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=CHAR},
+      ver = #{ver,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

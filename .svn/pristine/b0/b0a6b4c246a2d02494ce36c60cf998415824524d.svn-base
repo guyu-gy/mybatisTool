@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.TopicPostMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.TopicPost" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="author_id" property="authorId" jdbcType="CHAR" />
+    <result column="dateline" property="dateline" jdbcType="BIGINT" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="use_ip" property="useIp" jdbcType="VARCHAR" />
+    <result column="user_port" property="userPort" jdbcType="SMALLINT" />
+    <result column="post_type" property="postType" jdbcType="TINYINT" />
+    <result column="topic_id" property="topicId" jdbcType="BIGINT" />
+    <result column="reply_post_id" property="replyPostId" jdbcType="BIGINT" />
+    <result column="reply_user_id" property="replyUserId" jdbcType="CHAR" />
+    <result column="level_code" property="levelCode" jdbcType="VARCHAR" />
+    <result column="reply_times" property="replyTimes" jdbcType="INTEGER" />
+    <result column="root_post_id" property="rootPostId" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, author_id, dateline, message, use_ip, user_port, post_type, topic_id, reply_post_id, 
+    reply_user_id, level_code, reply_times, root_post_id, creater, create_time, modifier, 
+    modify_time, ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.TopicPostExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_topic_post
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_topic_post
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from xn_m_topic_post
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.TopicPostExample" >
+    delete from xn_m_topic_post
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.TopicPost" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into xn_m_topic_post (id, author_id, dateline, 
+      message, use_ip, user_port, 
+      post_type, topic_id, reply_post_id, 
+      reply_user_id, level_code, reply_times, 
+      root_post_id, creater, create_time, 
+      modifier, modify_time, ver
+      )
+    values (#{id,jdbcType=BIGINT}, #{authorId,jdbcType=CHAR}, #{dateline,jdbcType=BIGINT}, 
+      #{message,jdbcType=VARCHAR}, #{useIp,jdbcType=VARCHAR}, #{userPort,jdbcType=SMALLINT}, 
+      #{postType,jdbcType=TINYINT}, #{topicId,jdbcType=BIGINT}, #{replyPostId,jdbcType=BIGINT}, 
+      #{replyUserId,jdbcType=CHAR}, #{levelCode,jdbcType=VARCHAR}, #{replyTimes,jdbcType=INTEGER}, 
+      #{rootPostId,jdbcType=BIGINT}, #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.TopicPost" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into xn_m_topic_post
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      id,
+      <if test="authorId != null" >
+        author_id,
+      </if>
+      <if test="dateline != null" >
+        dateline,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+      <if test="useIp != null" >
+        use_ip,
+      </if>
+      <if test="userPort != null" >
+        user_port,
+      </if>
+      <if test="postType != null" >
+        post_type,
+      </if>
+      <if test="topicId != null" >
+        topic_id,
+      </if>
+      <if test="replyPostId != null" >
+        reply_post_id,
+      </if>
+      <if test="replyUserId != null" >
+        reply_user_id,
+      </if>
+      <if test="levelCode != null" >
+        level_code,
+      </if>
+      <if test="replyTimes != null" >
+        reply_times,
+      </if>
+      <if test="rootPostId != null" >
+        root_post_id,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{id,jdbcType=BIGINT},
+      <if test="authorId != null" >
+        #{authorId,jdbcType=CHAR},
+      </if>
+      <if test="dateline != null" >
+        #{dateline,jdbcType=BIGINT},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="useIp != null" >
+        #{useIp,jdbcType=VARCHAR},
+      </if>
+      <if test="userPort != null" >
+        #{userPort,jdbcType=SMALLINT},
+      </if>
+      <if test="postType != null" >
+        #{postType,jdbcType=TINYINT},
+      </if>
+      <if test="topicId != null" >
+        #{topicId,jdbcType=BIGINT},
+      </if>
+      <if test="replyPostId != null" >
+        #{replyPostId,jdbcType=BIGINT},
+      </if>
+      <if test="replyUserId != null" >
+        #{replyUserId,jdbcType=CHAR},
+      </if>
+      <if test="levelCode != null" >
+        #{levelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="replyTimes != null" >
+        #{replyTimes,jdbcType=INTEGER},
+      </if>
+      <if test="rootPostId != null" >
+        #{rootPostId,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.TopicPostExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_topic_post
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.TopicPost" >
+    update xn_m_topic_post
+    <set >
+      <if test="authorId != null" >
+        author_id = #{authorId,jdbcType=CHAR},
+      </if>
+      <if test="dateline != null" >
+        dateline = #{dateline,jdbcType=BIGINT},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="useIp != null" >
+        use_ip = #{useIp,jdbcType=VARCHAR},
+      </if>
+      <if test="userPort != null" >
+        user_port = #{userPort,jdbcType=SMALLINT},
+      </if>
+      <if test="postType != null" >
+        post_type = #{postType,jdbcType=TINYINT},
+      </if>
+      <if test="topicId != null" >
+        topic_id = #{topicId,jdbcType=BIGINT},
+      </if>
+      <if test="replyPostId != null" >
+        reply_post_id = #{replyPostId,jdbcType=BIGINT},
+      </if>
+      <if test="replyUserId != null" >
+        reply_user_id = #{replyUserId,jdbcType=CHAR},
+      </if>
+      <if test="levelCode != null" >
+        level_code = #{levelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="replyTimes != null" >
+        reply_times = #{replyTimes,jdbcType=INTEGER},
+      </if>
+      <if test="rootPostId != null" >
+        root_post_id = #{rootPostId,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.TopicPost" >
+    update xn_m_topic_post
+    set author_id = #{authorId,jdbcType=CHAR},
+      dateline = #{dateline,jdbcType=BIGINT},
+      message = #{message,jdbcType=VARCHAR},
+      use_ip = #{useIp,jdbcType=VARCHAR},
+      user_port = #{userPort,jdbcType=SMALLINT},
+      post_type = #{postType,jdbcType=TINYINT},
+      topic_id = #{topicId,jdbcType=BIGINT},
+      reply_post_id = #{replyPostId,jdbcType=BIGINT},
+      reply_user_id = #{replyUserId,jdbcType=CHAR},
+      level_code = #{levelCode,jdbcType=VARCHAR},
+      reply_times = #{replyTimes,jdbcType=INTEGER},
+      root_post_id = #{rootPostId,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

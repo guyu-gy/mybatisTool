@@ -1,0 +1,95 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class InoutStockGoods {
+    private String id;
+
+    private String inoutStockRecordId;
+
+    private String goodsId;
+
+    private String goodsMeasureId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifer;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getInoutStockRecordId() {
+        return inoutStockRecordId;
+    }
+
+    public void setInoutStockRecordId(String inoutStockRecordId) {
+        this.inoutStockRecordId = inoutStockRecordId == null ? null : inoutStockRecordId.trim();
+    }
+
+    public String getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId == null ? null : goodsId.trim();
+    }
+
+    public String getGoodsMeasureId() {
+        return goodsMeasureId;
+    }
+
+    public void setGoodsMeasureId(String goodsMeasureId) {
+        this.goodsMeasureId = goodsMeasureId == null ? null : goodsMeasureId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifer() {
+        return modifer;
+    }
+
+    public void setModifer(String modifer) {
+        this.modifer = modifer == null ? null : modifer.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.SubjectTemplateInit;
+import com.xiaoniu56.model.defaults.SubjectTemplateInitExample;
+import java.util.List;
+
+public interface SubjectTemplateInitMapper {
+    int countByExample(SubjectTemplateInitExample example);
+
+    int deleteByExample(SubjectTemplateInitExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(SubjectTemplateInit record);
+
+    int insertSelective(SubjectTemplateInit record);
+
+    List<SubjectTemplateInit> selectByExample(SubjectTemplateInitExample example);
+
+    SubjectTemplateInit selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(SubjectTemplateInit record);
+
+    int updateByPrimaryKey(SubjectTemplateInit record);
+}

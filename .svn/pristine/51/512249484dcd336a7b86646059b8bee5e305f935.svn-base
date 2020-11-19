@@ -1,0 +1,145 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Score {
+    private String id;
+
+    private Long one;
+
+    private Long two;
+
+    private Long three;
+
+    private Long four;
+
+    private Long five;
+
+    private Long complainTimes;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String driverUserId;
+
+    private String companyId;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public Long getOne() {
+        return one;
+    }
+
+    public void setOne(Long one) {
+        this.one = one;
+    }
+
+    public Long getTwo() {
+        return two;
+    }
+
+    public void setTwo(Long two) {
+        this.two = two;
+    }
+
+    public Long getThree() {
+        return three;
+    }
+
+    public void setThree(Long three) {
+        this.three = three;
+    }
+
+    public Long getFour() {
+        return four;
+    }
+
+    public void setFour(Long four) {
+        this.four = four;
+    }
+
+    public Long getFive() {
+        return five;
+    }
+
+    public void setFive(Long five) {
+        this.five = five;
+    }
+
+    public Long getComplainTimes() {
+        return complainTimes;
+    }
+
+    public void setComplainTimes(Long complainTimes) {
+        this.complainTimes = complainTimes;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getDriverUserId() {
+        return driverUserId;
+    }
+
+    public void setDriverUserId(String driverUserId) {
+        this.driverUserId = driverUserId == null ? null : driverUserId.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+}

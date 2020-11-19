@@ -1,0 +1,115 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class InoutStockRecord {
+    private String id;
+
+    private String operUserId;
+
+    private String outletsId;
+
+    private String createTime;
+
+    private Long inoutAction;
+
+    private String desp;
+
+    private Long inoutStockStatus;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getOperUserId() {
+        return operUserId;
+    }
+
+    public void setOperUserId(String operUserId) {
+        this.operUserId = operUserId == null ? null : operUserId.trim();
+    }
+
+    public String getOutletsId() {
+        return outletsId;
+    }
+
+    public void setOutletsId(String outletsId) {
+        this.outletsId = outletsId == null ? null : outletsId.trim();
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime == null ? null : createTime.trim();
+    }
+
+    public Long getInoutAction() {
+        return inoutAction;
+    }
+
+    public void setInoutAction(Long inoutAction) {
+        this.inoutAction = inoutAction;
+    }
+
+    public String getDesp() {
+        return desp;
+    }
+
+    public void setDesp(String desp) {
+        this.desp = desp == null ? null : desp.trim();
+    }
+
+    public Long getInoutStockStatus() {
+        return inoutStockStatus;
+    }
+
+    public void setInoutStockStatus(Long inoutStockStatus) {
+        this.inoutStockStatus = inoutStockStatus;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

@@ -1,0 +1,175 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class SMSSendInfo {
+    private String id;
+
+    private String msgTemplateId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String sendUserId;
+
+    private String receiveUserId;
+
+    private String receiveMobile;
+
+    private String sendUserName;
+
+    private Long status;
+
+    private Long type;
+
+    private String comment;
+
+    private Long code;
+
+    private String bizId;
+
+    private String msgContent;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getMsgTemplateId() {
+        return msgTemplateId;
+    }
+
+    public void setMsgTemplateId(String msgTemplateId) {
+        this.msgTemplateId = msgTemplateId == null ? null : msgTemplateId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getSendUserId() {
+        return sendUserId;
+    }
+
+    public void setSendUserId(String sendUserId) {
+        this.sendUserId = sendUserId == null ? null : sendUserId.trim();
+    }
+
+    public String getReceiveUserId() {
+        return receiveUserId;
+    }
+
+    public void setReceiveUserId(String receiveUserId) {
+        this.receiveUserId = receiveUserId == null ? null : receiveUserId.trim();
+    }
+
+    public String getReceiveMobile() {
+        return receiveMobile;
+    }
+
+    public void setReceiveMobile(String receiveMobile) {
+        this.receiveMobile = receiveMobile == null ? null : receiveMobile.trim();
+    }
+
+    public String getSendUserName() {
+        return sendUserName;
+    }
+
+    public void setSendUserName(String sendUserName) {
+        this.sendUserName = sendUserName == null ? null : sendUserName.trim();
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+
+    public Long getCode() {
+        return code;
+    }
+
+    public void setCode(Long code) {
+        this.code = code;
+    }
+
+    public String getBizId() {
+        return bizId;
+    }
+
+    public void setBizId(String bizId) {
+        this.bizId = bizId == null ? null : bizId.trim();
+    }
+
+    public String getMsgContent() {
+        return msgContent;
+    }
+
+    public void setMsgContent(String msgContent) {
+        this.msgContent = msgContent == null ? null : msgContent.trim();
+    }
+}

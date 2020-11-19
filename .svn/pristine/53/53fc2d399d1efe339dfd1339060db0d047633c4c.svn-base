@@ -1,0 +1,136 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class TieredPricing {
+    private String id;
+
+    private String chargeStrategyId;
+
+    private String accountSubjectId;
+
+    private BigDecimal lowerLimit;
+
+    private BigDecimal upperLimit;
+
+    private BigDecimal unitPrice;
+
+    private String defineUnit;
+
+    private Long orderNo;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getChargeStrategyId() {
+        return chargeStrategyId;
+    }
+
+    public void setChargeStrategyId(String chargeStrategyId) {
+        this.chargeStrategyId = chargeStrategyId == null ? null : chargeStrategyId.trim();
+    }
+
+    public String getAccountSubjectId() {
+        return accountSubjectId;
+    }
+
+    public void setAccountSubjectId(String accountSubjectId) {
+        this.accountSubjectId = accountSubjectId == null ? null : accountSubjectId.trim();
+    }
+
+    public BigDecimal getLowerLimit() {
+        return lowerLimit;
+    }
+
+    public void setLowerLimit(BigDecimal lowerLimit) {
+        this.lowerLimit = lowerLimit;
+    }
+
+    public BigDecimal getUpperLimit() {
+        return upperLimit;
+    }
+
+    public void setUpperLimit(BigDecimal upperLimit) {
+        this.upperLimit = upperLimit;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public String getDefineUnit() {
+        return defineUnit;
+    }
+
+    public void setDefineUnit(String defineUnit) {
+        this.defineUnit = defineUnit == null ? null : defineUnit.trim();
+    }
+
+    public Long getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(Long orderNo) {
+        this.orderNo = orderNo;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

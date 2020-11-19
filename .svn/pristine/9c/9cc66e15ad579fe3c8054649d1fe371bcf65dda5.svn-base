@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.DriverMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Driver" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="fixed_telephone" property="fixedTelephone" jdbcType="VARCHAR" />
+    <result column="certification_state" property="certificationState" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="idcard_no" property="idcardNo" jdbcType="VARCHAR" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="driver_licence_phone_id" property="driverLicencePhoneId" jdbcType="CHAR" />
+    <result column="driving_years" property="drivingYears" jdbcType="BIGINT" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="complain_count" property="complainCount" jdbcType="BIGINT" />
+    <result column="rating_count" property="ratingCount" jdbcType="BIGINT" />
+    <result column="driver_licence_expiry_date" property="driverLicenceExpiryDate" jdbcType="TIMESTAMP" />
+    <result column="gender" property="gender" jdbcType="CHAR" />
+    <result column="qualification_cerrificate_number" property="qualificationCerrificateNumber" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, fixed_telephone, certification_state, create_time, idcard_no, ver, creater, 
+    modifier, modify_time, driver_licence_phone_id, driving_years, description, user_id, 
+    appkey, complain_count, rating_count, driver_licence_expiry_date, gender, qualification_cerrificate_number
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.DriverExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_driver
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_driver
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_driver
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.DriverExample" >
+    delete from xn_m_driver
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Driver" >
+    insert into xn_m_driver (id, name, fixed_telephone, 
+      certification_state, create_time, idcard_no, 
+      ver, creater, modifier, 
+      modify_time, driver_licence_phone_id, driving_years, 
+      description, user_id, appkey, 
+      complain_count, rating_count, driver_licence_expiry_date, 
+      gender, qualification_cerrificate_number)
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{fixedTelephone,jdbcType=VARCHAR}, 
+      #{certificationState,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{idcardNo,jdbcType=VARCHAR}, 
+      #{ver,jdbcType=BIGINT}, #{creater,jdbcType=VARCHAR}, #{modifier,jdbcType=VARCHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{driverLicencePhoneId,jdbcType=CHAR}, #{drivingYears,jdbcType=BIGINT}, 
+      #{description,jdbcType=VARCHAR}, #{userId,jdbcType=CHAR}, #{appkey,jdbcType=VARCHAR}, 
+      #{complainCount,jdbcType=BIGINT}, #{ratingCount,jdbcType=BIGINT}, #{driverLicenceExpiryDate,jdbcType=TIMESTAMP}, 
+      #{gender,jdbcType=CHAR}, #{qualificationCerrificateNumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Driver" >
+    insert into xn_m_driver
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="fixedTelephone != null" >
+        fixed_telephone,
+      </if>
+      <if test="certificationState != null" >
+        certification_state,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="idcardNo != null" >
+        idcard_no,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="driverLicencePhoneId != null" >
+        driver_licence_phone_id,
+      </if>
+      <if test="drivingYears != null" >
+        driving_years,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="complainCount != null" >
+        complain_count,
+      </if>
+      <if test="ratingCount != null" >
+        rating_count,
+      </if>
+      <if test="driverLicenceExpiryDate != null" >
+        driver_licence_expiry_date,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="qualificationCerrificateNumber != null" >
+        qualification_cerrificate_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedTelephone != null" >
+        #{fixedTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="certificationState != null" >
+        #{certificationState,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idcardNo != null" >
+        #{idcardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="driverLicencePhoneId != null" >
+        #{driverLicencePhoneId,jdbcType=CHAR},
+      </if>
+      <if test="drivingYears != null" >
+        #{drivingYears,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="complainCount != null" >
+        #{complainCount,jdbcType=BIGINT},
+      </if>
+      <if test="ratingCount != null" >
+        #{ratingCount,jdbcType=BIGINT},
+      </if>
+      <if test="driverLicenceExpiryDate != null" >
+        #{driverLicenceExpiryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=CHAR},
+      </if>
+      <if test="qualificationCerrificateNumber != null" >
+        #{qualificationCerrificateNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.DriverExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_driver
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Driver" >
+    update xn_m_driver
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedTelephone != null" >
+        fixed_telephone = #{fixedTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="certificationState != null" >
+        certification_state = #{certificationState,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idcardNo != null" >
+        idcard_no = #{idcardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="driverLicencePhoneId != null" >
+        driver_licence_phone_id = #{driverLicencePhoneId,jdbcType=CHAR},
+      </if>
+      <if test="drivingYears != null" >
+        driving_years = #{drivingYears,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="complainCount != null" >
+        complain_count = #{complainCount,jdbcType=BIGINT},
+      </if>
+      <if test="ratingCount != null" >
+        rating_count = #{ratingCount,jdbcType=BIGINT},
+      </if>
+      <if test="driverLicenceExpiryDate != null" >
+        driver_licence_expiry_date = #{driverLicenceExpiryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=CHAR},
+      </if>
+      <if test="qualificationCerrificateNumber != null" >
+        qualification_cerrificate_number = #{qualificationCerrificateNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Driver" >
+    update xn_m_driver
+    set name = #{name,jdbcType=VARCHAR},
+      fixed_telephone = #{fixedTelephone,jdbcType=VARCHAR},
+      certification_state = #{certificationState,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      idcard_no = #{idcardNo,jdbcType=VARCHAR},
+      ver = #{ver,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      driver_licence_phone_id = #{driverLicencePhoneId,jdbcType=CHAR},
+      driving_years = #{drivingYears,jdbcType=BIGINT},
+      description = #{description,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=CHAR},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      complain_count = #{complainCount,jdbcType=BIGINT},
+      rating_count = #{ratingCount,jdbcType=BIGINT},
+      driver_licence_expiry_date = #{driverLicenceExpiryDate,jdbcType=TIMESTAMP},
+      gender = #{gender,jdbcType=CHAR},
+      qualification_cerrificate_number = #{qualificationCerrificateNumber,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

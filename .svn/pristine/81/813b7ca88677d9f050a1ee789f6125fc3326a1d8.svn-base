@@ -1,0 +1,106 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class InsurancePolicy {
+    private String id;
+
+    private String orderId;
+
+    private BigDecimal insuredValue;
+
+    private BigDecimal insuranceRate;
+
+    private String insuranceFeeChargeItemId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
+    }
+
+    public BigDecimal getInsuredValue() {
+        return insuredValue;
+    }
+
+    public void setInsuredValue(BigDecimal insuredValue) {
+        this.insuredValue = insuredValue;
+    }
+
+    public BigDecimal getInsuranceRate() {
+        return insuranceRate;
+    }
+
+    public void setInsuranceRate(BigDecimal insuranceRate) {
+        this.insuranceRate = insuranceRate;
+    }
+
+    public String getInsuranceFeeChargeItemId() {
+        return insuranceFeeChargeItemId;
+    }
+
+    public void setInsuranceFeeChargeItemId(String insuranceFeeChargeItemId) {
+        this.insuranceFeeChargeItemId = insuranceFeeChargeItemId == null ? null : insuranceFeeChargeItemId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

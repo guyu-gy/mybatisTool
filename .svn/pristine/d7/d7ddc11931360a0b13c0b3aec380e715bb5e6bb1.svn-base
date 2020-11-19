@@ -1,0 +1,416 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class Company {
+    private String id;
+
+    private String name;
+
+    private String legalRepresentative;
+
+    private String organizationCode;
+
+    private String registeredCapital;
+
+    private String registeredAddressId;
+
+    private String openingBank;
+
+    private String bankAccount;
+
+    private String officeAddressId;
+
+    private String zipCode;
+
+    private String contactNumber;
+
+    private String businessLicenseId;
+
+    private String taxRegistrationId;
+
+    private String orgCodeCertificateId;
+
+    private Long enableStatus;
+
+    private Long certificationState;
+
+    private Date createTime;
+
+    private Long organizationType;
+
+    private Long registeredCapitalCurrency;
+
+    private Long ver;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private String contactId;
+
+    private String bizCardPhotoId;
+
+    private String companyPhotoId;
+
+    private String serviceStar;
+
+    private BigDecimal turnover;
+
+    private Long complainCount;
+
+    private Long evaluationCount;
+
+    private Long tradedCount;
+
+    private String taxCode;
+
+    private String logoPhotoId;
+
+    private Long dispatchCount;
+
+    private Long goodsCount;
+
+    private Long vehicleTeamCount;
+
+    private Long isVip;
+
+    private String settleType;
+
+    private Long companyType;
+
+    private Long isAllow2c;
+
+    private String ext1;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getLegalRepresentative() {
+        return legalRepresentative;
+    }
+
+    public void setLegalRepresentative(String legalRepresentative) {
+        this.legalRepresentative = legalRepresentative == null ? null : legalRepresentative.trim();
+    }
+
+    public String getOrganizationCode() {
+        return organizationCode;
+    }
+
+    public void setOrganizationCode(String organizationCode) {
+        this.organizationCode = organizationCode == null ? null : organizationCode.trim();
+    }
+
+    public String getRegisteredCapital() {
+        return registeredCapital;
+    }
+
+    public void setRegisteredCapital(String registeredCapital) {
+        this.registeredCapital = registeredCapital == null ? null : registeredCapital.trim();
+    }
+
+    public String getRegisteredAddressId() {
+        return registeredAddressId;
+    }
+
+    public void setRegisteredAddressId(String registeredAddressId) {
+        this.registeredAddressId = registeredAddressId == null ? null : registeredAddressId.trim();
+    }
+
+    public String getOpeningBank() {
+        return openingBank;
+    }
+
+    public void setOpeningBank(String openingBank) {
+        this.openingBank = openingBank == null ? null : openingBank.trim();
+    }
+
+    public String getBankAccount() {
+        return bankAccount;
+    }
+
+    public void setBankAccount(String bankAccount) {
+        this.bankAccount = bankAccount == null ? null : bankAccount.trim();
+    }
+
+    public String getOfficeAddressId() {
+        return officeAddressId;
+    }
+
+    public void setOfficeAddressId(String officeAddressId) {
+        this.officeAddressId = officeAddressId == null ? null : officeAddressId.trim();
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode == null ? null : zipCode.trim();
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber == null ? null : contactNumber.trim();
+    }
+
+    public String getBusinessLicenseId() {
+        return businessLicenseId;
+    }
+
+    public void setBusinessLicenseId(String businessLicenseId) {
+        this.businessLicenseId = businessLicenseId == null ? null : businessLicenseId.trim();
+    }
+
+    public String getTaxRegistrationId() {
+        return taxRegistrationId;
+    }
+
+    public void setTaxRegistrationId(String taxRegistrationId) {
+        this.taxRegistrationId = taxRegistrationId == null ? null : taxRegistrationId.trim();
+    }
+
+    public String getOrgCodeCertificateId() {
+        return orgCodeCertificateId;
+    }
+
+    public void setOrgCodeCertificateId(String orgCodeCertificateId) {
+        this.orgCodeCertificateId = orgCodeCertificateId == null ? null : orgCodeCertificateId.trim();
+    }
+
+    public Long getEnableStatus() {
+        return enableStatus;
+    }
+
+    public void setEnableStatus(Long enableStatus) {
+        this.enableStatus = enableStatus;
+    }
+
+    public Long getCertificationState() {
+        return certificationState;
+    }
+
+    public void setCertificationState(Long certificationState) {
+        this.certificationState = certificationState;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getOrganizationType() {
+        return organizationType;
+    }
+
+    public void setOrganizationType(Long organizationType) {
+        this.organizationType = organizationType;
+    }
+
+    public Long getRegisteredCapitalCurrency() {
+        return registeredCapitalCurrency;
+    }
+
+    public void setRegisteredCapitalCurrency(Long registeredCapitalCurrency) {
+        this.registeredCapitalCurrency = registeredCapitalCurrency;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public String getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(String contactId) {
+        this.contactId = contactId == null ? null : contactId.trim();
+    }
+
+    public String getBizCardPhotoId() {
+        return bizCardPhotoId;
+    }
+
+    public void setBizCardPhotoId(String bizCardPhotoId) {
+        this.bizCardPhotoId = bizCardPhotoId == null ? null : bizCardPhotoId.trim();
+    }
+
+    public String getCompanyPhotoId() {
+        return companyPhotoId;
+    }
+
+    public void setCompanyPhotoId(String companyPhotoId) {
+        this.companyPhotoId = companyPhotoId == null ? null : companyPhotoId.trim();
+    }
+
+    public String getServiceStar() {
+        return serviceStar;
+    }
+
+    public void setServiceStar(String serviceStar) {
+        this.serviceStar = serviceStar == null ? null : serviceStar.trim();
+    }
+
+    public BigDecimal getTurnover() {
+        return turnover;
+    }
+
+    public void setTurnover(BigDecimal turnover) {
+        this.turnover = turnover;
+    }
+
+    public Long getComplainCount() {
+        return complainCount;
+    }
+
+    public void setComplainCount(Long complainCount) {
+        this.complainCount = complainCount;
+    }
+
+    public Long getEvaluationCount() {
+        return evaluationCount;
+    }
+
+    public void setEvaluationCount(Long evaluationCount) {
+        this.evaluationCount = evaluationCount;
+    }
+
+    public Long getTradedCount() {
+        return tradedCount;
+    }
+
+    public void setTradedCount(Long tradedCount) {
+        this.tradedCount = tradedCount;
+    }
+
+    public String getTaxCode() {
+        return taxCode;
+    }
+
+    public void setTaxCode(String taxCode) {
+        this.taxCode = taxCode == null ? null : taxCode.trim();
+    }
+
+    public String getLogoPhotoId() {
+        return logoPhotoId;
+    }
+
+    public void setLogoPhotoId(String logoPhotoId) {
+        this.logoPhotoId = logoPhotoId == null ? null : logoPhotoId.trim();
+    }
+
+    public Long getDispatchCount() {
+        return dispatchCount;
+    }
+
+    public void setDispatchCount(Long dispatchCount) {
+        this.dispatchCount = dispatchCount;
+    }
+
+    public Long getGoodsCount() {
+        return goodsCount;
+    }
+
+    public void setGoodsCount(Long goodsCount) {
+        this.goodsCount = goodsCount;
+    }
+
+    public Long getVehicleTeamCount() {
+        return vehicleTeamCount;
+    }
+
+    public void setVehicleTeamCount(Long vehicleTeamCount) {
+        this.vehicleTeamCount = vehicleTeamCount;
+    }
+
+    public Long getIsVip() {
+        return isVip;
+    }
+
+    public void setIsVip(Long isVip) {
+        this.isVip = isVip;
+    }
+
+    public String getSettleType() {
+        return settleType;
+    }
+
+    public void setSettleType(String settleType) {
+        this.settleType = settleType == null ? null : settleType.trim();
+    }
+
+    public Long getCompanyType() {
+        return companyType;
+    }
+
+    public void setCompanyType(Long companyType) {
+        this.companyType = companyType;
+    }
+
+    public Long getIsAllow2c() {
+        return isAllow2c;
+    }
+
+    public void setIsAllow2c(Long isAllow2c) {
+        this.isAllow2c = isAllow2c;
+    }
+
+    public String getExt1() {
+        return ext1;
+    }
+
+    public void setExt1(String ext1) {
+        this.ext1 = ext1 == null ? null : ext1.trim();
+    }
+}

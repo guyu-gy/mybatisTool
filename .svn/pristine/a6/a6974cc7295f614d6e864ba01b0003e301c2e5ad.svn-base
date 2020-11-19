@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.LogisticsPipelineMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.LogisticsPipeline" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="line_no" property="lineNo" jdbcType="VARCHAR" />
+    <result column="line_version" property="lineVersion" jdbcType="BIGINT" />
+    <result column="departure_point_id" property="departurePointId" jdbcType="BIGINT" />
+    <result column="arrival_point_id" property="arrivalPointId" jdbcType="BIGINT" />
+    <result column="expect_arrival_date" property="expectArrivalDate" jdbcType="VARCHAR" />
+    <result column="issuing_office" property="issuingOffice" jdbcType="VARCHAR" />
+    <result column="opening_bank" property="openingBank" jdbcType="VARCHAR" />
+    <result column="heavy_price" property="heavyPrice" jdbcType="DECIMAL" />
+    <result column="light_price" property="lightPrice" jdbcType="DECIMAL" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="aging_type_id" property="agingTypeId" jdbcType="BIGINT" />
+    <result column="transport_type_id" property="transportTypeId" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="company_id" property="companyId" jdbcType="CHAR" />
+    <result column="dead_weight_price" property="deadWeightPrice" jdbcType="DECIMAL" />
+    <result column="auth_code" property="authCode" jdbcType="CHAR" />
+    <result column="is_valid" property="isValid" jdbcType="BIGINT" />
+    <result column="is_delete" property="isDelete" jdbcType="BIGINT" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="input_mode" property="inputMode" jdbcType="BIGINT" />
+    <result column="ext1" property="ext1" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, line_no, line_version, departure_point_id, arrival_point_id, expect_arrival_date, 
+    issuing_office, opening_bank, heavy_price, light_price, comment, aging_type_id, transport_type_id, 
+    creater, create_time, modifier, modify_time, ver, company_id, dead_weight_price, 
+    auth_code, is_valid, is_delete, appkey, input_mode, ext1
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.LogisticsPipelineExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_logistics_pipeline
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_logistics_pipeline
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_logistics_pipeline
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.LogisticsPipelineExample" >
+    delete from xn_m_logistics_pipeline
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.LogisticsPipeline" >
+    insert into xn_m_logistics_pipeline (id, line_no, line_version, 
+      departure_point_id, arrival_point_id, expect_arrival_date, 
+      issuing_office, opening_bank, heavy_price, 
+      light_price, comment, aging_type_id, 
+      transport_type_id, creater, create_time, 
+      modifier, modify_time, ver, 
+      company_id, dead_weight_price, auth_code, 
+      is_valid, is_delete, appkey, 
+      input_mode, ext1)
+    values (#{id,jdbcType=CHAR}, #{lineNo,jdbcType=VARCHAR}, #{lineVersion,jdbcType=BIGINT}, 
+      #{departurePointId,jdbcType=BIGINT}, #{arrivalPointId,jdbcType=BIGINT}, #{expectArrivalDate,jdbcType=VARCHAR}, 
+      #{issuingOffice,jdbcType=VARCHAR}, #{openingBank,jdbcType=VARCHAR}, #{heavyPrice,jdbcType=DECIMAL}, 
+      #{lightPrice,jdbcType=DECIMAL}, #{comment,jdbcType=VARCHAR}, #{agingTypeId,jdbcType=BIGINT}, 
+      #{transportTypeId,jdbcType=BIGINT}, #{creater,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, 
+      #{companyId,jdbcType=CHAR}, #{deadWeightPrice,jdbcType=DECIMAL}, #{authCode,jdbcType=CHAR}, 
+      #{isValid,jdbcType=BIGINT}, #{isDelete,jdbcType=BIGINT}, #{appkey,jdbcType=VARCHAR}, 
+      #{inputMode,jdbcType=BIGINT}, #{ext1,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.LogisticsPipeline" >
+    insert into xn_m_logistics_pipeline
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="lineNo != null" >
+        line_no,
+      </if>
+      <if test="lineVersion != null" >
+        line_version,
+      </if>
+      <if test="departurePointId != null" >
+        departure_point_id,
+      </if>
+      <if test="arrivalPointId != null" >
+        arrival_point_id,
+      </if>
+      <if test="expectArrivalDate != null" >
+        expect_arrival_date,
+      </if>
+      <if test="issuingOffice != null" >
+        issuing_office,
+      </if>
+      <if test="openingBank != null" >
+        opening_bank,
+      </if>
+      <if test="heavyPrice != null" >
+        heavy_price,
+      </if>
+      <if test="lightPrice != null" >
+        light_price,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="agingTypeId != null" >
+        aging_type_id,
+      </if>
+      <if test="transportTypeId != null" >
+        transport_type_id,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="deadWeightPrice != null" >
+        dead_weight_price,
+      </if>
+      <if test="authCode != null" >
+        auth_code,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="inputMode != null" >
+        input_mode,
+      </if>
+      <if test="ext1 != null" >
+        ext1,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="lineNo != null" >
+        #{lineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lineVersion != null" >
+        #{lineVersion,jdbcType=BIGINT},
+      </if>
+      <if test="departurePointId != null" >
+        #{departurePointId,jdbcType=BIGINT},
+      </if>
+      <if test="arrivalPointId != null" >
+        #{arrivalPointId,jdbcType=BIGINT},
+      </if>
+      <if test="expectArrivalDate != null" >
+        #{expectArrivalDate,jdbcType=VARCHAR},
+      </if>
+      <if test="issuingOffice != null" >
+        #{issuingOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="openingBank != null" >
+        #{openingBank,jdbcType=VARCHAR},
+      </if>
+      <if test="heavyPrice != null" >
+        #{heavyPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="lightPrice != null" >
+        #{lightPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="agingTypeId != null" >
+        #{agingTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="transportTypeId != null" >
+        #{transportTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="deadWeightPrice != null" >
+        #{deadWeightPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="authCode != null" >
+        #{authCode,jdbcType=CHAR},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="inputMode != null" >
+        #{inputMode,jdbcType=BIGINT},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.LogisticsPipelineExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_logistics_pipeline
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.LogisticsPipeline" >
+    update xn_m_logistics_pipeline
+    <set >
+      <if test="lineNo != null" >
+        line_no = #{lineNo,jdbcType=VARCHAR},
+      </if>
+      <if test="lineVersion != null" >
+        line_version = #{lineVersion,jdbcType=BIGINT},
+      </if>
+      <if test="departurePointId != null" >
+        departure_point_id = #{departurePointId,jdbcType=BIGINT},
+      </if>
+      <if test="arrivalPointId != null" >
+        arrival_point_id = #{arrivalPointId,jdbcType=BIGINT},
+      </if>
+      <if test="expectArrivalDate != null" >
+        expect_arrival_date = #{expectArrivalDate,jdbcType=VARCHAR},
+      </if>
+      <if test="issuingOffice != null" >
+        issuing_office = #{issuingOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="openingBank != null" >
+        opening_bank = #{openingBank,jdbcType=VARCHAR},
+      </if>
+      <if test="heavyPrice != null" >
+        heavy_price = #{heavyPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="lightPrice != null" >
+        light_price = #{lightPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="agingTypeId != null" >
+        aging_type_id = #{agingTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="transportTypeId != null" >
+        transport_type_id = #{transportTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="deadWeightPrice != null" >
+        dead_weight_price = #{deadWeightPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="authCode != null" >
+        auth_code = #{authCode,jdbcType=CHAR},
+      </if>
+      <if test="isValid != null" >
+        is_valid = #{isValid,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="inputMode != null" >
+        input_mode = #{inputMode,jdbcType=BIGINT},
+      </if>
+      <if test="ext1 != null" >
+        ext1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.LogisticsPipeline" >
+    update xn_m_logistics_pipeline
+    set line_no = #{lineNo,jdbcType=VARCHAR},
+      line_version = #{lineVersion,jdbcType=BIGINT},
+      departure_point_id = #{departurePointId,jdbcType=BIGINT},
+      arrival_point_id = #{arrivalPointId,jdbcType=BIGINT},
+      expect_arrival_date = #{expectArrivalDate,jdbcType=VARCHAR},
+      issuing_office = #{issuingOffice,jdbcType=VARCHAR},
+      opening_bank = #{openingBank,jdbcType=VARCHAR},
+      heavy_price = #{heavyPrice,jdbcType=DECIMAL},
+      light_price = #{lightPrice,jdbcType=DECIMAL},
+      comment = #{comment,jdbcType=VARCHAR},
+      aging_type_id = #{agingTypeId,jdbcType=BIGINT},
+      transport_type_id = #{transportTypeId,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      company_id = #{companyId,jdbcType=CHAR},
+      dead_weight_price = #{deadWeightPrice,jdbcType=DECIMAL},
+      auth_code = #{authCode,jdbcType=CHAR},
+      is_valid = #{isValid,jdbcType=BIGINT},
+      is_delete = #{isDelete,jdbcType=BIGINT},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      input_mode = #{inputMode,jdbcType=BIGINT},
+      ext1 = #{ext1,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

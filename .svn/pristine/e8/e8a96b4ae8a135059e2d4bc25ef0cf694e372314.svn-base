@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.OtherPhotoMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.OtherPhoto" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="dispatch_id" property="dispatchId" jdbcType="CHAR" />
+    <result column="logistics_order_id" property="logisticsOrderId" jdbcType="CHAR" />
+    <result column="file_id" property="fileId" jdbcType="CHAR" />
+    <result column="file_seq_no" property="fileSeqNo" jdbcType="INTEGER" />
+    <result column="biz_type" property="bizType" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="business_id" property="businessId" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, dispatch_id, logistics_order_id, file_id, file_seq_no, biz_type, creater, create_time, 
+    modifier, modify_time, ver, business_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.OtherPhotoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_r_other_photo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_r_other_photo
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_r_other_photo
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.OtherPhotoExample" >
+    delete from xn_r_other_photo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.OtherPhoto" >
+    insert into xn_r_other_photo (id, dispatch_id, logistics_order_id, 
+      file_id, file_seq_no, biz_type, 
+      creater, create_time, modifier, 
+      modify_time, ver, business_id
+      )
+    values (#{id,jdbcType=CHAR}, #{dispatchId,jdbcType=CHAR}, #{logisticsOrderId,jdbcType=CHAR}, 
+      #{fileId,jdbcType=CHAR}, #{fileSeqNo,jdbcType=INTEGER}, #{bizType,jdbcType=BIGINT}, 
+      #{creater,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=CHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, #{businessId,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.OtherPhoto" >
+    insert into xn_r_other_photo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="dispatchId != null" >
+        dispatch_id,
+      </if>
+      <if test="logisticsOrderId != null" >
+        logistics_order_id,
+      </if>
+      <if test="fileId != null" >
+        file_id,
+      </if>
+      <if test="fileSeqNo != null" >
+        file_seq_no,
+      </if>
+      <if test="bizType != null" >
+        biz_type,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="businessId != null" >
+        business_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="dispatchId != null" >
+        #{dispatchId,jdbcType=CHAR},
+      </if>
+      <if test="logisticsOrderId != null" >
+        #{logisticsOrderId,jdbcType=CHAR},
+      </if>
+      <if test="fileId != null" >
+        #{fileId,jdbcType=CHAR},
+      </if>
+      <if test="fileSeqNo != null" >
+        #{fileSeqNo,jdbcType=INTEGER},
+      </if>
+      <if test="bizType != null" >
+        #{bizType,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.OtherPhotoExample" resultType="java.lang.Integer" >
+    select count(*) from xn_r_other_photo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.OtherPhoto" >
+    update xn_r_other_photo
+    <set >
+      <if test="dispatchId != null" >
+        dispatch_id = #{dispatchId,jdbcType=CHAR},
+      </if>
+      <if test="logisticsOrderId != null" >
+        logistics_order_id = #{logisticsOrderId,jdbcType=CHAR},
+      </if>
+      <if test="fileId != null" >
+        file_id = #{fileId,jdbcType=CHAR},
+      </if>
+      <if test="fileSeqNo != null" >
+        file_seq_no = #{fileSeqNo,jdbcType=INTEGER},
+      </if>
+      <if test="bizType != null" >
+        biz_type = #{bizType,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null" >
+        business_id = #{businessId,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.OtherPhoto" >
+    update xn_r_other_photo
+    set dispatch_id = #{dispatchId,jdbcType=CHAR},
+      logistics_order_id = #{logisticsOrderId,jdbcType=CHAR},
+      file_id = #{fileId,jdbcType=CHAR},
+      file_seq_no = #{fileSeqNo,jdbcType=INTEGER},
+      biz_type = #{bizType,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      business_id = #{businessId,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

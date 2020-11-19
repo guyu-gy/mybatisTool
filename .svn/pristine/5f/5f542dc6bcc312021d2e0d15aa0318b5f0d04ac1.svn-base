@@ -1,0 +1,95 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+
+public class SubjectTemplateInit {
+    private String id;
+
+    private String templateName;
+
+    private String subjectCode;
+
+    private Long methodType;
+
+    private Long accountDirection;
+
+    private BigDecimal mininum;
+
+    private BigDecimal oddrule;
+
+    private Long groupNo;
+
+    private Long companyType;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName == null ? null : templateName.trim();
+    }
+
+    public String getSubjectCode() {
+        return subjectCode;
+    }
+
+    public void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode == null ? null : subjectCode.trim();
+    }
+
+    public Long getMethodType() {
+        return methodType;
+    }
+
+    public void setMethodType(Long methodType) {
+        this.methodType = methodType;
+    }
+
+    public Long getAccountDirection() {
+        return accountDirection;
+    }
+
+    public void setAccountDirection(Long accountDirection) {
+        this.accountDirection = accountDirection;
+    }
+
+    public BigDecimal getMininum() {
+        return mininum;
+    }
+
+    public void setMininum(BigDecimal mininum) {
+        this.mininum = mininum;
+    }
+
+    public BigDecimal getOddrule() {
+        return oddrule;
+    }
+
+    public void setOddrule(BigDecimal oddrule) {
+        this.oddrule = oddrule;
+    }
+
+    public Long getGroupNo() {
+        return groupNo;
+    }
+
+    public void setGroupNo(Long groupNo) {
+        this.groupNo = groupNo;
+    }
+
+    public Long getCompanyType() {
+        return companyType;
+    }
+
+    public void setCompanyType(Long companyType) {
+        this.companyType = companyType;
+    }
+}

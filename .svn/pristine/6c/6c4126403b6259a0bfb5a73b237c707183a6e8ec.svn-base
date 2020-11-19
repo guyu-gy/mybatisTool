@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.LocationMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Location" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="vehicles_id" property="vehiclesId" jdbcType="CHAR" />
+    <result column="longitude" property="longitude" jdbcType="DOUBLE" />
+    <result column="dimension" property="dimension" jdbcType="DOUBLE" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="dispatch_batch_id" property="dispatchBatchId" jdbcType="CHAR" />
+    <result column="device_no" property="deviceNo" jdbcType="VARCHAR" />
+    <result column="location_mode" property="locationMode" jdbcType="BIGINT" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="tare" property="tare" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, vehicles_id, longitude, dimension, create_time, creater, modifier, modify_time, 
+    ver, dispatch_batch_id, device_no, location_mode, weight, tare
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.LocationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_location
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_location
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_location
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.LocationExample" >
+    delete from xn_m_location
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Location" >
+    insert into xn_m_location (id, vehicles_id, longitude, 
+      dimension, create_time, creater, 
+      modifier, modify_time, ver, 
+      dispatch_batch_id, device_no, location_mode, 
+      weight, tare)
+    values (#{id,jdbcType=CHAR}, #{vehiclesId,jdbcType=CHAR}, #{longitude,jdbcType=DOUBLE}, 
+      #{dimension,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, #{creater,jdbcType=CHAR}, 
+      #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, 
+      #{dispatchBatchId,jdbcType=CHAR}, #{deviceNo,jdbcType=VARCHAR}, #{locationMode,jdbcType=BIGINT}, 
+      #{weight,jdbcType=DECIMAL}, #{tare,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Location" >
+    insert into xn_m_location
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="vehiclesId != null" >
+        vehicles_id,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="dimension != null" >
+        dimension,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="dispatchBatchId != null" >
+        dispatch_batch_id,
+      </if>
+      <if test="deviceNo != null" >
+        device_no,
+      </if>
+      <if test="locationMode != null" >
+        location_mode,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="tare != null" >
+        tare,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="vehiclesId != null" >
+        #{vehiclesId,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="dimension != null" >
+        #{dimension,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="dispatchBatchId != null" >
+        #{dispatchBatchId,jdbcType=CHAR},
+      </if>
+      <if test="deviceNo != null" >
+        #{deviceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="locationMode != null" >
+        #{locationMode,jdbcType=BIGINT},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="tare != null" >
+        #{tare,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.LocationExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_location
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Location" >
+    update xn_m_location
+    <set >
+      <if test="vehiclesId != null" >
+        vehicles_id = #{vehiclesId,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="dimension != null" >
+        dimension = #{dimension,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="dispatchBatchId != null" >
+        dispatch_batch_id = #{dispatchBatchId,jdbcType=CHAR},
+      </if>
+      <if test="deviceNo != null" >
+        device_no = #{deviceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="locationMode != null" >
+        location_mode = #{locationMode,jdbcType=BIGINT},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="tare != null" >
+        tare = #{tare,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Location" >
+    update xn_m_location
+    set vehicles_id = #{vehiclesId,jdbcType=CHAR},
+      longitude = #{longitude,jdbcType=DOUBLE},
+      dimension = #{dimension,jdbcType=DOUBLE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      creater = #{creater,jdbcType=CHAR},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      dispatch_batch_id = #{dispatchBatchId,jdbcType=CHAR},
+      device_no = #{deviceNo,jdbcType=VARCHAR},
+      location_mode = #{locationMode,jdbcType=BIGINT},
+      weight = #{weight,jdbcType=DECIMAL},
+      tare = #{tare,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

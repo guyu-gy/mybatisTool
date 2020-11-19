@@ -1,0 +1,116 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class FreightSettleOilcard {
+    private String id;
+
+    private String freightSettleId;
+
+    private String oilcardId;
+
+    private BigDecimal chargePrice;
+
+    private Long isDeposited;
+
+    private Long chargeStatus;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getFreightSettleId() {
+        return freightSettleId;
+    }
+
+    public void setFreightSettleId(String freightSettleId) {
+        this.freightSettleId = freightSettleId == null ? null : freightSettleId.trim();
+    }
+
+    public String getOilcardId() {
+        return oilcardId;
+    }
+
+    public void setOilcardId(String oilcardId) {
+        this.oilcardId = oilcardId == null ? null : oilcardId.trim();
+    }
+
+    public BigDecimal getChargePrice() {
+        return chargePrice;
+    }
+
+    public void setChargePrice(BigDecimal chargePrice) {
+        this.chargePrice = chargePrice;
+    }
+
+    public Long getIsDeposited() {
+        return isDeposited;
+    }
+
+    public void setIsDeposited(Long isDeposited) {
+        this.isDeposited = isDeposited;
+    }
+
+    public Long getChargeStatus() {
+        return chargeStatus;
+    }
+
+    public void setChargeStatus(Long chargeStatus) {
+        this.chargeStatus = chargeStatus;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

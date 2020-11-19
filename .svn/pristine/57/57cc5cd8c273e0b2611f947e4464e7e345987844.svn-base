@@ -1,0 +1,195 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class ConstructionProject {
+    private String id;
+
+    private String constructionProjectName;
+
+    private String constructionProjectAddressId;
+
+    private String constructionCompanyId;
+
+    private String constructionResponsibleContactId;
+
+    private String buildCompanyId;
+
+    private String buildResponsibleContactId;
+
+    private String supervisePlatId;
+
+    private String superviseCompanyId;
+
+    private String superviseResponsibleContactId;
+
+    private Long isDelete;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Double longitude;
+
+    private Double dimension;
+
+    private Long radius;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getConstructionProjectName() {
+        return constructionProjectName;
+    }
+
+    public void setConstructionProjectName(String constructionProjectName) {
+        this.constructionProjectName = constructionProjectName == null ? null : constructionProjectName.trim();
+    }
+
+    public String getConstructionProjectAddressId() {
+        return constructionProjectAddressId;
+    }
+
+    public void setConstructionProjectAddressId(String constructionProjectAddressId) {
+        this.constructionProjectAddressId = constructionProjectAddressId == null ? null : constructionProjectAddressId.trim();
+    }
+
+    public String getConstructionCompanyId() {
+        return constructionCompanyId;
+    }
+
+    public void setConstructionCompanyId(String constructionCompanyId) {
+        this.constructionCompanyId = constructionCompanyId == null ? null : constructionCompanyId.trim();
+    }
+
+    public String getConstructionResponsibleContactId() {
+        return constructionResponsibleContactId;
+    }
+
+    public void setConstructionResponsibleContactId(String constructionResponsibleContactId) {
+        this.constructionResponsibleContactId = constructionResponsibleContactId == null ? null : constructionResponsibleContactId.trim();
+    }
+
+    public String getBuildCompanyId() {
+        return buildCompanyId;
+    }
+
+    public void setBuildCompanyId(String buildCompanyId) {
+        this.buildCompanyId = buildCompanyId == null ? null : buildCompanyId.trim();
+    }
+
+    public String getBuildResponsibleContactId() {
+        return buildResponsibleContactId;
+    }
+
+    public void setBuildResponsibleContactId(String buildResponsibleContactId) {
+        this.buildResponsibleContactId = buildResponsibleContactId == null ? null : buildResponsibleContactId.trim();
+    }
+
+    public String getSupervisePlatId() {
+        return supervisePlatId;
+    }
+
+    public void setSupervisePlatId(String supervisePlatId) {
+        this.supervisePlatId = supervisePlatId == null ? null : supervisePlatId.trim();
+    }
+
+    public String getSuperviseCompanyId() {
+        return superviseCompanyId;
+    }
+
+    public void setSuperviseCompanyId(String superviseCompanyId) {
+        this.superviseCompanyId = superviseCompanyId == null ? null : superviseCompanyId.trim();
+    }
+
+    public String getSuperviseResponsibleContactId() {
+        return superviseResponsibleContactId;
+    }
+
+    public void setSuperviseResponsibleContactId(String superviseResponsibleContactId) {
+        this.superviseResponsibleContactId = superviseResponsibleContactId == null ? null : superviseResponsibleContactId.trim();
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Double getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(Double dimension) {
+        this.dimension = dimension;
+    }
+
+    public Long getRadius() {
+        return radius;
+    }
+
+    public void setRadius(Long radius) {
+        this.radius = radius;
+    }
+}

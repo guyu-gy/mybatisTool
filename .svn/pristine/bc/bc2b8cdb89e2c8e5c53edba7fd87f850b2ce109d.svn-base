@@ -1,0 +1,185 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class TopicPost {
+    private Long id;
+
+    private String authorId;
+
+    private Long dateline;
+
+    private String message;
+
+    private String useIp;
+
+    private Short userPort;
+
+    private Byte postType;
+
+    private Long topicId;
+
+    private Long replyPostId;
+
+    private String replyUserId;
+
+    private String levelCode;
+
+    private Integer replyTimes;
+
+    private Long rootPostId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId == null ? null : authorId.trim();
+    }
+
+    public Long getDateline() {
+        return dateline;
+    }
+
+    public void setDateline(Long dateline) {
+        this.dateline = dateline;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message == null ? null : message.trim();
+    }
+
+    public String getUseIp() {
+        return useIp;
+    }
+
+    public void setUseIp(String useIp) {
+        this.useIp = useIp == null ? null : useIp.trim();
+    }
+
+    public Short getUserPort() {
+        return userPort;
+    }
+
+    public void setUserPort(Short userPort) {
+        this.userPort = userPort;
+    }
+
+    public Byte getPostType() {
+        return postType;
+    }
+
+    public void setPostType(Byte postType) {
+        this.postType = postType;
+    }
+
+    public Long getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
+    }
+
+    public Long getReplyPostId() {
+        return replyPostId;
+    }
+
+    public void setReplyPostId(Long replyPostId) {
+        this.replyPostId = replyPostId;
+    }
+
+    public String getReplyUserId() {
+        return replyUserId;
+    }
+
+    public void setReplyUserId(String replyUserId) {
+        this.replyUserId = replyUserId == null ? null : replyUserId.trim();
+    }
+
+    public String getLevelCode() {
+        return levelCode;
+    }
+
+    public void setLevelCode(String levelCode) {
+        this.levelCode = levelCode == null ? null : levelCode.trim();
+    }
+
+    public Integer getReplyTimes() {
+        return replyTimes;
+    }
+
+    public void setReplyTimes(Integer replyTimes) {
+        this.replyTimes = replyTimes;
+    }
+
+    public Long getRootPostId() {
+        return rootPostId;
+    }
+
+    public void setRootPostId(Long rootPostId) {
+        this.rootPostId = rootPostId;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

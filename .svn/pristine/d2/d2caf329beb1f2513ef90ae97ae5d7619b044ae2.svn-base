@@ -1,0 +1,116 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class ChargeTransport {
+    private Long transportMode;
+
+    private String companyId;
+
+    private String chargeTemplateId;
+
+    private BigDecimal codServiceRate;
+
+    private BigDecimal insuranceRate;
+
+    private String brokerageSubjectId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public Long getTransportMode() {
+        return transportMode;
+    }
+
+    public void setTransportMode(Long transportMode) {
+        this.transportMode = transportMode;
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public String getChargeTemplateId() {
+        return chargeTemplateId;
+    }
+
+    public void setChargeTemplateId(String chargeTemplateId) {
+        this.chargeTemplateId = chargeTemplateId == null ? null : chargeTemplateId.trim();
+    }
+
+    public BigDecimal getCodServiceRate() {
+        return codServiceRate;
+    }
+
+    public void setCodServiceRate(BigDecimal codServiceRate) {
+        this.codServiceRate = codServiceRate;
+    }
+
+    public BigDecimal getInsuranceRate() {
+        return insuranceRate;
+    }
+
+    public void setInsuranceRate(BigDecimal insuranceRate) {
+        this.insuranceRate = insuranceRate;
+    }
+
+    public String getBrokerageSubjectId() {
+        return brokerageSubjectId;
+    }
+
+    public void setBrokerageSubjectId(String brokerageSubjectId) {
+        this.brokerageSubjectId = brokerageSubjectId == null ? null : brokerageSubjectId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

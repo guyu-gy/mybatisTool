@@ -1,0 +1,95 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class App {
+    private String id;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String name;
+
+    private String appkey;
+
+    private String publicKey;
+
+    private String privateKey;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public String getPublicKey() {
+        return publicKey;
+    }
+
+    public void setPublicKey(String publicKey) {
+        this.publicKey = publicKey == null ? null : publicKey.trim();
+    }
+
+    public String getPrivateKey() {
+        return privateKey;
+    }
+
+    public void setPrivateKey(String privateKey) {
+        this.privateKey = privateKey == null ? null : privateKey.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+}

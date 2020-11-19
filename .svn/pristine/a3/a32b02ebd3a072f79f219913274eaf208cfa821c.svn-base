@@ -1,0 +1,155 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class SmsDown {
+    private String id;
+
+    private String sendMobile;
+
+    private String smsContent;
+
+    private Long status;
+
+    private String channelId;
+
+    private String channelUserId;
+
+    private String messageTemplateId;
+
+    private String ext1;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long type;
+
+    private Long isRead;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getSendMobile() {
+        return sendMobile;
+    }
+
+    public void setSendMobile(String sendMobile) {
+        this.sendMobile = sendMobile == null ? null : sendMobile.trim();
+    }
+
+    public String getSmsContent() {
+        return smsContent;
+    }
+
+    public void setSmsContent(String smsContent) {
+        this.smsContent = smsContent == null ? null : smsContent.trim();
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId == null ? null : channelId.trim();
+    }
+
+    public String getChannelUserId() {
+        return channelUserId;
+    }
+
+    public void setChannelUserId(String channelUserId) {
+        this.channelUserId = channelUserId == null ? null : channelUserId.trim();
+    }
+
+    public String getMessageTemplateId() {
+        return messageTemplateId;
+    }
+
+    public void setMessageTemplateId(String messageTemplateId) {
+        this.messageTemplateId = messageTemplateId == null ? null : messageTemplateId.trim();
+    }
+
+    public String getExt1() {
+        return ext1;
+    }
+
+    public void setExt1(String ext1) {
+        this.ext1 = ext1 == null ? null : ext1.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
+    }
+
+    public Long getIsRead() {
+        return isRead;
+    }
+
+    public void setIsRead(Long isRead) {
+        this.isRead = isRead;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

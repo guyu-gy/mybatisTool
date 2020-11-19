@@ -1,0 +1,115 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class CompanyMember {
+    private String memberCompanyId;
+
+    private String memberLevelId;
+
+    private String companyId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long relationType;
+
+    private Long memberType;
+
+    private String contactId;
+
+    public String getMemberCompanyId() {
+        return memberCompanyId;
+    }
+
+    public void setMemberCompanyId(String memberCompanyId) {
+        this.memberCompanyId = memberCompanyId == null ? null : memberCompanyId.trim();
+    }
+
+    public String getMemberLevelId() {
+        return memberLevelId;
+    }
+
+    public void setMemberLevelId(String memberLevelId) {
+        this.memberLevelId = memberLevelId == null ? null : memberLevelId.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getRelationType() {
+        return relationType;
+    }
+
+    public void setRelationType(Long relationType) {
+        this.relationType = relationType;
+    }
+
+    public Long getMemberType() {
+        return memberType;
+    }
+
+    public void setMemberType(Long memberType) {
+        this.memberType = memberType;
+    }
+
+    public String getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(String contactId) {
+        this.contactId = contactId == null ? null : contactId.trim();
+    }
+}

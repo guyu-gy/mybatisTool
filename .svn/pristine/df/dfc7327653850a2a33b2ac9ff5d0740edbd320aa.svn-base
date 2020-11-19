@@ -1,0 +1,105 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class CompanyVehicles {
+    private String vehiclesId;
+
+    private String companyId;
+
+    private String userId;
+
+    private Date createTime;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long originType;
+
+    private String contactId;
+
+    public String getVehiclesId() {
+        return vehiclesId;
+    }
+
+    public void setVehiclesId(String vehiclesId) {
+        this.vehiclesId = vehiclesId == null ? null : vehiclesId.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getOriginType() {
+        return originType;
+    }
+
+    public void setOriginType(Long originType) {
+        this.originType = originType;
+    }
+
+    public String getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(String contactId) {
+        this.contactId = contactId == null ? null : contactId.trim();
+    }
+}

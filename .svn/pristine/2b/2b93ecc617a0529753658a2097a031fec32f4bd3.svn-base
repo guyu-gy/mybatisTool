@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.EventSubscriptionUser;
+import com.xiaoniu56.model.defaults.EventSubscriptionUserExample;
+import java.util.List;
+
+public interface EventSubscriptionUserMapper {
+    int countByExample(EventSubscriptionUserExample example);
+
+    int deleteByExample(EventSubscriptionUserExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(EventSubscriptionUser record);
+
+    int insertSelective(EventSubscriptionUser record);
+
+    List<EventSubscriptionUser> selectByExample(EventSubscriptionUserExample example);
+
+    EventSubscriptionUser selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(EventSubscriptionUser record);
+
+    int updateByPrimaryKey(EventSubscriptionUser record);
+}

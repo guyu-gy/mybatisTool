@@ -1,0 +1,155 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Permission {
+    private String id;
+
+    private Long parentPermissionId;
+
+    private String description;
+
+    private String url;
+
+    private Long ver;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long enableStatus;
+
+    private Long permissionMode;
+
+    private String name;
+
+    private String code;
+
+    private Long seq;
+
+    private String verificationName;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public Long getParentPermissionId() {
+        return parentPermissionId;
+    }
+
+    public void setParentPermissionId(Long parentPermissionId) {
+        this.parentPermissionId = parentPermissionId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url == null ? null : url.trim();
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getEnableStatus() {
+        return enableStatus;
+    }
+
+    public void setEnableStatus(Long enableStatus) {
+        this.enableStatus = enableStatus;
+    }
+
+    public Long getPermissionMode() {
+        return permissionMode;
+    }
+
+    public void setPermissionMode(Long permissionMode) {
+        this.permissionMode = permissionMode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code == null ? null : code.trim();
+    }
+
+    public Long getSeq() {
+        return seq;
+    }
+
+    public void setSeq(Long seq) {
+        this.seq = seq;
+    }
+
+    public String getVerificationName() {
+        return verificationName;
+    }
+
+    public void setVerificationName(String verificationName) {
+        this.verificationName = verificationName == null ? null : verificationName.trim();
+    }
+}

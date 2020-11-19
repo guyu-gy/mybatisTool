@@ -1,0 +1,155 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class DispatchBatch {
+    private String id;
+
+    private String vehiclesId;
+
+    private String dispatchUserId;
+
+    private Date createTime;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String slaveDriverId;
+
+    private String followerId;
+
+    private String contractPriceId;
+
+    private String settlePriceId;
+
+    private String dispatchCode;
+
+    private String dispatchBatchCode;
+
+    private String driverId;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getVehiclesId() {
+        return vehiclesId;
+    }
+
+    public void setVehiclesId(String vehiclesId) {
+        this.vehiclesId = vehiclesId == null ? null : vehiclesId.trim();
+    }
+
+    public String getDispatchUserId() {
+        return dispatchUserId;
+    }
+
+    public void setDispatchUserId(String dispatchUserId) {
+        this.dispatchUserId = dispatchUserId == null ? null : dispatchUserId.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getSlaveDriverId() {
+        return slaveDriverId;
+    }
+
+    public void setSlaveDriverId(String slaveDriverId) {
+        this.slaveDriverId = slaveDriverId == null ? null : slaveDriverId.trim();
+    }
+
+    public String getFollowerId() {
+        return followerId;
+    }
+
+    public void setFollowerId(String followerId) {
+        this.followerId = followerId == null ? null : followerId.trim();
+    }
+
+    public String getContractPriceId() {
+        return contractPriceId;
+    }
+
+    public void setContractPriceId(String contractPriceId) {
+        this.contractPriceId = contractPriceId == null ? null : contractPriceId.trim();
+    }
+
+    public String getSettlePriceId() {
+        return settlePriceId;
+    }
+
+    public void setSettlePriceId(String settlePriceId) {
+        this.settlePriceId = settlePriceId == null ? null : settlePriceId.trim();
+    }
+
+    public String getDispatchCode() {
+        return dispatchCode;
+    }
+
+    public void setDispatchCode(String dispatchCode) {
+        this.dispatchCode = dispatchCode == null ? null : dispatchCode.trim();
+    }
+
+    public String getDispatchBatchCode() {
+        return dispatchBatchCode;
+    }
+
+    public void setDispatchBatchCode(String dispatchBatchCode) {
+        this.dispatchBatchCode = dispatchBatchCode == null ? null : dispatchBatchCode.trim();
+    }
+
+    public String getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(String driverId) {
+        this.driverId = driverId == null ? null : driverId.trim();
+    }
+}

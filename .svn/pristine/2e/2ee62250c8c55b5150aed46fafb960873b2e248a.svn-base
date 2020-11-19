@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.ConstructionProject;
+import com.xiaoniu56.model.defaults.ConstructionProjectExample;
+import java.util.List;
+
+public interface ConstructionProjectMapper {
+    int countByExample(ConstructionProjectExample example);
+
+    int deleteByExample(ConstructionProjectExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(ConstructionProject record);
+
+    int insertSelective(ConstructionProject record);
+
+    List<ConstructionProject> selectByExample(ConstructionProjectExample example);
+
+    ConstructionProject selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(ConstructionProject record);
+
+    int updateByPrimaryKey(ConstructionProject record);
+}

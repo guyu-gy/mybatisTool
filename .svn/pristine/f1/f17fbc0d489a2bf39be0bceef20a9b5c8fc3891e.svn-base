@@ -1,0 +1,125 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class BankCard {
+    private String id;
+
+    private String userName;
+
+    private String cardNo;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long bankCityCode;
+
+    private String userId;
+
+    private String openingBank;
+
+    private Long bankCode;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
+    }
+
+    public String getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo == null ? null : cardNo.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getBankCityCode() {
+        return bankCityCode;
+    }
+
+    public void setBankCityCode(Long bankCityCode) {
+        this.bankCityCode = bankCityCode;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public String getOpeningBank() {
+        return openingBank;
+    }
+
+    public void setOpeningBank(String openingBank) {
+        this.openingBank = openingBank == null ? null : openingBank.trim();
+    }
+
+    public Long getBankCode() {
+        return bankCode;
+    }
+
+    public void setBankCode(Long bankCode) {
+        this.bankCode = bankCode;
+    }
+}

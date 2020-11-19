@@ -1,0 +1,95 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class DesktopBox {
+    private String id;
+
+    private String boxName;
+
+    private Long boxNumber;
+
+    private Long isDelete;
+
+    private Long ver;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getBoxName() {
+        return boxName;
+    }
+
+    public void setBoxName(String boxName) {
+        this.boxName = boxName == null ? null : boxName.trim();
+    }
+
+    public Long getBoxNumber() {
+        return boxNumber;
+    }
+
+    public void setBoxNumber(Long boxNumber) {
+        this.boxNumber = boxNumber;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+}

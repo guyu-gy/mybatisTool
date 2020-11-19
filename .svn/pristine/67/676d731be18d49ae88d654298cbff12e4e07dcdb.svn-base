@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.ChargeStrategy;
+import com.xiaoniu56.model.defaults.ChargeStrategyExample;
+import java.util.List;
+
+public interface ChargeStrategyMapper {
+    int countByExample(ChargeStrategyExample example);
+
+    int deleteByExample(ChargeStrategyExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(ChargeStrategy record);
+
+    int insertSelective(ChargeStrategy record);
+
+    List<ChargeStrategy> selectByExample(ChargeStrategyExample example);
+
+    ChargeStrategy selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(ChargeStrategy record);
+
+    int updateByPrimaryKey(ChargeStrategy record);
+}

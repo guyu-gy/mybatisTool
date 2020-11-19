@@ -1,0 +1,195 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Topic {
+    private Long id;
+
+    private String authorId;
+
+    private Long dateline;
+
+    private String message;
+
+    private Byte invisible;
+
+    private Byte isAnonymous;
+
+    private Byte status;
+
+    private String tags;
+
+    private Integer favTimes;
+
+    private Integer likeTimes;
+
+    private Integer shareTimes;
+
+    private Integer postTimes;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String useIp;
+
+    private Short usePort;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId == null ? null : authorId.trim();
+    }
+
+    public Long getDateline() {
+        return dateline;
+    }
+
+    public void setDateline(Long dateline) {
+        this.dateline = dateline;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message == null ? null : message.trim();
+    }
+
+    public Byte getInvisible() {
+        return invisible;
+    }
+
+    public void setInvisible(Byte invisible) {
+        this.invisible = invisible;
+    }
+
+    public Byte getIsAnonymous() {
+        return isAnonymous;
+    }
+
+    public void setIsAnonymous(Byte isAnonymous) {
+        this.isAnonymous = isAnonymous;
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(Byte status) {
+        this.status = status;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags == null ? null : tags.trim();
+    }
+
+    public Integer getFavTimes() {
+        return favTimes;
+    }
+
+    public void setFavTimes(Integer favTimes) {
+        this.favTimes = favTimes;
+    }
+
+    public Integer getLikeTimes() {
+        return likeTimes;
+    }
+
+    public void setLikeTimes(Integer likeTimes) {
+        this.likeTimes = likeTimes;
+    }
+
+    public Integer getShareTimes() {
+        return shareTimes;
+    }
+
+    public void setShareTimes(Integer shareTimes) {
+        this.shareTimes = shareTimes;
+    }
+
+    public Integer getPostTimes() {
+        return postTimes;
+    }
+
+    public void setPostTimes(Integer postTimes) {
+        this.postTimes = postTimes;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getUseIp() {
+        return useIp;
+    }
+
+    public void setUseIp(String useIp) {
+        this.useIp = useIp == null ? null : useIp.trim();
+    }
+
+    public Short getUsePort() {
+        return usePort;
+    }
+
+    public void setUsePort(Short usePort) {
+        this.usePort = usePort;
+    }
+}

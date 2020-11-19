@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.EventSubscriptionOrg;
+import com.xiaoniu56.model.defaults.EventSubscriptionOrgExample;
+import java.util.List;
+
+public interface EventSubscriptionOrgMapper {
+    int countByExample(EventSubscriptionOrgExample example);
+
+    int deleteByExample(EventSubscriptionOrgExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(EventSubscriptionOrg record);
+
+    int insertSelective(EventSubscriptionOrg record);
+
+    List<EventSubscriptionOrg> selectByExample(EventSubscriptionOrgExample example);
+
+    EventSubscriptionOrg selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(EventSubscriptionOrg record);
+
+    int updateByPrimaryKey(EventSubscriptionOrg record);
+}

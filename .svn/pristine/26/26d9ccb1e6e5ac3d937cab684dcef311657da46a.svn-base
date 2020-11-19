@@ -1,0 +1,395 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class GoodsSupply {
+    private String id;
+
+    private String senderId;
+
+    private String consigneeId;
+
+    private Long splitPackageType;
+
+    private String invoiceId;
+
+    private String comment;
+
+    private Date createTime;
+
+    private String principalUserId;
+
+    private String principalCompanyId;
+
+    private Long status;
+
+    private Long paymentMode;
+
+    private Long priceMode;
+
+    private String transportChargeId;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Date sendTime;
+
+    private Long valuationMode;
+
+    private String authCode;
+
+    private Long publicGoods;
+
+    private String appkey;
+
+    private Long inputMode;
+
+    private Long isDelete;
+
+    private String ext1;
+
+    private Long vehiclesMode;
+
+    private String originId;
+
+    private Long goodsType;
+
+    private String traderUserId;
+
+    private Long isSubstitute;
+
+    private String outerOrderId;
+
+    private Long msgPushNum;
+
+    private Long vehicleQuotation;
+
+    private Date quotationClosingTime;
+
+    private Long isTotal;
+
+    private Date arrivalDate;
+
+    private String code;
+
+    private String loadingNeeds;
+
+    private String scriptHandleDesc;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(String senderId) {
+        this.senderId = senderId == null ? null : senderId.trim();
+    }
+
+    public String getConsigneeId() {
+        return consigneeId;
+    }
+
+    public void setConsigneeId(String consigneeId) {
+        this.consigneeId = consigneeId == null ? null : consigneeId.trim();
+    }
+
+    public Long getSplitPackageType() {
+        return splitPackageType;
+    }
+
+    public void setSplitPackageType(Long splitPackageType) {
+        this.splitPackageType = splitPackageType;
+    }
+
+    public String getInvoiceId() {
+        return invoiceId;
+    }
+
+    public void setInvoiceId(String invoiceId) {
+        this.invoiceId = invoiceId == null ? null : invoiceId.trim();
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getPrincipalUserId() {
+        return principalUserId;
+    }
+
+    public void setPrincipalUserId(String principalUserId) {
+        this.principalUserId = principalUserId == null ? null : principalUserId.trim();
+    }
+
+    public String getPrincipalCompanyId() {
+        return principalCompanyId;
+    }
+
+    public void setPrincipalCompanyId(String principalCompanyId) {
+        this.principalCompanyId = principalCompanyId == null ? null : principalCompanyId.trim();
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getPaymentMode() {
+        return paymentMode;
+    }
+
+    public void setPaymentMode(Long paymentMode) {
+        this.paymentMode = paymentMode;
+    }
+
+    public Long getPriceMode() {
+        return priceMode;
+    }
+
+    public void setPriceMode(Long priceMode) {
+        this.priceMode = priceMode;
+    }
+
+    public String getTransportChargeId() {
+        return transportChargeId;
+    }
+
+    public void setTransportChargeId(String transportChargeId) {
+        this.transportChargeId = transportChargeId == null ? null : transportChargeId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Date getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
+    }
+
+    public Long getValuationMode() {
+        return valuationMode;
+    }
+
+    public void setValuationMode(Long valuationMode) {
+        this.valuationMode = valuationMode;
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode == null ? null : authCode.trim();
+    }
+
+    public Long getPublicGoods() {
+        return publicGoods;
+    }
+
+    public void setPublicGoods(Long publicGoods) {
+        this.publicGoods = publicGoods;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public Long getInputMode() {
+        return inputMode;
+    }
+
+    public void setInputMode(Long inputMode) {
+        this.inputMode = inputMode;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public String getExt1() {
+        return ext1;
+    }
+
+    public void setExt1(String ext1) {
+        this.ext1 = ext1 == null ? null : ext1.trim();
+    }
+
+    public Long getVehiclesMode() {
+        return vehiclesMode;
+    }
+
+    public void setVehiclesMode(Long vehiclesMode) {
+        this.vehiclesMode = vehiclesMode;
+    }
+
+    public String getOriginId() {
+        return originId;
+    }
+
+    public void setOriginId(String originId) {
+        this.originId = originId == null ? null : originId.trim();
+    }
+
+    public Long getGoodsType() {
+        return goodsType;
+    }
+
+    public void setGoodsType(Long goodsType) {
+        this.goodsType = goodsType;
+    }
+
+    public String getTraderUserId() {
+        return traderUserId;
+    }
+
+    public void setTraderUserId(String traderUserId) {
+        this.traderUserId = traderUserId == null ? null : traderUserId.trim();
+    }
+
+    public Long getIsSubstitute() {
+        return isSubstitute;
+    }
+
+    public void setIsSubstitute(Long isSubstitute) {
+        this.isSubstitute = isSubstitute;
+    }
+
+    public String getOuterOrderId() {
+        return outerOrderId;
+    }
+
+    public void setOuterOrderId(String outerOrderId) {
+        this.outerOrderId = outerOrderId == null ? null : outerOrderId.trim();
+    }
+
+    public Long getMsgPushNum() {
+        return msgPushNum;
+    }
+
+    public void setMsgPushNum(Long msgPushNum) {
+        this.msgPushNum = msgPushNum;
+    }
+
+    public Long getVehicleQuotation() {
+        return vehicleQuotation;
+    }
+
+    public void setVehicleQuotation(Long vehicleQuotation) {
+        this.vehicleQuotation = vehicleQuotation;
+    }
+
+    public Date getQuotationClosingTime() {
+        return quotationClosingTime;
+    }
+
+    public void setQuotationClosingTime(Date quotationClosingTime) {
+        this.quotationClosingTime = quotationClosingTime;
+    }
+
+    public Long getIsTotal() {
+        return isTotal;
+    }
+
+    public void setIsTotal(Long isTotal) {
+        this.isTotal = isTotal;
+    }
+
+    public Date getArrivalDate() {
+        return arrivalDate;
+    }
+
+    public void setArrivalDate(Date arrivalDate) {
+        this.arrivalDate = arrivalDate;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code == null ? null : code.trim();
+    }
+
+    public String getLoadingNeeds() {
+        return loadingNeeds;
+    }
+
+    public void setLoadingNeeds(String loadingNeeds) {
+        this.loadingNeeds = loadingNeeds == null ? null : loadingNeeds.trim();
+    }
+
+    public String getScriptHandleDesc() {
+        return scriptHandleDesc;
+    }
+
+    public void setScriptHandleDesc(String scriptHandleDesc) {
+        this.scriptHandleDesc = scriptHandleDesc == null ? null : scriptHandleDesc.trim();
+    }
+}

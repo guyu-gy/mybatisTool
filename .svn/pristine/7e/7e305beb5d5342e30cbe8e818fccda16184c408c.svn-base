@@ -1,0 +1,125 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Luguang {
+    private String id;
+
+    private String companyId;
+
+    private String contactName;
+
+    private String contactMobile;
+
+    private String fixedTelephone;
+
+    private String addressId;
+
+    private Long isDelete;
+
+    private Long ver;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public String getContactName() {
+        return contactName;
+    }
+
+    public void setContactName(String contactName) {
+        this.contactName = contactName == null ? null : contactName.trim();
+    }
+
+    public String getContactMobile() {
+        return contactMobile;
+    }
+
+    public void setContactMobile(String contactMobile) {
+        this.contactMobile = contactMobile == null ? null : contactMobile.trim();
+    }
+
+    public String getFixedTelephone() {
+        return fixedTelephone;
+    }
+
+    public void setFixedTelephone(String fixedTelephone) {
+        this.fixedTelephone = fixedTelephone == null ? null : fixedTelephone.trim();
+    }
+
+    public String getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(String addressId) {
+        this.addressId = addressId == null ? null : addressId.trim();
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+}

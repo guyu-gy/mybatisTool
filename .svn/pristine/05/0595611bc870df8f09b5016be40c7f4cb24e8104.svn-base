@@ -1,0 +1,236 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class ReceivePayDetail {
+    private String id;
+
+    private String companyId;
+
+    private String salesUserId;
+
+    private String otherCompanyId;
+
+    private String otherSalesUserId;
+
+    private String documentId;
+
+    private Long documentType;
+
+    private Long accountDirection;
+
+    private Long verificationStatus;
+
+    private Long recPayFeeType;
+
+    private BigDecimal totalPrice;
+
+    private Date auditTime;
+
+    private Long auditStatus;
+
+    private String auditRemark;
+
+    private String auditUserId;
+
+    private String settleCode;
+
+    private Long isDelete;
+
+    private Long ver;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long isBrokerage;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public String getSalesUserId() {
+        return salesUserId;
+    }
+
+    public void setSalesUserId(String salesUserId) {
+        this.salesUserId = salesUserId == null ? null : salesUserId.trim();
+    }
+
+    public String getOtherCompanyId() {
+        return otherCompanyId;
+    }
+
+    public void setOtherCompanyId(String otherCompanyId) {
+        this.otherCompanyId = otherCompanyId == null ? null : otherCompanyId.trim();
+    }
+
+    public String getOtherSalesUserId() {
+        return otherSalesUserId;
+    }
+
+    public void setOtherSalesUserId(String otherSalesUserId) {
+        this.otherSalesUserId = otherSalesUserId == null ? null : otherSalesUserId.trim();
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId == null ? null : documentId.trim();
+    }
+
+    public Long getDocumentType() {
+        return documentType;
+    }
+
+    public void setDocumentType(Long documentType) {
+        this.documentType = documentType;
+    }
+
+    public Long getAccountDirection() {
+        return accountDirection;
+    }
+
+    public void setAccountDirection(Long accountDirection) {
+        this.accountDirection = accountDirection;
+    }
+
+    public Long getVerificationStatus() {
+        return verificationStatus;
+    }
+
+    public void setVerificationStatus(Long verificationStatus) {
+        this.verificationStatus = verificationStatus;
+    }
+
+    public Long getRecPayFeeType() {
+        return recPayFeeType;
+    }
+
+    public void setRecPayFeeType(Long recPayFeeType) {
+        this.recPayFeeType = recPayFeeType;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public Date getAuditTime() {
+        return auditTime;
+    }
+
+    public void setAuditTime(Date auditTime) {
+        this.auditTime = auditTime;
+    }
+
+    public Long getAuditStatus() {
+        return auditStatus;
+    }
+
+    public void setAuditStatus(Long auditStatus) {
+        this.auditStatus = auditStatus;
+    }
+
+    public String getAuditRemark() {
+        return auditRemark;
+    }
+
+    public void setAuditRemark(String auditRemark) {
+        this.auditRemark = auditRemark == null ? null : auditRemark.trim();
+    }
+
+    public String getAuditUserId() {
+        return auditUserId;
+    }
+
+    public void setAuditUserId(String auditUserId) {
+        this.auditUserId = auditUserId == null ? null : auditUserId.trim();
+    }
+
+    public String getSettleCode() {
+        return settleCode;
+    }
+
+    public void setSettleCode(String settleCode) {
+        this.settleCode = settleCode == null ? null : settleCode.trim();
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getIsBrokerage() {
+        return isBrokerage;
+    }
+
+    public void setIsBrokerage(Long isBrokerage) {
+        this.isBrokerage = isBrokerage;
+    }
+}

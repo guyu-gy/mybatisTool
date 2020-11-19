@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.ConstructionProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.ConstructionProject" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="construction_project_name" property="constructionProjectName" jdbcType="VARCHAR" />
+    <result column="construction_project_address_id" property="constructionProjectAddressId" jdbcType="CHAR" />
+    <result column="construction_company_id" property="constructionCompanyId" jdbcType="CHAR" />
+    <result column="construction_responsible_contact_id" property="constructionResponsibleContactId" jdbcType="CHAR" />
+    <result column="build_company_id" property="buildCompanyId" jdbcType="CHAR" />
+    <result column="build_responsible_contact_id" property="buildResponsibleContactId" jdbcType="CHAR" />
+    <result column="supervise_plat_id" property="supervisePlatId" jdbcType="CHAR" />
+    <result column="supervise_company_id" property="superviseCompanyId" jdbcType="CHAR" />
+    <result column="supervise_responsible_contact_id" property="superviseResponsibleContactId" jdbcType="CHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="longitude" property="longitude" jdbcType="DOUBLE" />
+    <result column="dimension" property="dimension" jdbcType="DOUBLE" />
+    <result column="radius" property="radius" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, construction_project_name, construction_project_address_id, construction_company_id, 
+    construction_responsible_contact_id, build_company_id, build_responsible_contact_id, 
+    supervise_plat_id, supervise_company_id, supervise_responsible_contact_id, is_delete, 
+    creater, create_time, modifier, modify_time, ver, longitude, dimension, radius
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.ConstructionProjectExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_construction_project
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_construction_project
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_construction_project
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.ConstructionProjectExample" >
+    delete from xn_m_construction_project
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.ConstructionProject" >
+    insert into xn_m_construction_project (id, construction_project_name, construction_project_address_id, 
+      construction_company_id, construction_responsible_contact_id, 
+      build_company_id, build_responsible_contact_id, supervise_plat_id, 
+      supervise_company_id, supervise_responsible_contact_id, 
+      is_delete, creater, create_time, 
+      modifier, modify_time, ver, 
+      longitude, dimension, radius
+      )
+    values (#{id,jdbcType=CHAR}, #{constructionProjectName,jdbcType=VARCHAR}, #{constructionProjectAddressId,jdbcType=CHAR}, 
+      #{constructionCompanyId,jdbcType=CHAR}, #{constructionResponsibleContactId,jdbcType=CHAR}, 
+      #{buildCompanyId,jdbcType=CHAR}, #{buildResponsibleContactId,jdbcType=CHAR}, #{supervisePlatId,jdbcType=CHAR}, 
+      #{superviseCompanyId,jdbcType=CHAR}, #{superviseResponsibleContactId,jdbcType=CHAR}, 
+      #{isDelete,jdbcType=BIGINT}, #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, 
+      #{longitude,jdbcType=DOUBLE}, #{dimension,jdbcType=DOUBLE}, #{radius,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.ConstructionProject" >
+    insert into xn_m_construction_project
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="constructionProjectName != null" >
+        construction_project_name,
+      </if>
+      <if test="constructionProjectAddressId != null" >
+        construction_project_address_id,
+      </if>
+      <if test="constructionCompanyId != null" >
+        construction_company_id,
+      </if>
+      <if test="constructionResponsibleContactId != null" >
+        construction_responsible_contact_id,
+      </if>
+      <if test="buildCompanyId != null" >
+        build_company_id,
+      </if>
+      <if test="buildResponsibleContactId != null" >
+        build_responsible_contact_id,
+      </if>
+      <if test="supervisePlatId != null" >
+        supervise_plat_id,
+      </if>
+      <if test="superviseCompanyId != null" >
+        supervise_company_id,
+      </if>
+      <if test="superviseResponsibleContactId != null" >
+        supervise_responsible_contact_id,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="dimension != null" >
+        dimension,
+      </if>
+      <if test="radius != null" >
+        radius,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="constructionProjectName != null" >
+        #{constructionProjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="constructionProjectAddressId != null" >
+        #{constructionProjectAddressId,jdbcType=CHAR},
+      </if>
+      <if test="constructionCompanyId != null" >
+        #{constructionCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="constructionResponsibleContactId != null" >
+        #{constructionResponsibleContactId,jdbcType=CHAR},
+      </if>
+      <if test="buildCompanyId != null" >
+        #{buildCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="buildResponsibleContactId != null" >
+        #{buildResponsibleContactId,jdbcType=CHAR},
+      </if>
+      <if test="supervisePlatId != null" >
+        #{supervisePlatId,jdbcType=CHAR},
+      </if>
+      <if test="superviseCompanyId != null" >
+        #{superviseCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="superviseResponsibleContactId != null" >
+        #{superviseResponsibleContactId,jdbcType=CHAR},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="dimension != null" >
+        #{dimension,jdbcType=DOUBLE},
+      </if>
+      <if test="radius != null" >
+        #{radius,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.ConstructionProjectExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_construction_project
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.ConstructionProject" >
+    update xn_m_construction_project
+    <set >
+      <if test="constructionProjectName != null" >
+        construction_project_name = #{constructionProjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="constructionProjectAddressId != null" >
+        construction_project_address_id = #{constructionProjectAddressId,jdbcType=CHAR},
+      </if>
+      <if test="constructionCompanyId != null" >
+        construction_company_id = #{constructionCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="constructionResponsibleContactId != null" >
+        construction_responsible_contact_id = #{constructionResponsibleContactId,jdbcType=CHAR},
+      </if>
+      <if test="buildCompanyId != null" >
+        build_company_id = #{buildCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="buildResponsibleContactId != null" >
+        build_responsible_contact_id = #{buildResponsibleContactId,jdbcType=CHAR},
+      </if>
+      <if test="supervisePlatId != null" >
+        supervise_plat_id = #{supervisePlatId,jdbcType=CHAR},
+      </if>
+      <if test="superviseCompanyId != null" >
+        supervise_company_id = #{superviseCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="superviseResponsibleContactId != null" >
+        supervise_responsible_contact_id = #{superviseResponsibleContactId,jdbcType=CHAR},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="dimension != null" >
+        dimension = #{dimension,jdbcType=DOUBLE},
+      </if>
+      <if test="radius != null" >
+        radius = #{radius,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.ConstructionProject" >
+    update xn_m_construction_project
+    set construction_project_name = #{constructionProjectName,jdbcType=VARCHAR},
+      construction_project_address_id = #{constructionProjectAddressId,jdbcType=CHAR},
+      construction_company_id = #{constructionCompanyId,jdbcType=CHAR},
+      construction_responsible_contact_id = #{constructionResponsibleContactId,jdbcType=CHAR},
+      build_company_id = #{buildCompanyId,jdbcType=CHAR},
+      build_responsible_contact_id = #{buildResponsibleContactId,jdbcType=CHAR},
+      supervise_plat_id = #{supervisePlatId,jdbcType=CHAR},
+      supervise_company_id = #{superviseCompanyId,jdbcType=CHAR},
+      supervise_responsible_contact_id = #{superviseResponsibleContactId,jdbcType=CHAR},
+      is_delete = #{isDelete,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      longitude = #{longitude,jdbcType=DOUBLE},
+      dimension = #{dimension,jdbcType=DOUBLE},
+      radius = #{radius,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

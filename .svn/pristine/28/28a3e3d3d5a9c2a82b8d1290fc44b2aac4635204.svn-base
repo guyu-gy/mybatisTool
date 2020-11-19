@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.PaymentScheduleMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.PaymentSchedule" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="payment_mode" property="paymentMode" jdbcType="BIGINT" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="document_id" property="documentId" jdbcType="CHAR" />
+    <result column="document_type" property="documentType" jdbcType="BIGINT" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, payment_mode, price, document_id, document_type, ver, creater, create_time, modifier, 
+    modify_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.PaymentScheduleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_payment_schedule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_payment_schedule
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_payment_schedule
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.PaymentScheduleExample" >
+    delete from xn_m_payment_schedule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.PaymentSchedule" >
+    insert into xn_m_payment_schedule (id, payment_mode, price, 
+      document_id, document_type, ver, 
+      creater, create_time, modifier, 
+      modify_time)
+    values (#{id,jdbcType=CHAR}, #{paymentMode,jdbcType=BIGINT}, #{price,jdbcType=DECIMAL}, 
+      #{documentId,jdbcType=CHAR}, #{documentType,jdbcType=BIGINT}, #{ver,jdbcType=BIGINT}, 
+      #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.PaymentSchedule" >
+    insert into xn_m_payment_schedule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="paymentMode != null" >
+        payment_mode,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="documentId != null" >
+        document_id,
+      </if>
+      <if test="documentType != null" >
+        document_type,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="paymentMode != null" >
+        #{paymentMode,jdbcType=BIGINT},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="documentId != null" >
+        #{documentId,jdbcType=CHAR},
+      </if>
+      <if test="documentType != null" >
+        #{documentType,jdbcType=BIGINT},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.PaymentScheduleExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_payment_schedule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.PaymentSchedule" >
+    update xn_m_payment_schedule
+    <set >
+      <if test="paymentMode != null" >
+        payment_mode = #{paymentMode,jdbcType=BIGINT},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="documentId != null" >
+        document_id = #{documentId,jdbcType=CHAR},
+      </if>
+      <if test="documentType != null" >
+        document_type = #{documentType,jdbcType=BIGINT},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.PaymentSchedule" >
+    update xn_m_payment_schedule
+    set payment_mode = #{paymentMode,jdbcType=BIGINT},
+      price = #{price,jdbcType=DECIMAL},
+      document_id = #{documentId,jdbcType=CHAR},
+      document_type = #{documentType,jdbcType=BIGINT},
+      ver = #{ver,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

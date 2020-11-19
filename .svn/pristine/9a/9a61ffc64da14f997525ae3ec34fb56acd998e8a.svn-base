@@ -1,0 +1,95 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class LogisticsOrderOperateLog {
+    private String id;
+
+    private String logisticsOrderId;
+
+    private String rootLogisticsOrderId;
+
+    private Long operateType;
+
+    private String changeOrderIds;
+
+    private String creater;
+
+    private Date createTime;
+
+    private Long ver;
+
+    private String comment;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getLogisticsOrderId() {
+        return logisticsOrderId;
+    }
+
+    public void setLogisticsOrderId(String logisticsOrderId) {
+        this.logisticsOrderId = logisticsOrderId == null ? null : logisticsOrderId.trim();
+    }
+
+    public String getRootLogisticsOrderId() {
+        return rootLogisticsOrderId;
+    }
+
+    public void setRootLogisticsOrderId(String rootLogisticsOrderId) {
+        this.rootLogisticsOrderId = rootLogisticsOrderId == null ? null : rootLogisticsOrderId.trim();
+    }
+
+    public Long getOperateType() {
+        return operateType;
+    }
+
+    public void setOperateType(Long operateType) {
+        this.operateType = operateType;
+    }
+
+    public String getChangeOrderIds() {
+        return changeOrderIds;
+    }
+
+    public void setChangeOrderIds(String changeOrderIds) {
+        this.changeOrderIds = changeOrderIds == null ? null : changeOrderIds.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+}

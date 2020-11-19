@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.OutletsMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Outlets" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="outlets_name" property="outletsName" jdbcType="VARCHAR" />
+    <result column="outlets_no" property="outletsNo" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="CHAR" />
+    <result column="dept_id" property="deptId" jdbcType="CHAR" />
+    <result column="address_id" property="addressId" jdbcType="CHAR" />
+    <result column="contact_id" property="contactId" jdbcType="CHAR" />
+    <result column="business_hours" property="businessHours" jdbcType="VARCHAR" />
+    <result column="outlets_mobile" property="outletsMobile" jdbcType="VARCHAR" />
+    <result column="outlets_fax" property="outletsFax" jdbcType="VARCHAR" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="BIGINT" />
+    <result column="opening_status" property="openingStatus" jdbcType="BIGINT" />
+    <result column="outlets_type" property="outletsType" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="is_delete" property="isDelete" jdbcType="BIGINT" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, outlets_name, outlets_no, company_id, dept_id, address_id, contact_id, business_hours, 
+    outlets_mobile, outlets_fax, introduction, version, opening_status, outlets_type, 
+    creater, create_time, modifier, modify_time, ver, is_delete, appkey
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.OutletsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_outlets
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_outlets
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_outlets
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.OutletsExample" >
+    delete from xn_m_outlets
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Outlets" >
+    insert into xn_m_outlets (id, outlets_name, outlets_no, 
+      company_id, dept_id, address_id, 
+      contact_id, business_hours, outlets_mobile, 
+      outlets_fax, introduction, version, 
+      opening_status, outlets_type, creater, 
+      create_time, modifier, modify_time, 
+      ver, is_delete, appkey
+      )
+    values (#{id,jdbcType=CHAR}, #{outletsName,jdbcType=VARCHAR}, #{outletsNo,jdbcType=VARCHAR}, 
+      #{companyId,jdbcType=CHAR}, #{deptId,jdbcType=CHAR}, #{addressId,jdbcType=CHAR}, 
+      #{contactId,jdbcType=CHAR}, #{businessHours,jdbcType=VARCHAR}, #{outletsMobile,jdbcType=VARCHAR}, 
+      #{outletsFax,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{version,jdbcType=BIGINT}, 
+      #{openingStatus,jdbcType=BIGINT}, #{outletsType,jdbcType=BIGINT}, #{creater,jdbcType=CHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{isDelete,jdbcType=BIGINT}, #{appkey,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Outlets" >
+    insert into xn_m_outlets
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="outletsName != null" >
+        outlets_name,
+      </if>
+      <if test="outletsNo != null" >
+        outlets_no,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="deptId != null" >
+        dept_id,
+      </if>
+      <if test="addressId != null" >
+        address_id,
+      </if>
+      <if test="contactId != null" >
+        contact_id,
+      </if>
+      <if test="businessHours != null" >
+        business_hours,
+      </if>
+      <if test="outletsMobile != null" >
+        outlets_mobile,
+      </if>
+      <if test="outletsFax != null" >
+        outlets_fax,
+      </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
+      <if test="version != null" >
+        version,
+      </if>
+      <if test="openingStatus != null" >
+        opening_status,
+      </if>
+      <if test="outletsType != null" >
+        outlets_type,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="outletsName != null" >
+        #{outletsName,jdbcType=VARCHAR},
+      </if>
+      <if test="outletsNo != null" >
+        #{outletsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=CHAR},
+      </if>
+      <if test="addressId != null" >
+        #{addressId,jdbcType=CHAR},
+      </if>
+      <if test="contactId != null" >
+        #{contactId,jdbcType=CHAR},
+      </if>
+      <if test="businessHours != null" >
+        #{businessHours,jdbcType=VARCHAR},
+      </if>
+      <if test="outletsMobile != null" >
+        #{outletsMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="outletsFax != null" >
+        #{outletsFax,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=BIGINT},
+      </if>
+      <if test="openingStatus != null" >
+        #{openingStatus,jdbcType=BIGINT},
+      </if>
+      <if test="outletsType != null" >
+        #{outletsType,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.OutletsExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_outlets
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Outlets" >
+    update xn_m_outlets
+    <set >
+      <if test="outletsName != null" >
+        outlets_name = #{outletsName,jdbcType=VARCHAR},
+      </if>
+      <if test="outletsNo != null" >
+        outlets_no = #{outletsNo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="deptId != null" >
+        dept_id = #{deptId,jdbcType=CHAR},
+      </if>
+      <if test="addressId != null" >
+        address_id = #{addressId,jdbcType=CHAR},
+      </if>
+      <if test="contactId != null" >
+        contact_id = #{contactId,jdbcType=CHAR},
+      </if>
+      <if test="businessHours != null" >
+        business_hours = #{businessHours,jdbcType=VARCHAR},
+      </if>
+      <if test="outletsMobile != null" >
+        outlets_mobile = #{outletsMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="outletsFax != null" >
+        outlets_fax = #{outletsFax,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        version = #{version,jdbcType=BIGINT},
+      </if>
+      <if test="openingStatus != null" >
+        opening_status = #{openingStatus,jdbcType=BIGINT},
+      </if>
+      <if test="outletsType != null" >
+        outlets_type = #{outletsType,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Outlets" >
+    update xn_m_outlets
+    set outlets_name = #{outletsName,jdbcType=VARCHAR},
+      outlets_no = #{outletsNo,jdbcType=VARCHAR},
+      company_id = #{companyId,jdbcType=CHAR},
+      dept_id = #{deptId,jdbcType=CHAR},
+      address_id = #{addressId,jdbcType=CHAR},
+      contact_id = #{contactId,jdbcType=CHAR},
+      business_hours = #{businessHours,jdbcType=VARCHAR},
+      outlets_mobile = #{outletsMobile,jdbcType=VARCHAR},
+      outlets_fax = #{outletsFax,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      version = #{version,jdbcType=BIGINT},
+      opening_status = #{openingStatus,jdbcType=BIGINT},
+      outlets_type = #{outletsType,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      is_delete = #{isDelete,jdbcType=BIGINT},
+      appkey = #{appkey,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

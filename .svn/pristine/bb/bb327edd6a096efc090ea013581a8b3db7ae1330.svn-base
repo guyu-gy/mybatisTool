@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.InfLogMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.InfLog" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="inf_name" property="infName" jdbcType="VARCHAR" />
+    <result column="param_name" property="paramName" jdbcType="VARCHAR" />
+    <result column="inf_url" property="infUrl" jdbcType="VARCHAR" />
+    <result column="operator" property="operator" jdbcType="CHAR" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="BIGINT" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="inf_conf_id" property="infConfId" jdbcType="CHAR" />
+    <result column="count" property="count" jdbcType="BIGINT" />
+    <result column="appkey" property="appkey" jdbcType="CHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.xiaoniu56.model.defaults.InfLogWithBLOBs" extends="BaseResultMap" >
+    <result column="inf_result" property="infResult" jdbcType="LONGVARCHAR" />
+    <result column="param_value" property="paramValue" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, inf_name, param_name, inf_url, operator, creater, create_time, modifier, modify_time, 
+    ver, status, comment, inf_conf_id, count, appkey
+  </sql>
+  <sql id="Blob_Column_List" >
+    inf_result, param_value
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.xiaoniu56.model.defaults.InfLogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from xn_m_inf_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.InfLogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_inf_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from xn_m_inf_log
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_inf_log
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.InfLogExample" >
+    delete from xn_m_inf_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.InfLogWithBLOBs" >
+    insert into xn_m_inf_log (id, inf_name, param_name, 
+      inf_url, operator, creater, 
+      create_time, modifier, modify_time, 
+      ver, status, comment, 
+      inf_conf_id, count, appkey, 
+      inf_result, param_value)
+    values (#{id,jdbcType=CHAR}, #{infName,jdbcType=VARCHAR}, #{paramName,jdbcType=VARCHAR}, 
+      #{infUrl,jdbcType=VARCHAR}, #{operator,jdbcType=CHAR}, #{creater,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{status,jdbcType=BIGINT}, #{comment,jdbcType=VARCHAR}, 
+      #{infConfId,jdbcType=CHAR}, #{count,jdbcType=BIGINT}, #{appkey,jdbcType=CHAR}, 
+      #{infResult,jdbcType=LONGVARCHAR}, #{paramValue,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.InfLogWithBLOBs" >
+    insert into xn_m_inf_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="infName != null" >
+        inf_name,
+      </if>
+      <if test="paramName != null" >
+        param_name,
+      </if>
+      <if test="infUrl != null" >
+        inf_url,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="infConfId != null" >
+        inf_conf_id,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="infResult != null" >
+        inf_result,
+      </if>
+      <if test="paramValue != null" >
+        param_value,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="infName != null" >
+        #{infName,jdbcType=VARCHAR},
+      </if>
+      <if test="paramName != null" >
+        #{paramName,jdbcType=VARCHAR},
+      </if>
+      <if test="infUrl != null" >
+        #{infUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIGINT},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="infConfId != null" >
+        #{infConfId,jdbcType=CHAR},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=CHAR},
+      </if>
+      <if test="infResult != null" >
+        #{infResult,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="paramValue != null" >
+        #{paramValue,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.InfLogExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_inf_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.InfLogWithBLOBs" >
+    update xn_m_inf_log
+    <set >
+      <if test="infName != null" >
+        inf_name = #{infName,jdbcType=VARCHAR},
+      </if>
+      <if test="paramName != null" >
+        param_name = #{paramName,jdbcType=VARCHAR},
+      </if>
+      <if test="infUrl != null" >
+        inf_url = #{infUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null" >
+        operator = #{operator,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIGINT},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="infConfId != null" >
+        inf_conf_id = #{infConfId,jdbcType=CHAR},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=CHAR},
+      </if>
+      <if test="infResult != null" >
+        inf_result = #{infResult,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="paramValue != null" >
+        param_value = #{paramValue,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xiaoniu56.model.defaults.InfLogWithBLOBs" >
+    update xn_m_inf_log
+    set inf_name = #{infName,jdbcType=VARCHAR},
+      param_name = #{paramName,jdbcType=VARCHAR},
+      inf_url = #{infUrl,jdbcType=VARCHAR},
+      operator = #{operator,jdbcType=CHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      status = #{status,jdbcType=BIGINT},
+      comment = #{comment,jdbcType=VARCHAR},
+      inf_conf_id = #{infConfId,jdbcType=CHAR},
+      count = #{count,jdbcType=BIGINT},
+      appkey = #{appkey,jdbcType=CHAR},
+      inf_result = #{infResult,jdbcType=LONGVARCHAR},
+      param_value = #{paramValue,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.InfLog" >
+    update xn_m_inf_log
+    set inf_name = #{infName,jdbcType=VARCHAR},
+      param_name = #{paramName,jdbcType=VARCHAR},
+      inf_url = #{infUrl,jdbcType=VARCHAR},
+      operator = #{operator,jdbcType=CHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      status = #{status,jdbcType=BIGINT},
+      comment = #{comment,jdbcType=VARCHAR},
+      inf_conf_id = #{infConfId,jdbcType=CHAR},
+      count = #{count,jdbcType=BIGINT},
+      appkey = #{appkey,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

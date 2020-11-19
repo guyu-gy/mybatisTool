@@ -1,0 +1,145 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class RealtimeTransport {
+    private String id;
+
+    private String gpsDeviceNo;
+
+    private Date createTime;
+
+    private Long enableStatus;
+
+    private Long loadStatus;
+
+    private String realtimeTransportNo;
+
+    private Long realtimeTransportVersion;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String authCode;
+
+    private Long isValid;
+
+    private Long isDelete;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getGpsDeviceNo() {
+        return gpsDeviceNo;
+    }
+
+    public void setGpsDeviceNo(String gpsDeviceNo) {
+        this.gpsDeviceNo = gpsDeviceNo == null ? null : gpsDeviceNo.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getEnableStatus() {
+        return enableStatus;
+    }
+
+    public void setEnableStatus(Long enableStatus) {
+        this.enableStatus = enableStatus;
+    }
+
+    public Long getLoadStatus() {
+        return loadStatus;
+    }
+
+    public void setLoadStatus(Long loadStatus) {
+        this.loadStatus = loadStatus;
+    }
+
+    public String getRealtimeTransportNo() {
+        return realtimeTransportNo;
+    }
+
+    public void setRealtimeTransportNo(String realtimeTransportNo) {
+        this.realtimeTransportNo = realtimeTransportNo == null ? null : realtimeTransportNo.trim();
+    }
+
+    public Long getRealtimeTransportVersion() {
+        return realtimeTransportVersion;
+    }
+
+    public void setRealtimeTransportVersion(Long realtimeTransportVersion) {
+        this.realtimeTransportVersion = realtimeTransportVersion;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode == null ? null : authCode.trim();
+    }
+
+    public Long getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Long isValid) {
+        this.isValid = isValid;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+}

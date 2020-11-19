@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.OtherLog;
+import com.xiaoniu56.model.defaults.OtherLogExample;
+import java.util.List;
+
+public interface OtherLogMapper {
+    int countByExample(OtherLogExample example);
+
+    int deleteByExample(OtherLogExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(OtherLog record);
+
+    int insertSelective(OtherLog record);
+
+    List<OtherLog> selectByExample(OtherLogExample example);
+
+    OtherLog selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(OtherLog record);
+
+    int updateByPrimaryKey(OtherLog record);
+}

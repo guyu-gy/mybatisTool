@@ -1,0 +1,29 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.ShowField;
+import com.xiaoniu56.model.defaults.ShowFieldExample;
+import java.util.List;
+
+public interface ShowFieldMapper {
+    int countByExample(ShowFieldExample example);
+
+    int deleteByExample(ShowFieldExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(ShowField record);
+
+    int insertSelective(ShowField record);
+
+    List<ShowField> selectByExampleWithBLOBs(ShowFieldExample example);
+
+    List<ShowField> selectByExample(ShowFieldExample example);
+
+    ShowField selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(ShowField record);
+
+    int updateByPrimaryKeyWithBLOBs(ShowField record);
+
+    int updateByPrimaryKey(ShowField record);
+}

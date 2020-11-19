@@ -1,0 +1,556 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class Dispatch {
+    private String id;
+
+    private String parentDispatchId;
+
+    private String dispatchCode;
+
+    private Date createTime;
+
+    private String logisticsOrderId;
+
+    private Date planDepartureDate;
+
+    private Date planArrivalDate;
+
+    private Date realDepartureDate;
+
+    private Date realArrivalDate;
+
+    private Date signedTime;
+
+    private String signedPasswd;
+
+    private String signedComment;
+
+    private String loadProfilePhotoId;
+
+    private String loadTailPhotoId;
+
+    private String unloadProfilePhotoId;
+
+    private String unloadTailPhotoId;
+
+    private String receiptSignPhotoId;
+
+    private String receiptGroupPhotoId;
+
+    private String consigneeId;
+
+    private String sendAddressId;
+
+    private String receiveAddressId;
+
+    private String dispatchBatchId;
+
+    private Long isDestination;
+
+    private String senderId;
+
+    private Long deliveryMode;
+
+    private String code;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String deliveryOutletsId;
+
+    private String arrivalOutletsId;
+
+    private String authCode;
+
+    private Long rht;
+
+    private Long lft;
+
+    private Long nodeVer;
+
+    private String appkey;
+
+    private Long isRegistered;
+
+    private String signedUserName;
+
+    private String signedIdCardNo;
+
+    private Integer signedAgent;
+
+    private String registerId;
+
+    private Date registerTime;
+
+    private Long isWarn;
+
+    private BigDecimal distance;
+
+    private Short isMorePhoto;
+
+    private Short deptHandoverMode;
+
+    private Short signedHandoverMode;
+
+    private String deptQrcodeId;
+
+    private String signQrcodeId;
+
+    private String deptLonLat;
+
+    private String signedLonLat;
+
+    private Long deptLonLatAddr;
+
+    private Long signedLonLatAddr;
+
+    private BigDecimal costPrice;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getParentDispatchId() {
+        return parentDispatchId;
+    }
+
+    public void setParentDispatchId(String parentDispatchId) {
+        this.parentDispatchId = parentDispatchId == null ? null : parentDispatchId.trim();
+    }
+
+    public String getDispatchCode() {
+        return dispatchCode;
+    }
+
+    public void setDispatchCode(String dispatchCode) {
+        this.dispatchCode = dispatchCode == null ? null : dispatchCode.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getLogisticsOrderId() {
+        return logisticsOrderId;
+    }
+
+    public void setLogisticsOrderId(String logisticsOrderId) {
+        this.logisticsOrderId = logisticsOrderId == null ? null : logisticsOrderId.trim();
+    }
+
+    public Date getPlanDepartureDate() {
+        return planDepartureDate;
+    }
+
+    public void setPlanDepartureDate(Date planDepartureDate) {
+        this.planDepartureDate = planDepartureDate;
+    }
+
+    public Date getPlanArrivalDate() {
+        return planArrivalDate;
+    }
+
+    public void setPlanArrivalDate(Date planArrivalDate) {
+        this.planArrivalDate = planArrivalDate;
+    }
+
+    public Date getRealDepartureDate() {
+        return realDepartureDate;
+    }
+
+    public void setRealDepartureDate(Date realDepartureDate) {
+        this.realDepartureDate = realDepartureDate;
+    }
+
+    public Date getRealArrivalDate() {
+        return realArrivalDate;
+    }
+
+    public void setRealArrivalDate(Date realArrivalDate) {
+        this.realArrivalDate = realArrivalDate;
+    }
+
+    public Date getSignedTime() {
+        return signedTime;
+    }
+
+    public void setSignedTime(Date signedTime) {
+        this.signedTime = signedTime;
+    }
+
+    public String getSignedPasswd() {
+        return signedPasswd;
+    }
+
+    public void setSignedPasswd(String signedPasswd) {
+        this.signedPasswd = signedPasswd == null ? null : signedPasswd.trim();
+    }
+
+    public String getSignedComment() {
+        return signedComment;
+    }
+
+    public void setSignedComment(String signedComment) {
+        this.signedComment = signedComment == null ? null : signedComment.trim();
+    }
+
+    public String getLoadProfilePhotoId() {
+        return loadProfilePhotoId;
+    }
+
+    public void setLoadProfilePhotoId(String loadProfilePhotoId) {
+        this.loadProfilePhotoId = loadProfilePhotoId == null ? null : loadProfilePhotoId.trim();
+    }
+
+    public String getLoadTailPhotoId() {
+        return loadTailPhotoId;
+    }
+
+    public void setLoadTailPhotoId(String loadTailPhotoId) {
+        this.loadTailPhotoId = loadTailPhotoId == null ? null : loadTailPhotoId.trim();
+    }
+
+    public String getUnloadProfilePhotoId() {
+        return unloadProfilePhotoId;
+    }
+
+    public void setUnloadProfilePhotoId(String unloadProfilePhotoId) {
+        this.unloadProfilePhotoId = unloadProfilePhotoId == null ? null : unloadProfilePhotoId.trim();
+    }
+
+    public String getUnloadTailPhotoId() {
+        return unloadTailPhotoId;
+    }
+
+    public void setUnloadTailPhotoId(String unloadTailPhotoId) {
+        this.unloadTailPhotoId = unloadTailPhotoId == null ? null : unloadTailPhotoId.trim();
+    }
+
+    public String getReceiptSignPhotoId() {
+        return receiptSignPhotoId;
+    }
+
+    public void setReceiptSignPhotoId(String receiptSignPhotoId) {
+        this.receiptSignPhotoId = receiptSignPhotoId == null ? null : receiptSignPhotoId.trim();
+    }
+
+    public String getReceiptGroupPhotoId() {
+        return receiptGroupPhotoId;
+    }
+
+    public void setReceiptGroupPhotoId(String receiptGroupPhotoId) {
+        this.receiptGroupPhotoId = receiptGroupPhotoId == null ? null : receiptGroupPhotoId.trim();
+    }
+
+    public String getConsigneeId() {
+        return consigneeId;
+    }
+
+    public void setConsigneeId(String consigneeId) {
+        this.consigneeId = consigneeId == null ? null : consigneeId.trim();
+    }
+
+    public String getSendAddressId() {
+        return sendAddressId;
+    }
+
+    public void setSendAddressId(String sendAddressId) {
+        this.sendAddressId = sendAddressId == null ? null : sendAddressId.trim();
+    }
+
+    public String getReceiveAddressId() {
+        return receiveAddressId;
+    }
+
+    public void setReceiveAddressId(String receiveAddressId) {
+        this.receiveAddressId = receiveAddressId == null ? null : receiveAddressId.trim();
+    }
+
+    public String getDispatchBatchId() {
+        return dispatchBatchId;
+    }
+
+    public void setDispatchBatchId(String dispatchBatchId) {
+        this.dispatchBatchId = dispatchBatchId == null ? null : dispatchBatchId.trim();
+    }
+
+    public Long getIsDestination() {
+        return isDestination;
+    }
+
+    public void setIsDestination(Long isDestination) {
+        this.isDestination = isDestination;
+    }
+
+    public String getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(String senderId) {
+        this.senderId = senderId == null ? null : senderId.trim();
+    }
+
+    public Long getDeliveryMode() {
+        return deliveryMode;
+    }
+
+    public void setDeliveryMode(Long deliveryMode) {
+        this.deliveryMode = deliveryMode;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code == null ? null : code.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getDeliveryOutletsId() {
+        return deliveryOutletsId;
+    }
+
+    public void setDeliveryOutletsId(String deliveryOutletsId) {
+        this.deliveryOutletsId = deliveryOutletsId == null ? null : deliveryOutletsId.trim();
+    }
+
+    public String getArrivalOutletsId() {
+        return arrivalOutletsId;
+    }
+
+    public void setArrivalOutletsId(String arrivalOutletsId) {
+        this.arrivalOutletsId = arrivalOutletsId == null ? null : arrivalOutletsId.trim();
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode == null ? null : authCode.trim();
+    }
+
+    public Long getRht() {
+        return rht;
+    }
+
+    public void setRht(Long rht) {
+        this.rht = rht;
+    }
+
+    public Long getLft() {
+        return lft;
+    }
+
+    public void setLft(Long lft) {
+        this.lft = lft;
+    }
+
+    public Long getNodeVer() {
+        return nodeVer;
+    }
+
+    public void setNodeVer(Long nodeVer) {
+        this.nodeVer = nodeVer;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public Long getIsRegistered() {
+        return isRegistered;
+    }
+
+    public void setIsRegistered(Long isRegistered) {
+        this.isRegistered = isRegistered;
+    }
+
+    public String getSignedUserName() {
+        return signedUserName;
+    }
+
+    public void setSignedUserName(String signedUserName) {
+        this.signedUserName = signedUserName == null ? null : signedUserName.trim();
+    }
+
+    public String getSignedIdCardNo() {
+        return signedIdCardNo;
+    }
+
+    public void setSignedIdCardNo(String signedIdCardNo) {
+        this.signedIdCardNo = signedIdCardNo == null ? null : signedIdCardNo.trim();
+    }
+
+    public Integer getSignedAgent() {
+        return signedAgent;
+    }
+
+    public void setSignedAgent(Integer signedAgent) {
+        this.signedAgent = signedAgent;
+    }
+
+    public String getRegisterId() {
+        return registerId;
+    }
+
+    public void setRegisterId(String registerId) {
+        this.registerId = registerId == null ? null : registerId.trim();
+    }
+
+    public Date getRegisterTime() {
+        return registerTime;
+    }
+
+    public void setRegisterTime(Date registerTime) {
+        this.registerTime = registerTime;
+    }
+
+    public Long getIsWarn() {
+        return isWarn;
+    }
+
+    public void setIsWarn(Long isWarn) {
+        this.isWarn = isWarn;
+    }
+
+    public BigDecimal getDistance() {
+        return distance;
+    }
+
+    public void setDistance(BigDecimal distance) {
+        this.distance = distance;
+    }
+
+    public Short getIsMorePhoto() {
+        return isMorePhoto;
+    }
+
+    public void setIsMorePhoto(Short isMorePhoto) {
+        this.isMorePhoto = isMorePhoto;
+    }
+
+    public Short getDeptHandoverMode() {
+        return deptHandoverMode;
+    }
+
+    public void setDeptHandoverMode(Short deptHandoverMode) {
+        this.deptHandoverMode = deptHandoverMode;
+    }
+
+    public Short getSignedHandoverMode() {
+        return signedHandoverMode;
+    }
+
+    public void setSignedHandoverMode(Short signedHandoverMode) {
+        this.signedHandoverMode = signedHandoverMode;
+    }
+
+    public String getDeptQrcodeId() {
+        return deptQrcodeId;
+    }
+
+    public void setDeptQrcodeId(String deptQrcodeId) {
+        this.deptQrcodeId = deptQrcodeId == null ? null : deptQrcodeId.trim();
+    }
+
+    public String getSignQrcodeId() {
+        return signQrcodeId;
+    }
+
+    public void setSignQrcodeId(String signQrcodeId) {
+        this.signQrcodeId = signQrcodeId == null ? null : signQrcodeId.trim();
+    }
+
+    public String getDeptLonLat() {
+        return deptLonLat;
+    }
+
+    public void setDeptLonLat(String deptLonLat) {
+        this.deptLonLat = deptLonLat == null ? null : deptLonLat.trim();
+    }
+
+    public String getSignedLonLat() {
+        return signedLonLat;
+    }
+
+    public void setSignedLonLat(String signedLonLat) {
+        this.signedLonLat = signedLonLat == null ? null : signedLonLat.trim();
+    }
+
+    public Long getDeptLonLatAddr() {
+        return deptLonLatAddr;
+    }
+
+    public void setDeptLonLatAddr(Long deptLonLatAddr) {
+        this.deptLonLatAddr = deptLonLatAddr;
+    }
+
+    public Long getSignedLonLatAddr() {
+        return signedLonLatAddr;
+    }
+
+    public void setSignedLonLatAddr(Long signedLonLatAddr) {
+        this.signedLonLatAddr = signedLonLatAddr;
+    }
+
+    public BigDecimal getCostPrice() {
+        return costPrice;
+    }
+
+    public void setCostPrice(BigDecimal costPrice) {
+        this.costPrice = costPrice;
+    }
+}

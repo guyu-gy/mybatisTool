@@ -1,0 +1,115 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class DispatchGoods {
+    private String planDsptGoodsMeasureId;
+
+    private String realDsptGoodsMeasureId;
+
+    private String signedGoodsMeasureId;
+
+    private String dispatchId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String goodsId;
+
+    private String id;
+
+    public String getPlanDsptGoodsMeasureId() {
+        return planDsptGoodsMeasureId;
+    }
+
+    public void setPlanDsptGoodsMeasureId(String planDsptGoodsMeasureId) {
+        this.planDsptGoodsMeasureId = planDsptGoodsMeasureId == null ? null : planDsptGoodsMeasureId.trim();
+    }
+
+    public String getRealDsptGoodsMeasureId() {
+        return realDsptGoodsMeasureId;
+    }
+
+    public void setRealDsptGoodsMeasureId(String realDsptGoodsMeasureId) {
+        this.realDsptGoodsMeasureId = realDsptGoodsMeasureId == null ? null : realDsptGoodsMeasureId.trim();
+    }
+
+    public String getSignedGoodsMeasureId() {
+        return signedGoodsMeasureId;
+    }
+
+    public void setSignedGoodsMeasureId(String signedGoodsMeasureId) {
+        this.signedGoodsMeasureId = signedGoodsMeasureId == null ? null : signedGoodsMeasureId.trim();
+    }
+
+    public String getDispatchId() {
+        return dispatchId;
+    }
+
+    public void setDispatchId(String dispatchId) {
+        this.dispatchId = dispatchId == null ? null : dispatchId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(String goodsId) {
+        this.goodsId = goodsId == null ? null : goodsId.trim();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+}

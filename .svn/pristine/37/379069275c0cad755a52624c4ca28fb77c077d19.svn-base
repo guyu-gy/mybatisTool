@@ -1,0 +1,376 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class Vehicles {
+    private String id;
+
+    private String vehicleCode;
+
+    private String drivingLicensePhotoId;
+
+    private String headPhotoId;
+
+    private String profilePhotoId;
+
+    private String tailPhotoId;
+
+    private String enableStatus;
+
+    private String contactId;
+
+    private String gpsDeviceid;
+
+    private Long vehiclesMode;
+
+    private Long vehicleType;
+
+    private Long vehicleLength;
+
+    private Long locationMode;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long shipZone;
+
+    private Long isValid;
+
+    private Long isDelete;
+
+    private String vehicleTonnage;
+
+    private Long certificationState;
+
+    private String driverId;
+
+    private Long isFree;
+
+    private Long departurePoint;
+
+    private String vehicleNo;
+
+    private String vehicleVersion;
+
+    private String ownerId;
+
+    private Long dispatchCount;
+
+    private Long currentPoint;
+
+    private Date currentPointTime;
+
+    private String appkey;
+
+    private Long telConfirm;
+
+    private String systemDesc;
+
+    private BigDecimal tare;
+
+    private Long relationType;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getVehicleCode() {
+        return vehicleCode;
+    }
+
+    public void setVehicleCode(String vehicleCode) {
+        this.vehicleCode = vehicleCode == null ? null : vehicleCode.trim();
+    }
+
+    public String getDrivingLicensePhotoId() {
+        return drivingLicensePhotoId;
+    }
+
+    public void setDrivingLicensePhotoId(String drivingLicensePhotoId) {
+        this.drivingLicensePhotoId = drivingLicensePhotoId == null ? null : drivingLicensePhotoId.trim();
+    }
+
+    public String getHeadPhotoId() {
+        return headPhotoId;
+    }
+
+    public void setHeadPhotoId(String headPhotoId) {
+        this.headPhotoId = headPhotoId == null ? null : headPhotoId.trim();
+    }
+
+    public String getProfilePhotoId() {
+        return profilePhotoId;
+    }
+
+    public void setProfilePhotoId(String profilePhotoId) {
+        this.profilePhotoId = profilePhotoId == null ? null : profilePhotoId.trim();
+    }
+
+    public String getTailPhotoId() {
+        return tailPhotoId;
+    }
+
+    public void setTailPhotoId(String tailPhotoId) {
+        this.tailPhotoId = tailPhotoId == null ? null : tailPhotoId.trim();
+    }
+
+    public String getEnableStatus() {
+        return enableStatus;
+    }
+
+    public void setEnableStatus(String enableStatus) {
+        this.enableStatus = enableStatus == null ? null : enableStatus.trim();
+    }
+
+    public String getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(String contactId) {
+        this.contactId = contactId == null ? null : contactId.trim();
+    }
+
+    public String getGpsDeviceid() {
+        return gpsDeviceid;
+    }
+
+    public void setGpsDeviceid(String gpsDeviceid) {
+        this.gpsDeviceid = gpsDeviceid == null ? null : gpsDeviceid.trim();
+    }
+
+    public Long getVehiclesMode() {
+        return vehiclesMode;
+    }
+
+    public void setVehiclesMode(Long vehiclesMode) {
+        this.vehiclesMode = vehiclesMode;
+    }
+
+    public Long getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(Long vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    public Long getVehicleLength() {
+        return vehicleLength;
+    }
+
+    public void setVehicleLength(Long vehicleLength) {
+        this.vehicleLength = vehicleLength;
+    }
+
+    public Long getLocationMode() {
+        return locationMode;
+    }
+
+    public void setLocationMode(Long locationMode) {
+        this.locationMode = locationMode;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getShipZone() {
+        return shipZone;
+    }
+
+    public void setShipZone(Long shipZone) {
+        this.shipZone = shipZone;
+    }
+
+    public Long getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Long isValid) {
+        this.isValid = isValid;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public String getVehicleTonnage() {
+        return vehicleTonnage;
+    }
+
+    public void setVehicleTonnage(String vehicleTonnage) {
+        this.vehicleTonnage = vehicleTonnage == null ? null : vehicleTonnage.trim();
+    }
+
+    public Long getCertificationState() {
+        return certificationState;
+    }
+
+    public void setCertificationState(Long certificationState) {
+        this.certificationState = certificationState;
+    }
+
+    public String getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(String driverId) {
+        this.driverId = driverId == null ? null : driverId.trim();
+    }
+
+    public Long getIsFree() {
+        return isFree;
+    }
+
+    public void setIsFree(Long isFree) {
+        this.isFree = isFree;
+    }
+
+    public Long getDeparturePoint() {
+        return departurePoint;
+    }
+
+    public void setDeparturePoint(Long departurePoint) {
+        this.departurePoint = departurePoint;
+    }
+
+    public String getVehicleNo() {
+        return vehicleNo;
+    }
+
+    public void setVehicleNo(String vehicleNo) {
+        this.vehicleNo = vehicleNo == null ? null : vehicleNo.trim();
+    }
+
+    public String getVehicleVersion() {
+        return vehicleVersion;
+    }
+
+    public void setVehicleVersion(String vehicleVersion) {
+        this.vehicleVersion = vehicleVersion == null ? null : vehicleVersion.trim();
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId == null ? null : ownerId.trim();
+    }
+
+    public Long getDispatchCount() {
+        return dispatchCount;
+    }
+
+    public void setDispatchCount(Long dispatchCount) {
+        this.dispatchCount = dispatchCount;
+    }
+
+    public Long getCurrentPoint() {
+        return currentPoint;
+    }
+
+    public void setCurrentPoint(Long currentPoint) {
+        this.currentPoint = currentPoint;
+    }
+
+    public Date getCurrentPointTime() {
+        return currentPointTime;
+    }
+
+    public void setCurrentPointTime(Date currentPointTime) {
+        this.currentPointTime = currentPointTime;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public Long getTelConfirm() {
+        return telConfirm;
+    }
+
+    public void setTelConfirm(Long telConfirm) {
+        this.telConfirm = telConfirm;
+    }
+
+    public String getSystemDesc() {
+        return systemDesc;
+    }
+
+    public void setSystemDesc(String systemDesc) {
+        this.systemDesc = systemDesc == null ? null : systemDesc.trim();
+    }
+
+    public BigDecimal getTare() {
+        return tare;
+    }
+
+    public void setTare(BigDecimal tare) {
+        this.tare = tare;
+    }
+
+    public Long getRelationType() {
+        return relationType;
+    }
+
+    public void setRelationType(Long relationType) {
+        this.relationType = relationType;
+    }
+}

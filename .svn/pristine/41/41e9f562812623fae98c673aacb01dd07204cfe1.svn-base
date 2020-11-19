@@ -1,0 +1,105 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class CompanyDriver {
+    private String userId;
+
+    private String companyId;
+
+    private Date createTime;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long relationType;
+
+    private String driverId;
+
+    private Long originType;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getRelationType() {
+        return relationType;
+    }
+
+    public void setRelationType(Long relationType) {
+        this.relationType = relationType;
+    }
+
+    public String getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(String driverId) {
+        this.driverId = driverId == null ? null : driverId.trim();
+    }
+
+    public Long getOriginType() {
+        return originType;
+    }
+
+    public void setOriginType(Long originType) {
+        this.originType = originType;
+    }
+}

@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.LogisticsOrder;
+import com.xiaoniu56.model.defaults.LogisticsOrderExample;
+import java.util.List;
+
+public interface LogisticsOrderMapper {
+    int countByExample(LogisticsOrderExample example);
+
+    int deleteByExample(LogisticsOrderExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(LogisticsOrder record);
+
+    int insertSelective(LogisticsOrder record);
+
+    List<LogisticsOrder> selectByExample(LogisticsOrderExample example);
+
+    LogisticsOrder selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(LogisticsOrder record);
+
+    int updateByPrimaryKey(LogisticsOrder record);
+}

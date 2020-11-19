@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.CompanyMergerMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.CompanyMerger" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="from_company_id" property="fromCompanyId" jdbcType="CHAR" />
+    <result column="from_company_name" property="fromCompanyName" jdbcType="VARCHAR" />
+    <result column="to_company_id" property="toCompanyId" jdbcType="CHAR" />
+    <result column="to_company_name" property="toCompanyName" jdbcType="VARCHAR" />
+    <result column="business_licence_file_id" property="businessLicenceFileId" jdbcType="CHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, from_company_id, from_company_name, to_company_id, to_company_name, business_licence_file_id, 
+    comment, creater, create_time, modifier, modify_time, ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.CompanyMergerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_company_merger
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_company_merger
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_company_merger
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.CompanyMergerExample" >
+    delete from xn_m_company_merger
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.CompanyMerger" >
+    insert into xn_m_company_merger (id, from_company_id, from_company_name, 
+      to_company_id, to_company_name, business_licence_file_id, 
+      comment, creater, create_time, 
+      modifier, modify_time, ver
+      )
+    values (#{id,jdbcType=CHAR}, #{fromCompanyId,jdbcType=CHAR}, #{fromCompanyName,jdbcType=VARCHAR}, 
+      #{toCompanyId,jdbcType=CHAR}, #{toCompanyName,jdbcType=VARCHAR}, #{businessLicenceFileId,jdbcType=CHAR}, 
+      #{comment,jdbcType=VARCHAR}, #{creater,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.CompanyMerger" >
+    insert into xn_m_company_merger
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fromCompanyId != null" >
+        from_company_id,
+      </if>
+      <if test="fromCompanyName != null" >
+        from_company_name,
+      </if>
+      <if test="toCompanyId != null" >
+        to_company_id,
+      </if>
+      <if test="toCompanyName != null" >
+        to_company_name,
+      </if>
+      <if test="businessLicenceFileId != null" >
+        business_licence_file_id,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="fromCompanyId != null" >
+        #{fromCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="fromCompanyName != null" >
+        #{fromCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="toCompanyId != null" >
+        #{toCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="toCompanyName != null" >
+        #{toCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenceFileId != null" >
+        #{businessLicenceFileId,jdbcType=CHAR},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.CompanyMergerExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_company_merger
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.CompanyMerger" >
+    update xn_m_company_merger
+    <set >
+      <if test="fromCompanyId != null" >
+        from_company_id = #{fromCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="fromCompanyName != null" >
+        from_company_name = #{fromCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="toCompanyId != null" >
+        to_company_id = #{toCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="toCompanyName != null" >
+        to_company_name = #{toCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenceFileId != null" >
+        business_licence_file_id = #{businessLicenceFileId,jdbcType=CHAR},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.CompanyMerger" >
+    update xn_m_company_merger
+    set from_company_id = #{fromCompanyId,jdbcType=CHAR},
+      from_company_name = #{fromCompanyName,jdbcType=VARCHAR},
+      to_company_id = #{toCompanyId,jdbcType=CHAR},
+      to_company_name = #{toCompanyName,jdbcType=VARCHAR},
+      business_licence_file_id = #{businessLicenceFileId,jdbcType=CHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

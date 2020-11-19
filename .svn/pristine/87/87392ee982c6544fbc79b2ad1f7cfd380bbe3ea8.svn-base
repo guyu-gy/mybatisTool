@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.CompanyMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Company" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="legal_representative" property="legalRepresentative" jdbcType="VARCHAR" />
+    <result column="organization_code" property="organizationCode" jdbcType="VARCHAR" />
+    <result column="registered_capital" property="registeredCapital" jdbcType="VARCHAR" />
+    <result column="registered_address_id" property="registeredAddressId" jdbcType="CHAR" />
+    <result column="opening_bank" property="openingBank" jdbcType="VARCHAR" />
+    <result column="bank_account" property="bankAccount" jdbcType="VARCHAR" />
+    <result column="office_address_id" property="officeAddressId" jdbcType="CHAR" />
+    <result column="zip_code" property="zipCode" jdbcType="VARCHAR" />
+    <result column="contact_number" property="contactNumber" jdbcType="VARCHAR" />
+    <result column="business_license_id" property="businessLicenseId" jdbcType="CHAR" />
+    <result column="tax_registration_id" property="taxRegistrationId" jdbcType="CHAR" />
+    <result column="org_code_certificate_id" property="orgCodeCertificateId" jdbcType="CHAR" />
+    <result column="enable_status" property="enableStatus" jdbcType="BIGINT" />
+    <result column="certification_state" property="certificationState" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="organization_type" property="organizationType" jdbcType="BIGINT" />
+    <result column="registered_capital_currency" property="registeredCapitalCurrency" jdbcType="BIGINT" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="contact_id" property="contactId" jdbcType="CHAR" />
+    <result column="biz_card_photo_id" property="bizCardPhotoId" jdbcType="CHAR" />
+    <result column="company_photo_id" property="companyPhotoId" jdbcType="CHAR" />
+    <result column="service_star" property="serviceStar" jdbcType="VARCHAR" />
+    <result column="turnover" property="turnover" jdbcType="DECIMAL" />
+    <result column="complain_count" property="complainCount" jdbcType="BIGINT" />
+    <result column="evaluation_count" property="evaluationCount" jdbcType="BIGINT" />
+    <result column="traded_count" property="tradedCount" jdbcType="BIGINT" />
+    <result column="tax_code" property="taxCode" jdbcType="VARCHAR" />
+    <result column="logo_photo_id" property="logoPhotoId" jdbcType="CHAR" />
+    <result column="dispatch_count" property="dispatchCount" jdbcType="BIGINT" />
+    <result column="goods_count" property="goodsCount" jdbcType="BIGINT" />
+    <result column="vehicle_team_count" property="vehicleTeamCount" jdbcType="BIGINT" />
+    <result column="is_vip" property="isVip" jdbcType="BIGINT" />
+    <result column="settle_type" property="settleType" jdbcType="CHAR" />
+    <result column="company_type" property="companyType" jdbcType="BIGINT" />
+    <result column="is_allow2c" property="isAllow2c" jdbcType="BIGINT" />
+    <result column="ext1" property="ext1" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, legal_representative, organization_code, registered_capital, registered_address_id, 
+    opening_bank, bank_account, office_address_id, zip_code, contact_number, business_license_id, 
+    tax_registration_id, org_code_certificate_id, enable_status, certification_state, 
+    create_time, organization_type, registered_capital_currency, ver, creater, modifier, 
+    modify_time, contact_id, biz_card_photo_id, company_photo_id, service_star, turnover, 
+    complain_count, evaluation_count, traded_count, tax_code, logo_photo_id, dispatch_count, 
+    goods_count, vehicle_team_count, is_vip, settle_type, company_type, is_allow2c, ext1
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.CompanyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_company
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_company
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.CompanyExample" >
+    delete from xn_m_company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Company" >
+    insert into xn_m_company (id, name, legal_representative, 
+      organization_code, registered_capital, registered_address_id, 
+      opening_bank, bank_account, office_address_id, 
+      zip_code, contact_number, business_license_id, 
+      tax_registration_id, org_code_certificate_id, enable_status, 
+      certification_state, create_time, organization_type, 
+      registered_capital_currency, ver, creater, 
+      modifier, modify_time, contact_id, 
+      biz_card_photo_id, company_photo_id, service_star, 
+      turnover, complain_count, evaluation_count, 
+      traded_count, tax_code, logo_photo_id, 
+      dispatch_count, goods_count, vehicle_team_count, 
+      is_vip, settle_type, company_type, 
+      is_allow2c, ext1)
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{legalRepresentative,jdbcType=VARCHAR}, 
+      #{organizationCode,jdbcType=VARCHAR}, #{registeredCapital,jdbcType=VARCHAR}, #{registeredAddressId,jdbcType=CHAR}, 
+      #{openingBank,jdbcType=VARCHAR}, #{bankAccount,jdbcType=VARCHAR}, #{officeAddressId,jdbcType=CHAR}, 
+      #{zipCode,jdbcType=VARCHAR}, #{contactNumber,jdbcType=VARCHAR}, #{businessLicenseId,jdbcType=CHAR}, 
+      #{taxRegistrationId,jdbcType=CHAR}, #{orgCodeCertificateId,jdbcType=CHAR}, #{enableStatus,jdbcType=BIGINT}, 
+      #{certificationState,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{organizationType,jdbcType=BIGINT}, 
+      #{registeredCapitalCurrency,jdbcType=BIGINT}, #{ver,jdbcType=BIGINT}, #{creater,jdbcType=VARCHAR}, 
+      #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{contactId,jdbcType=CHAR}, 
+      #{bizCardPhotoId,jdbcType=CHAR}, #{companyPhotoId,jdbcType=CHAR}, #{serviceStar,jdbcType=VARCHAR}, 
+      #{turnover,jdbcType=DECIMAL}, #{complainCount,jdbcType=BIGINT}, #{evaluationCount,jdbcType=BIGINT}, 
+      #{tradedCount,jdbcType=BIGINT}, #{taxCode,jdbcType=VARCHAR}, #{logoPhotoId,jdbcType=CHAR}, 
+      #{dispatchCount,jdbcType=BIGINT}, #{goodsCount,jdbcType=BIGINT}, #{vehicleTeamCount,jdbcType=BIGINT}, 
+      #{isVip,jdbcType=BIGINT}, #{settleType,jdbcType=CHAR}, #{companyType,jdbcType=BIGINT}, 
+      #{isAllow2c,jdbcType=BIGINT}, #{ext1,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Company" >
+    insert into xn_m_company
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="legalRepresentative != null" >
+        legal_representative,
+      </if>
+      <if test="organizationCode != null" >
+        organization_code,
+      </if>
+      <if test="registeredCapital != null" >
+        registered_capital,
+      </if>
+      <if test="registeredAddressId != null" >
+        registered_address_id,
+      </if>
+      <if test="openingBank != null" >
+        opening_bank,
+      </if>
+      <if test="bankAccount != null" >
+        bank_account,
+      </if>
+      <if test="officeAddressId != null" >
+        office_address_id,
+      </if>
+      <if test="zipCode != null" >
+        zip_code,
+      </if>
+      <if test="contactNumber != null" >
+        contact_number,
+      </if>
+      <if test="businessLicenseId != null" >
+        business_license_id,
+      </if>
+      <if test="taxRegistrationId != null" >
+        tax_registration_id,
+      </if>
+      <if test="orgCodeCertificateId != null" >
+        org_code_certificate_id,
+      </if>
+      <if test="enableStatus != null" >
+        enable_status,
+      </if>
+      <if test="certificationState != null" >
+        certification_state,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="organizationType != null" >
+        organization_type,
+      </if>
+      <if test="registeredCapitalCurrency != null" >
+        registered_capital_currency,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="contactId != null" >
+        contact_id,
+      </if>
+      <if test="bizCardPhotoId != null" >
+        biz_card_photo_id,
+      </if>
+      <if test="companyPhotoId != null" >
+        company_photo_id,
+      </if>
+      <if test="serviceStar != null" >
+        service_star,
+      </if>
+      <if test="turnover != null" >
+        turnover,
+      </if>
+      <if test="complainCount != null" >
+        complain_count,
+      </if>
+      <if test="evaluationCount != null" >
+        evaluation_count,
+      </if>
+      <if test="tradedCount != null" >
+        traded_count,
+      </if>
+      <if test="taxCode != null" >
+        tax_code,
+      </if>
+      <if test="logoPhotoId != null" >
+        logo_photo_id,
+      </if>
+      <if test="dispatchCount != null" >
+        dispatch_count,
+      </if>
+      <if test="goodsCount != null" >
+        goods_count,
+      </if>
+      <if test="vehicleTeamCount != null" >
+        vehicle_team_count,
+      </if>
+      <if test="isVip != null" >
+        is_vip,
+      </if>
+      <if test="settleType != null" >
+        settle_type,
+      </if>
+      <if test="companyType != null" >
+        company_type,
+      </if>
+      <if test="isAllow2c != null" >
+        is_allow2c,
+      </if>
+      <if test="ext1 != null" >
+        ext1,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="legalRepresentative != null" >
+        #{legalRepresentative,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null" >
+        #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null" >
+        #{registeredCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredAddressId != null" >
+        #{registeredAddressId,jdbcType=CHAR},
+      </if>
+      <if test="openingBank != null" >
+        #{openingBank,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccount != null" >
+        #{bankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="officeAddressId != null" >
+        #{officeAddressId,jdbcType=CHAR},
+      </if>
+      <if test="zipCode != null" >
+        #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contactNumber != null" >
+        #{contactNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseId != null" >
+        #{businessLicenseId,jdbcType=CHAR},
+      </if>
+      <if test="taxRegistrationId != null" >
+        #{taxRegistrationId,jdbcType=CHAR},
+      </if>
+      <if test="orgCodeCertificateId != null" >
+        #{orgCodeCertificateId,jdbcType=CHAR},
+      </if>
+      <if test="enableStatus != null" >
+        #{enableStatus,jdbcType=BIGINT},
+      </if>
+      <if test="certificationState != null" >
+        #{certificationState,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="organizationType != null" >
+        #{organizationType,jdbcType=BIGINT},
+      </if>
+      <if test="registeredCapitalCurrency != null" >
+        #{registeredCapitalCurrency,jdbcType=BIGINT},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contactId != null" >
+        #{contactId,jdbcType=CHAR},
+      </if>
+      <if test="bizCardPhotoId != null" >
+        #{bizCardPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="companyPhotoId != null" >
+        #{companyPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="serviceStar != null" >
+        #{serviceStar,jdbcType=VARCHAR},
+      </if>
+      <if test="turnover != null" >
+        #{turnover,jdbcType=DECIMAL},
+      </if>
+      <if test="complainCount != null" >
+        #{complainCount,jdbcType=BIGINT},
+      </if>
+      <if test="evaluationCount != null" >
+        #{evaluationCount,jdbcType=BIGINT},
+      </if>
+      <if test="tradedCount != null" >
+        #{tradedCount,jdbcType=BIGINT},
+      </if>
+      <if test="taxCode != null" >
+        #{taxCode,jdbcType=VARCHAR},
+      </if>
+      <if test="logoPhotoId != null" >
+        #{logoPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchCount != null" >
+        #{dispatchCount,jdbcType=BIGINT},
+      </if>
+      <if test="goodsCount != null" >
+        #{goodsCount,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleTeamCount != null" >
+        #{vehicleTeamCount,jdbcType=BIGINT},
+      </if>
+      <if test="isVip != null" >
+        #{isVip,jdbcType=BIGINT},
+      </if>
+      <if test="settleType != null" >
+        #{settleType,jdbcType=CHAR},
+      </if>
+      <if test="companyType != null" >
+        #{companyType,jdbcType=BIGINT},
+      </if>
+      <if test="isAllow2c != null" >
+        #{isAllow2c,jdbcType=BIGINT},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.CompanyExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Company" >
+    update xn_m_company
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="legalRepresentative != null" >
+        legal_representative = #{legalRepresentative,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null" >
+        organization_code = #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredCapital != null" >
+        registered_capital = #{registeredCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredAddressId != null" >
+        registered_address_id = #{registeredAddressId,jdbcType=CHAR},
+      </if>
+      <if test="openingBank != null" >
+        opening_bank = #{openingBank,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccount != null" >
+        bank_account = #{bankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="officeAddressId != null" >
+        office_address_id = #{officeAddressId,jdbcType=CHAR},
+      </if>
+      <if test="zipCode != null" >
+        zip_code = #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contactNumber != null" >
+        contact_number = #{contactNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseId != null" >
+        business_license_id = #{businessLicenseId,jdbcType=CHAR},
+      </if>
+      <if test="taxRegistrationId != null" >
+        tax_registration_id = #{taxRegistrationId,jdbcType=CHAR},
+      </if>
+      <if test="orgCodeCertificateId != null" >
+        org_code_certificate_id = #{orgCodeCertificateId,jdbcType=CHAR},
+      </if>
+      <if test="enableStatus != null" >
+        enable_status = #{enableStatus,jdbcType=BIGINT},
+      </if>
+      <if test="certificationState != null" >
+        certification_state = #{certificationState,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="organizationType != null" >
+        organization_type = #{organizationType,jdbcType=BIGINT},
+      </if>
+      <if test="registeredCapitalCurrency != null" >
+        registered_capital_currency = #{registeredCapitalCurrency,jdbcType=BIGINT},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contactId != null" >
+        contact_id = #{contactId,jdbcType=CHAR},
+      </if>
+      <if test="bizCardPhotoId != null" >
+        biz_card_photo_id = #{bizCardPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="companyPhotoId != null" >
+        company_photo_id = #{companyPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="serviceStar != null" >
+        service_star = #{serviceStar,jdbcType=VARCHAR},
+      </if>
+      <if test="turnover != null" >
+        turnover = #{turnover,jdbcType=DECIMAL},
+      </if>
+      <if test="complainCount != null" >
+        complain_count = #{complainCount,jdbcType=BIGINT},
+      </if>
+      <if test="evaluationCount != null" >
+        evaluation_count = #{evaluationCount,jdbcType=BIGINT},
+      </if>
+      <if test="tradedCount != null" >
+        traded_count = #{tradedCount,jdbcType=BIGINT},
+      </if>
+      <if test="taxCode != null" >
+        tax_code = #{taxCode,jdbcType=VARCHAR},
+      </if>
+      <if test="logoPhotoId != null" >
+        logo_photo_id = #{logoPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchCount != null" >
+        dispatch_count = #{dispatchCount,jdbcType=BIGINT},
+      </if>
+      <if test="goodsCount != null" >
+        goods_count = #{goodsCount,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleTeamCount != null" >
+        vehicle_team_count = #{vehicleTeamCount,jdbcType=BIGINT},
+      </if>
+      <if test="isVip != null" >
+        is_vip = #{isVip,jdbcType=BIGINT},
+      </if>
+      <if test="settleType != null" >
+        settle_type = #{settleType,jdbcType=CHAR},
+      </if>
+      <if test="companyType != null" >
+        company_type = #{companyType,jdbcType=BIGINT},
+      </if>
+      <if test="isAllow2c != null" >
+        is_allow2c = #{isAllow2c,jdbcType=BIGINT},
+      </if>
+      <if test="ext1 != null" >
+        ext1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Company" >
+    update xn_m_company
+    set name = #{name,jdbcType=VARCHAR},
+      legal_representative = #{legalRepresentative,jdbcType=VARCHAR},
+      organization_code = #{organizationCode,jdbcType=VARCHAR},
+      registered_capital = #{registeredCapital,jdbcType=VARCHAR},
+      registered_address_id = #{registeredAddressId,jdbcType=CHAR},
+      opening_bank = #{openingBank,jdbcType=VARCHAR},
+      bank_account = #{bankAccount,jdbcType=VARCHAR},
+      office_address_id = #{officeAddressId,jdbcType=CHAR},
+      zip_code = #{zipCode,jdbcType=VARCHAR},
+      contact_number = #{contactNumber,jdbcType=VARCHAR},
+      business_license_id = #{businessLicenseId,jdbcType=CHAR},
+      tax_registration_id = #{taxRegistrationId,jdbcType=CHAR},
+      org_code_certificate_id = #{orgCodeCertificateId,jdbcType=CHAR},
+      enable_status = #{enableStatus,jdbcType=BIGINT},
+      certification_state = #{certificationState,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      organization_type = #{organizationType,jdbcType=BIGINT},
+      registered_capital_currency = #{registeredCapitalCurrency,jdbcType=BIGINT},
+      ver = #{ver,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      contact_id = #{contactId,jdbcType=CHAR},
+      biz_card_photo_id = #{bizCardPhotoId,jdbcType=CHAR},
+      company_photo_id = #{companyPhotoId,jdbcType=CHAR},
+      service_star = #{serviceStar,jdbcType=VARCHAR},
+      turnover = #{turnover,jdbcType=DECIMAL},
+      complain_count = #{complainCount,jdbcType=BIGINT},
+      evaluation_count = #{evaluationCount,jdbcType=BIGINT},
+      traded_count = #{tradedCount,jdbcType=BIGINT},
+      tax_code = #{taxCode,jdbcType=VARCHAR},
+      logo_photo_id = #{logoPhotoId,jdbcType=CHAR},
+      dispatch_count = #{dispatchCount,jdbcType=BIGINT},
+      goods_count = #{goodsCount,jdbcType=BIGINT},
+      vehicle_team_count = #{vehicleTeamCount,jdbcType=BIGINT},
+      is_vip = #{isVip,jdbcType=BIGINT},
+      settle_type = #{settleType,jdbcType=CHAR},
+      company_type = #{companyType,jdbcType=BIGINT},
+      is_allow2c = #{isAllow2c,jdbcType=BIGINT},
+      ext1 = #{ext1,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,205 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Driver {
+    private String id;
+
+    private String name;
+
+    private String fixedTelephone;
+
+    private Long certificationState;
+
+    private Date createTime;
+
+    private String idcardNo;
+
+    private Long ver;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private String driverLicencePhoneId;
+
+    private Long drivingYears;
+
+    private String description;
+
+    private String userId;
+
+    private String appkey;
+
+    private Long complainCount;
+
+    private Long ratingCount;
+
+    private Date driverLicenceExpiryDate;
+
+    private String gender;
+
+    private String qualificationCerrificateNumber;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getFixedTelephone() {
+        return fixedTelephone;
+    }
+
+    public void setFixedTelephone(String fixedTelephone) {
+        this.fixedTelephone = fixedTelephone == null ? null : fixedTelephone.trim();
+    }
+
+    public Long getCertificationState() {
+        return certificationState;
+    }
+
+    public void setCertificationState(Long certificationState) {
+        this.certificationState = certificationState;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getIdcardNo() {
+        return idcardNo;
+    }
+
+    public void setIdcardNo(String idcardNo) {
+        this.idcardNo = idcardNo == null ? null : idcardNo.trim();
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public String getDriverLicencePhoneId() {
+        return driverLicencePhoneId;
+    }
+
+    public void setDriverLicencePhoneId(String driverLicencePhoneId) {
+        this.driverLicencePhoneId = driverLicencePhoneId == null ? null : driverLicencePhoneId.trim();
+    }
+
+    public Long getDrivingYears() {
+        return drivingYears;
+    }
+
+    public void setDrivingYears(Long drivingYears) {
+        this.drivingYears = drivingYears;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public Long getComplainCount() {
+        return complainCount;
+    }
+
+    public void setComplainCount(Long complainCount) {
+        this.complainCount = complainCount;
+    }
+
+    public Long getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(Long ratingCount) {
+        this.ratingCount = ratingCount;
+    }
+
+    public Date getDriverLicenceExpiryDate() {
+        return driverLicenceExpiryDate;
+    }
+
+    public void setDriverLicenceExpiryDate(Date driverLicenceExpiryDate) {
+        this.driverLicenceExpiryDate = driverLicenceExpiryDate;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender == null ? null : gender.trim();
+    }
+
+    public String getQualificationCerrificateNumber() {
+        return qualificationCerrificateNumber;
+    }
+
+    public void setQualificationCerrificateNumber(String qualificationCerrificateNumber) {
+        this.qualificationCerrificateNumber = qualificationCerrificateNumber == null ? null : qualificationCerrificateNumber.trim();
+    }
+}

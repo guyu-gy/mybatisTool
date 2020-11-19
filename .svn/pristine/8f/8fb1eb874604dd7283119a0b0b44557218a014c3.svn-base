@@ -1,0 +1,105 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class DispatchStatusHis {
+    private String id;
+
+    private String dispatchId;
+
+    private String userId;
+
+    private Long isValid;
+
+    private Date createTime;
+
+    private Long dispatchStatus;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getDispatchId() {
+        return dispatchId;
+    }
+
+    public void setDispatchId(String dispatchId) {
+        this.dispatchId = dispatchId == null ? null : dispatchId.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public Long getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Long isValid) {
+        this.isValid = isValid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getDispatchStatus() {
+        return dispatchStatus;
+    }
+
+    public void setDispatchStatus(Long dispatchStatus) {
+        this.dispatchStatus = dispatchStatus;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

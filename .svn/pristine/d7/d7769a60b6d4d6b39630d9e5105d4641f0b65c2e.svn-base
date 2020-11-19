@@ -1,0 +1,146 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class TransportChargeItem {
+    private String id;
+
+    private BigDecimal amount;
+
+    private String transportChargeId;
+
+    private String accountSubjectId;
+
+    private BigDecimal unitPrice;
+
+    private BigDecimal subtotalPrice;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String description;
+
+    private Long methodType;
+
+    private String startingPriceMethod;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public String getTransportChargeId() {
+        return transportChargeId;
+    }
+
+    public void setTransportChargeId(String transportChargeId) {
+        this.transportChargeId = transportChargeId == null ? null : transportChargeId.trim();
+    }
+
+    public String getAccountSubjectId() {
+        return accountSubjectId;
+    }
+
+    public void setAccountSubjectId(String accountSubjectId) {
+        this.accountSubjectId = accountSubjectId == null ? null : accountSubjectId.trim();
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public BigDecimal getSubtotalPrice() {
+        return subtotalPrice;
+    }
+
+    public void setSubtotalPrice(BigDecimal subtotalPrice) {
+        this.subtotalPrice = subtotalPrice;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public Long getMethodType() {
+        return methodType;
+    }
+
+    public void setMethodType(Long methodType) {
+        this.methodType = methodType;
+    }
+
+    public String getStartingPriceMethod() {
+        return startingPriceMethod;
+    }
+
+    public void setStartingPriceMethod(String startingPriceMethod) {
+        this.startingPriceMethod = startingPriceMethod == null ? null : startingPriceMethod.trim();
+    }
+}

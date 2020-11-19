@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.FirmwareUpdateMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.FirmwareUpdate" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="version_code" property="versionCode" jdbcType="VARCHAR" />
+    <result column="version_name" property="versionName" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="version_desc" property="versionDesc" jdbcType="VARCHAR" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="svn_code" property="svnCode" jdbcType="BIGINT" />
+    <result column="compatible_version" property="compatibleVersion" jdbcType="VARCHAR" />
+    <result column="device_type" property="deviceType" jdbcType="VARCHAR" />
+    <result column="trustor_url" property="trustorUrl" jdbcType="VARCHAR" />
+    <result column="carrier_url" property="carrierUrl" jdbcType="VARCHAR" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, version_code, version_name, name, version_desc, creater, create_time, modifier, 
+    modify_time, ver, svn_code, compatible_version, device_type, trustor_url, carrier_url, 
+    appkey
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.FirmwareUpdateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_firmware_update
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_firmware_update
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_firmware_update
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.FirmwareUpdateExample" >
+    delete from xn_m_firmware_update
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.FirmwareUpdate" >
+    insert into xn_m_firmware_update (id, version_code, version_name, 
+      name, version_desc, creater, 
+      create_time, modifier, modify_time, 
+      ver, svn_code, compatible_version, 
+      device_type, trustor_url, carrier_url, 
+      appkey)
+    values (#{id,jdbcType=CHAR}, #{versionCode,jdbcType=VARCHAR}, #{versionName,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{versionDesc,jdbcType=VARCHAR}, #{creater,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{svnCode,jdbcType=BIGINT}, #{compatibleVersion,jdbcType=VARCHAR}, 
+      #{deviceType,jdbcType=VARCHAR}, #{trustorUrl,jdbcType=VARCHAR}, #{carrierUrl,jdbcType=VARCHAR}, 
+      #{appkey,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.FirmwareUpdate" >
+    insert into xn_m_firmware_update
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="versionCode != null" >
+        version_code,
+      </if>
+      <if test="versionName != null" >
+        version_name,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="versionDesc != null" >
+        version_desc,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="svnCode != null" >
+        svn_code,
+      </if>
+      <if test="compatibleVersion != null" >
+        compatible_version,
+      </if>
+      <if test="deviceType != null" >
+        device_type,
+      </if>
+      <if test="trustorUrl != null" >
+        trustor_url,
+      </if>
+      <if test="carrierUrl != null" >
+        carrier_url,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="versionCode != null" >
+        #{versionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="versionName != null" >
+        #{versionName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="versionDesc != null" >
+        #{versionDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="svnCode != null" >
+        #{svnCode,jdbcType=BIGINT},
+      </if>
+      <if test="compatibleVersion != null" >
+        #{compatibleVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="trustorUrl != null" >
+        #{trustorUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="carrierUrl != null" >
+        #{carrierUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.FirmwareUpdateExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_firmware_update
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.FirmwareUpdate" >
+    update xn_m_firmware_update
+    <set >
+      <if test="versionCode != null" >
+        version_code = #{versionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="versionName != null" >
+        version_name = #{versionName,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="versionDesc != null" >
+        version_desc = #{versionDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="svnCode != null" >
+        svn_code = #{svnCode,jdbcType=BIGINT},
+      </if>
+      <if test="compatibleVersion != null" >
+        compatible_version = #{compatibleVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        device_type = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="trustorUrl != null" >
+        trustor_url = #{trustorUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="carrierUrl != null" >
+        carrier_url = #{carrierUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.FirmwareUpdate" >
+    update xn_m_firmware_update
+    set version_code = #{versionCode,jdbcType=VARCHAR},
+      version_name = #{versionName,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      version_desc = #{versionDesc,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      svn_code = #{svnCode,jdbcType=BIGINT},
+      compatible_version = #{compatibleVersion,jdbcType=VARCHAR},
+      device_type = #{deviceType,jdbcType=VARCHAR},
+      trustor_url = #{trustorUrl,jdbcType=VARCHAR},
+      carrier_url = #{carrierUrl,jdbcType=VARCHAR},
+      appkey = #{appkey,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

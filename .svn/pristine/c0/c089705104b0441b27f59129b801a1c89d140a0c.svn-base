@@ -1,0 +1,146 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class FreightSettlement {
+    private String id;
+
+    private String orderId;
+
+    private BigDecimal recordSettlePrice;
+
+    private BigDecimal oilcardSettlePrice;
+
+    private BigDecimal cashSettledPrice;
+
+    private BigDecimal ratio;
+
+    private String description;
+
+    private Long paymentStatus;
+
+    private Long paymentType;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
+    }
+
+    public BigDecimal getRecordSettlePrice() {
+        return recordSettlePrice;
+    }
+
+    public void setRecordSettlePrice(BigDecimal recordSettlePrice) {
+        this.recordSettlePrice = recordSettlePrice;
+    }
+
+    public BigDecimal getOilcardSettlePrice() {
+        return oilcardSettlePrice;
+    }
+
+    public void setOilcardSettlePrice(BigDecimal oilcardSettlePrice) {
+        this.oilcardSettlePrice = oilcardSettlePrice;
+    }
+
+    public BigDecimal getCashSettledPrice() {
+        return cashSettledPrice;
+    }
+
+    public void setCashSettledPrice(BigDecimal cashSettledPrice) {
+        this.cashSettledPrice = cashSettledPrice;
+    }
+
+    public BigDecimal getRatio() {
+        return ratio;
+    }
+
+    public void setRatio(BigDecimal ratio) {
+        this.ratio = ratio;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public Long getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(Long paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public Long getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(Long paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

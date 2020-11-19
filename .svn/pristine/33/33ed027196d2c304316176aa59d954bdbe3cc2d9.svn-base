@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.TieredPricing;
+import com.xiaoniu56.model.defaults.TieredPricingExample;
+import java.util.List;
+
+public interface TieredPricingMapper {
+    int countByExample(TieredPricingExample example);
+
+    int deleteByExample(TieredPricingExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(TieredPricing record);
+
+    int insertSelective(TieredPricing record);
+
+    List<TieredPricing> selectByExample(TieredPricingExample example);
+
+    TieredPricing selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(TieredPricing record);
+
+    int updateByPrimaryKey(TieredPricing record);
+}

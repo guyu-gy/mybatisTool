@@ -1,0 +1,135 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class TopicWarning {
+    private Long id;
+
+    private String operatorId;
+
+    private String operator;
+
+    private String authorId;
+
+    private String author;
+
+    private Long dateline;
+
+    private String reason;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifer;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long topicId;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getOperatorId() {
+        return operatorId;
+    }
+
+    public void setOperatorId(String operatorId) {
+        this.operatorId = operatorId == null ? null : operatorId.trim();
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator == null ? null : operator.trim();
+    }
+
+    public String getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId == null ? null : authorId.trim();
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author == null ? null : author.trim();
+    }
+
+    public Long getDateline() {
+        return dateline;
+    }
+
+    public void setDateline(Long dateline) {
+        this.dateline = dateline;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason == null ? null : reason.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifer() {
+        return modifer;
+    }
+
+    public void setModifer(String modifer) {
+        this.modifer = modifer == null ? null : modifer.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
+    }
+}

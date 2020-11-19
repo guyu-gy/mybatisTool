@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.DocumentCodeRuleMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.DocumentCodeRule" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="company_id" property="companyId" jdbcType="CHAR" />
+    <result column="document_type" property="documentType" jdbcType="BIGINT" />
+    <result column="code_rule_id" property="codeRuleId" jdbcType="BIGINT" />
+    <result column="fixed_text" property="fixedText" jdbcType="VARCHAR" />
+    <result column="restart_val" property="restartVal" jdbcType="BIGINT" />
+    <result column="date_rule_id" property="dateRuleId" jdbcType="BIGINT" />
+    <result column="serial_number_length" property="serialNumberLength" jdbcType="BIGINT" />
+    <result column="serial_number_rule_id" property="serialNumberRuleId" jdbcType="BIGINT" />
+    <result column="curr_val" property="currVal" jdbcType="BIGINT" />
+    <result column="order_no" property="orderNo" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, company_id, document_type, code_rule_id, fixed_text, restart_val, date_rule_id, 
+    serial_number_length, serial_number_rule_id, curr_val, order_no, creater, create_time, 
+    modifier, modify_time, ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.DocumentCodeRuleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_document_code_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_document_code_rule
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_document_code_rule
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.DocumentCodeRuleExample" >
+    delete from xn_m_document_code_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.DocumentCodeRule" >
+    insert into xn_m_document_code_rule (id, company_id, document_type, 
+      code_rule_id, fixed_text, restart_val, 
+      date_rule_id, serial_number_length, serial_number_rule_id, 
+      curr_val, order_no, creater, 
+      create_time, modifier, modify_time, 
+      ver)
+    values (#{id,jdbcType=CHAR}, #{companyId,jdbcType=CHAR}, #{documentType,jdbcType=BIGINT}, 
+      #{codeRuleId,jdbcType=BIGINT}, #{fixedText,jdbcType=VARCHAR}, #{restartVal,jdbcType=BIGINT}, 
+      #{dateRuleId,jdbcType=BIGINT}, #{serialNumberLength,jdbcType=BIGINT}, #{serialNumberRuleId,jdbcType=BIGINT}, 
+      #{currVal,jdbcType=BIGINT}, #{orderNo,jdbcType=BIGINT}, #{creater,jdbcType=CHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.DocumentCodeRule" >
+    insert into xn_m_document_code_rule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="documentType != null" >
+        document_type,
+      </if>
+      <if test="codeRuleId != null" >
+        code_rule_id,
+      </if>
+      <if test="fixedText != null" >
+        fixed_text,
+      </if>
+      <if test="restartVal != null" >
+        restart_val,
+      </if>
+      <if test="dateRuleId != null" >
+        date_rule_id,
+      </if>
+      <if test="serialNumberLength != null" >
+        serial_number_length,
+      </if>
+      <if test="serialNumberRuleId != null" >
+        serial_number_rule_id,
+      </if>
+      <if test="currVal != null" >
+        curr_val,
+      </if>
+      <if test="orderNo != null" >
+        order_no,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="documentType != null" >
+        #{documentType,jdbcType=BIGINT},
+      </if>
+      <if test="codeRuleId != null" >
+        #{codeRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="fixedText != null" >
+        #{fixedText,jdbcType=VARCHAR},
+      </if>
+      <if test="restartVal != null" >
+        #{restartVal,jdbcType=BIGINT},
+      </if>
+      <if test="dateRuleId != null" >
+        #{dateRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="serialNumberLength != null" >
+        #{serialNumberLength,jdbcType=BIGINT},
+      </if>
+      <if test="serialNumberRuleId != null" >
+        #{serialNumberRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="currVal != null" >
+        #{currVal,jdbcType=BIGINT},
+      </if>
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.DocumentCodeRuleExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_document_code_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.DocumentCodeRule" >
+    update xn_m_document_code_rule
+    <set >
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="documentType != null" >
+        document_type = #{documentType,jdbcType=BIGINT},
+      </if>
+      <if test="codeRuleId != null" >
+        code_rule_id = #{codeRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="fixedText != null" >
+        fixed_text = #{fixedText,jdbcType=VARCHAR},
+      </if>
+      <if test="restartVal != null" >
+        restart_val = #{restartVal,jdbcType=BIGINT},
+      </if>
+      <if test="dateRuleId != null" >
+        date_rule_id = #{dateRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="serialNumberLength != null" >
+        serial_number_length = #{serialNumberLength,jdbcType=BIGINT},
+      </if>
+      <if test="serialNumberRuleId != null" >
+        serial_number_rule_id = #{serialNumberRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="currVal != null" >
+        curr_val = #{currVal,jdbcType=BIGINT},
+      </if>
+      <if test="orderNo != null" >
+        order_no = #{orderNo,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.DocumentCodeRule" >
+    update xn_m_document_code_rule
+    set company_id = #{companyId,jdbcType=CHAR},
+      document_type = #{documentType,jdbcType=BIGINT},
+      code_rule_id = #{codeRuleId,jdbcType=BIGINT},
+      fixed_text = #{fixedText,jdbcType=VARCHAR},
+      restart_val = #{restartVal,jdbcType=BIGINT},
+      date_rule_id = #{dateRuleId,jdbcType=BIGINT},
+      serial_number_length = #{serialNumberLength,jdbcType=BIGINT},
+      serial_number_rule_id = #{serialNumberRuleId,jdbcType=BIGINT},
+      curr_val = #{currVal,jdbcType=BIGINT},
+      order_no = #{orderNo,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

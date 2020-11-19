@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.SubjectInitMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.SubjectInit" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="subject_name" property="subjectName" jdbcType="VARCHAR" />
+    <result column="subject_code" property="subjectCode" jdbcType="VARCHAR" />
+    <result column="company_type" property="companyType" jdbcType="BIGINT" />
+    <result column="account_direction" property="accountDirection" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, subject_name, subject_code, company_type, account_direction
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.SubjectInitExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from subject_init
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from subject_init
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from subject_init
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.SubjectInitExample" >
+    delete from subject_init
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.SubjectInit" >
+    insert into subject_init (id, subject_name, subject_code, 
+      company_type, account_direction)
+    values (#{id,jdbcType=CHAR}, #{subjectName,jdbcType=VARCHAR}, #{subjectCode,jdbcType=VARCHAR}, 
+      #{companyType,jdbcType=BIGINT}, #{accountDirection,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.SubjectInit" >
+    insert into subject_init
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="subjectName != null" >
+        subject_name,
+      </if>
+      <if test="subjectCode != null" >
+        subject_code,
+      </if>
+      <if test="companyType != null" >
+        company_type,
+      </if>
+      <if test="accountDirection != null" >
+        account_direction,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="subjectName != null" >
+        #{subjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectCode != null" >
+        #{subjectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="companyType != null" >
+        #{companyType,jdbcType=BIGINT},
+      </if>
+      <if test="accountDirection != null" >
+        #{accountDirection,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.SubjectInitExample" resultType="java.lang.Integer" >
+    select count(*) from subject_init
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.SubjectInit" >
+    update subject_init
+    <set >
+      <if test="subjectName != null" >
+        subject_name = #{subjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectCode != null" >
+        subject_code = #{subjectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="companyType != null" >
+        company_type = #{companyType,jdbcType=BIGINT},
+      </if>
+      <if test="accountDirection != null" >
+        account_direction = #{accountDirection,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.SubjectInit" >
+    update subject_init
+    set subject_name = #{subjectName,jdbcType=VARCHAR},
+      subject_code = #{subjectCode,jdbcType=VARCHAR},
+      company_type = #{companyType,jdbcType=BIGINT},
+      account_direction = #{accountDirection,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

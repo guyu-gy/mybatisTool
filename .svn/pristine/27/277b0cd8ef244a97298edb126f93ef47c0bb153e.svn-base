@@ -1,0 +1,115 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class UserMessage {
+    private String id;
+
+    private String userId;
+
+    private String messageId;
+
+    private Date readedTime;
+
+    private Long messageType;
+
+    private Long readedStatus;
+
+    private String creater;
+
+    private String createTime;
+
+    private String modifier;
+
+    private String modifyTime;
+
+    private String ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public String getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(String messageId) {
+        this.messageId = messageId == null ? null : messageId.trim();
+    }
+
+    public Date getReadedTime() {
+        return readedTime;
+    }
+
+    public void setReadedTime(Date readedTime) {
+        this.readedTime = readedTime;
+    }
+
+    public Long getMessageType() {
+        return messageType;
+    }
+
+    public void setMessageType(Long messageType) {
+        this.messageType = messageType;
+    }
+
+    public Long getReadedStatus() {
+        return readedStatus;
+    }
+
+    public void setReadedStatus(Long readedStatus) {
+        this.readedStatus = readedStatus;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime == null ? null : createTime.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public String getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(String modifyTime) {
+        this.modifyTime = modifyTime == null ? null : modifyTime.trim();
+    }
+
+    public String getVer() {
+        return ver;
+    }
+
+    public void setVer(String ver) {
+        this.ver = ver == null ? null : ver.trim();
+    }
+}

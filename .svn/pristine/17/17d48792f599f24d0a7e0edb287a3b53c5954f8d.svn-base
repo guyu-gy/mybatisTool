@@ -1,0 +1,225 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class CompanySetting {
+    private String id;
+
+    private String companyId;
+
+    private Long quotationLimit;
+
+    private Long quotationClosingTime;
+
+    private Long quotationDisplay;
+
+    private Short ecFenceLoading;
+
+    private Float ecFenceLoadingKm;
+
+    private Short ecFenceSign;
+
+    private Float ecFenceSignKm;
+
+    private Float ecFenceArrForecastKm;
+
+    private Long otherPubSubject;
+
+    private Long driverQuotation;
+
+    private Long isMyGoods;
+
+    private String platLogoFileId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Short otherOrderSubject;
+
+    private Long trustorMobileShow;
+
+    private Long abandonTenderSetting;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public Long getQuotationLimit() {
+        return quotationLimit;
+    }
+
+    public void setQuotationLimit(Long quotationLimit) {
+        this.quotationLimit = quotationLimit;
+    }
+
+    public Long getQuotationClosingTime() {
+        return quotationClosingTime;
+    }
+
+    public void setQuotationClosingTime(Long quotationClosingTime) {
+        this.quotationClosingTime = quotationClosingTime;
+    }
+
+    public Long getQuotationDisplay() {
+        return quotationDisplay;
+    }
+
+    public void setQuotationDisplay(Long quotationDisplay) {
+        this.quotationDisplay = quotationDisplay;
+    }
+
+    public Short getEcFenceLoading() {
+        return ecFenceLoading;
+    }
+
+    public void setEcFenceLoading(Short ecFenceLoading) {
+        this.ecFenceLoading = ecFenceLoading;
+    }
+
+    public Float getEcFenceLoadingKm() {
+        return ecFenceLoadingKm;
+    }
+
+    public void setEcFenceLoadingKm(Float ecFenceLoadingKm) {
+        this.ecFenceLoadingKm = ecFenceLoadingKm;
+    }
+
+    public Short getEcFenceSign() {
+        return ecFenceSign;
+    }
+
+    public void setEcFenceSign(Short ecFenceSign) {
+        this.ecFenceSign = ecFenceSign;
+    }
+
+    public Float getEcFenceSignKm() {
+        return ecFenceSignKm;
+    }
+
+    public void setEcFenceSignKm(Float ecFenceSignKm) {
+        this.ecFenceSignKm = ecFenceSignKm;
+    }
+
+    public Float getEcFenceArrForecastKm() {
+        return ecFenceArrForecastKm;
+    }
+
+    public void setEcFenceArrForecastKm(Float ecFenceArrForecastKm) {
+        this.ecFenceArrForecastKm = ecFenceArrForecastKm;
+    }
+
+    public Long getOtherPubSubject() {
+        return otherPubSubject;
+    }
+
+    public void setOtherPubSubject(Long otherPubSubject) {
+        this.otherPubSubject = otherPubSubject;
+    }
+
+    public Long getDriverQuotation() {
+        return driverQuotation;
+    }
+
+    public void setDriverQuotation(Long driverQuotation) {
+        this.driverQuotation = driverQuotation;
+    }
+
+    public Long getIsMyGoods() {
+        return isMyGoods;
+    }
+
+    public void setIsMyGoods(Long isMyGoods) {
+        this.isMyGoods = isMyGoods;
+    }
+
+    public String getPlatLogoFileId() {
+        return platLogoFileId;
+    }
+
+    public void setPlatLogoFileId(String platLogoFileId) {
+        this.platLogoFileId = platLogoFileId == null ? null : platLogoFileId.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Short getOtherOrderSubject() {
+        return otherOrderSubject;
+    }
+
+    public void setOtherOrderSubject(Short otherOrderSubject) {
+        this.otherOrderSubject = otherOrderSubject;
+    }
+
+    public Long getTrustorMobileShow() {
+        return trustorMobileShow;
+    }
+
+    public void setTrustorMobileShow(Long trustorMobileShow) {
+        this.trustorMobileShow = trustorMobileShow;
+    }
+
+    public Long getAbandonTenderSetting() {
+        return abandonTenderSetting;
+    }
+
+    public void setAbandonTenderSetting(Long abandonTenderSetting) {
+        this.abandonTenderSetting = abandonTenderSetting;
+    }
+}

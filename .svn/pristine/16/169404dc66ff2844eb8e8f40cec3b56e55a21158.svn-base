@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.SmsDownMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.SmsDown" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="send_mobile" property="sendMobile" jdbcType="VARCHAR" />
+    <result column="sms_content" property="smsContent" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="BIGINT" />
+    <result column="channel_id" property="channelId" jdbcType="VARCHAR" />
+    <result column="channel_user_id" property="channelUserId" jdbcType="VARCHAR" />
+    <result column="message_template_id" property="messageTemplateId" jdbcType="CHAR" />
+    <result column="ext1" property="ext1" jdbcType="VARCHAR" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="type" property="type" jdbcType="BIGINT" />
+    <result column="is_read" property="isRead" jdbcType="BIGINT" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, send_mobile, sms_content, status, channel_id, channel_user_id, message_template_id, 
+    ext1, creater, create_time, modifier, modify_time, type, is_read, ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.SmsDownExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_sms_down
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_sms_down
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_sms_down
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.SmsDownExample" >
+    delete from xn_m_sms_down
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.SmsDown" >
+    insert into xn_m_sms_down (id, send_mobile, sms_content, 
+      status, channel_id, channel_user_id, 
+      message_template_id, ext1, creater, 
+      create_time, modifier, modify_time, 
+      type, is_read, ver)
+    values (#{id,jdbcType=CHAR}, #{sendMobile,jdbcType=VARCHAR}, #{smsContent,jdbcType=VARCHAR}, 
+      #{status,jdbcType=BIGINT}, #{channelId,jdbcType=VARCHAR}, #{channelUserId,jdbcType=VARCHAR}, 
+      #{messageTemplateId,jdbcType=CHAR}, #{ext1,jdbcType=VARCHAR}, #{creater,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{type,jdbcType=BIGINT}, #{isRead,jdbcType=BIGINT}, #{ver,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.SmsDown" >
+    insert into xn_m_sms_down
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sendMobile != null" >
+        send_mobile,
+      </if>
+      <if test="smsContent != null" >
+        sms_content,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="channelId != null" >
+        channel_id,
+      </if>
+      <if test="channelUserId != null" >
+        channel_user_id,
+      </if>
+      <if test="messageTemplateId != null" >
+        message_template_id,
+      </if>
+      <if test="ext1 != null" >
+        ext1,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="isRead != null" >
+        is_read,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="sendMobile != null" >
+        #{sendMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="smsContent != null" >
+        #{smsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIGINT},
+      </if>
+      <if test="channelId != null" >
+        #{channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="channelUserId != null" >
+        #{channelUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTemplateId != null" >
+        #{messageTemplateId,jdbcType=CHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=BIGINT},
+      </if>
+      <if test="isRead != null" >
+        #{isRead,jdbcType=BIGINT},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.SmsDownExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_sms_down
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.SmsDown" >
+    update xn_m_sms_down
+    <set >
+      <if test="sendMobile != null" >
+        send_mobile = #{sendMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="smsContent != null" >
+        sms_content = #{smsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIGINT},
+      </if>
+      <if test="channelId != null" >
+        channel_id = #{channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="channelUserId != null" >
+        channel_user_id = #{channelUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="messageTemplateId != null" >
+        message_template_id = #{messageTemplateId,jdbcType=CHAR},
+      </if>
+      <if test="ext1 != null" >
+        ext1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=BIGINT},
+      </if>
+      <if test="isRead != null" >
+        is_read = #{isRead,jdbcType=BIGINT},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.SmsDown" >
+    update xn_m_sms_down
+    set send_mobile = #{sendMobile,jdbcType=VARCHAR},
+      sms_content = #{smsContent,jdbcType=VARCHAR},
+      status = #{status,jdbcType=BIGINT},
+      channel_id = #{channelId,jdbcType=VARCHAR},
+      channel_user_id = #{channelUserId,jdbcType=VARCHAR},
+      message_template_id = #{messageTemplateId,jdbcType=CHAR},
+      ext1 = #{ext1,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      type = #{type,jdbcType=BIGINT},
+      is_read = #{isRead,jdbcType=BIGINT},
+      ver = #{ver,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

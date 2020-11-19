@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.EventMessageTemplate;
+import com.xiaoniu56.model.defaults.EventMessageTemplateExample;
+import java.util.List;
+
+public interface EventMessageTemplateMapper {
+    int countByExample(EventMessageTemplateExample example);
+
+    int deleteByExample(EventMessageTemplateExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(EventMessageTemplate record);
+
+    int insertSelective(EventMessageTemplate record);
+
+    List<EventMessageTemplate> selectByExample(EventMessageTemplateExample example);
+
+    EventMessageTemplate selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(EventMessageTemplate record);
+
+    int updateByPrimaryKey(EventMessageTemplate record);
+}

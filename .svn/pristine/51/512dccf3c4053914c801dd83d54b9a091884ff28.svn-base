@@ -1,0 +1,145 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Invoice {
+    private String id;
+
+    private String enterpriseName;
+
+    private String taxRegistryNumber;
+
+    private String address;
+
+    private String mobile;
+
+    private String openingBank;
+
+    private String bankAccount;
+
+    private String userId;
+
+    private Long invoiceType;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getEnterpriseName() {
+        return enterpriseName;
+    }
+
+    public void setEnterpriseName(String enterpriseName) {
+        this.enterpriseName = enterpriseName == null ? null : enterpriseName.trim();
+    }
+
+    public String getTaxRegistryNumber() {
+        return taxRegistryNumber;
+    }
+
+    public void setTaxRegistryNumber(String taxRegistryNumber) {
+        this.taxRegistryNumber = taxRegistryNumber == null ? null : taxRegistryNumber.trim();
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
+    }
+
+    public String getOpeningBank() {
+        return openingBank;
+    }
+
+    public void setOpeningBank(String openingBank) {
+        this.openingBank = openingBank == null ? null : openingBank.trim();
+    }
+
+    public String getBankAccount() {
+        return bankAccount;
+    }
+
+    public void setBankAccount(String bankAccount) {
+        this.bankAccount = bankAccount == null ? null : bankAccount.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public Long getInvoiceType() {
+        return invoiceType;
+    }
+
+    public void setInvoiceType(Long invoiceType) {
+        this.invoiceType = invoiceType;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

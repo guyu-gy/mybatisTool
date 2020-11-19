@@ -1,0 +1,165 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class FirmwareUpdate {
+    private String id;
+
+    private String versionCode;
+
+    private String versionName;
+
+    private String name;
+
+    private String versionDesc;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long svnCode;
+
+    private String compatibleVersion;
+
+    private String deviceType;
+
+    private String trustorUrl;
+
+    private String carrierUrl;
+
+    private String appkey;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getVersionCode() {
+        return versionCode;
+    }
+
+    public void setVersionCode(String versionCode) {
+        this.versionCode = versionCode == null ? null : versionCode.trim();
+    }
+
+    public String getVersionName() {
+        return versionName;
+    }
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName == null ? null : versionName.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getVersionDesc() {
+        return versionDesc;
+    }
+
+    public void setVersionDesc(String versionDesc) {
+        this.versionDesc = versionDesc == null ? null : versionDesc.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getSvnCode() {
+        return svnCode;
+    }
+
+    public void setSvnCode(Long svnCode) {
+        this.svnCode = svnCode;
+    }
+
+    public String getCompatibleVersion() {
+        return compatibleVersion;
+    }
+
+    public void setCompatibleVersion(String compatibleVersion) {
+        this.compatibleVersion = compatibleVersion == null ? null : compatibleVersion.trim();
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType == null ? null : deviceType.trim();
+    }
+
+    public String getTrustorUrl() {
+        return trustorUrl;
+    }
+
+    public void setTrustorUrl(String trustorUrl) {
+        this.trustorUrl = trustorUrl == null ? null : trustorUrl.trim();
+    }
+
+    public String getCarrierUrl() {
+        return carrierUrl;
+    }
+
+    public void setCarrierUrl(String carrierUrl) {
+        this.carrierUrl = carrierUrl == null ? null : carrierUrl.trim();
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+}

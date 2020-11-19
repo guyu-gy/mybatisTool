@@ -1,0 +1,206 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class Goods {
+    private String id;
+
+    private String name;
+
+    private String totalGoodsMeasuringId;
+
+    private String commissionedGoodsMeasuringId;
+
+    private String code;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long valuationMode;
+
+    private String relateGoodsId;
+
+    private String model;
+
+    private String parentId;
+
+    private Long flag;
+
+    private Long quantityUnitId;
+
+    private BigDecimal weight;
+
+    private BigDecimal length;
+
+    private BigDecimal width;
+
+    private BigDecimal height;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getTotalGoodsMeasuringId() {
+        return totalGoodsMeasuringId;
+    }
+
+    public void setTotalGoodsMeasuringId(String totalGoodsMeasuringId) {
+        this.totalGoodsMeasuringId = totalGoodsMeasuringId == null ? null : totalGoodsMeasuringId.trim();
+    }
+
+    public String getCommissionedGoodsMeasuringId() {
+        return commissionedGoodsMeasuringId;
+    }
+
+    public void setCommissionedGoodsMeasuringId(String commissionedGoodsMeasuringId) {
+        this.commissionedGoodsMeasuringId = commissionedGoodsMeasuringId == null ? null : commissionedGoodsMeasuringId.trim();
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code == null ? null : code.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getValuationMode() {
+        return valuationMode;
+    }
+
+    public void setValuationMode(Long valuationMode) {
+        this.valuationMode = valuationMode;
+    }
+
+    public String getRelateGoodsId() {
+        return relateGoodsId;
+    }
+
+    public void setRelateGoodsId(String relateGoodsId) {
+        this.relateGoodsId = relateGoodsId == null ? null : relateGoodsId.trim();
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model == null ? null : model.trim();
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId == null ? null : parentId.trim();
+    }
+
+    public Long getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Long flag) {
+        this.flag = flag;
+    }
+
+    public Long getQuantityUnitId() {
+        return quantityUnitId;
+    }
+
+    public void setQuantityUnitId(Long quantityUnitId) {
+        this.quantityUnitId = quantityUnitId;
+    }
+
+    public BigDecimal getWeight() {
+        return weight;
+    }
+
+    public void setWeight(BigDecimal weight) {
+        this.weight = weight;
+    }
+
+    public BigDecimal getLength() {
+        return length;
+    }
+
+    public void setLength(BigDecimal length) {
+        this.length = length;
+    }
+
+    public BigDecimal getWidth() {
+        return width;
+    }
+
+    public void setWidth(BigDecimal width) {
+        this.width = width;
+    }
+
+    public BigDecimal getHeight() {
+        return height;
+    }
+
+    public void setHeight(BigDecimal height) {
+        this.height = height;
+    }
+}

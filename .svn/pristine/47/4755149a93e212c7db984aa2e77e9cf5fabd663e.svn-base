@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.SubjectTemplateInitMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.SubjectTemplateInit" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="template_name" property="templateName" jdbcType="VARCHAR" />
+    <result column="subject_code" property="subjectCode" jdbcType="VARCHAR" />
+    <result column="method_type" property="methodType" jdbcType="BIGINT" />
+    <result column="account_direction" property="accountDirection" jdbcType="BIGINT" />
+    <result column="mininum" property="mininum" jdbcType="DECIMAL" />
+    <result column="oddRule" property="oddrule" jdbcType="DECIMAL" />
+    <result column="group_no" property="groupNo" jdbcType="BIGINT" />
+    <result column="company_type" property="companyType" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, template_name, subject_code, method_type, account_direction, mininum, oddRule, 
+    group_no, company_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.SubjectTemplateInitExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from subject_template_init
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from subject_template_init
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from subject_template_init
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.SubjectTemplateInitExample" >
+    delete from subject_template_init
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.SubjectTemplateInit" >
+    insert into subject_template_init (id, template_name, subject_code, 
+      method_type, account_direction, mininum, 
+      oddRule, group_no, company_type
+      )
+    values (#{id,jdbcType=VARCHAR}, #{templateName,jdbcType=VARCHAR}, #{subjectCode,jdbcType=VARCHAR}, 
+      #{methodType,jdbcType=BIGINT}, #{accountDirection,jdbcType=BIGINT}, #{mininum,jdbcType=DECIMAL}, 
+      #{oddrule,jdbcType=DECIMAL}, #{groupNo,jdbcType=BIGINT}, #{companyType,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.SubjectTemplateInit" >
+    insert into subject_template_init
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="templateName != null" >
+        template_name,
+      </if>
+      <if test="subjectCode != null" >
+        subject_code,
+      </if>
+      <if test="methodType != null" >
+        method_type,
+      </if>
+      <if test="accountDirection != null" >
+        account_direction,
+      </if>
+      <if test="mininum != null" >
+        mininum,
+      </if>
+      <if test="oddrule != null" >
+        oddRule,
+      </if>
+      <if test="groupNo != null" >
+        group_no,
+      </if>
+      <if test="companyType != null" >
+        company_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="templateName != null" >
+        #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectCode != null" >
+        #{subjectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="methodType != null" >
+        #{methodType,jdbcType=BIGINT},
+      </if>
+      <if test="accountDirection != null" >
+        #{accountDirection,jdbcType=BIGINT},
+      </if>
+      <if test="mininum != null" >
+        #{mininum,jdbcType=DECIMAL},
+      </if>
+      <if test="oddrule != null" >
+        #{oddrule,jdbcType=DECIMAL},
+      </if>
+      <if test="groupNo != null" >
+        #{groupNo,jdbcType=BIGINT},
+      </if>
+      <if test="companyType != null" >
+        #{companyType,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.SubjectTemplateInitExample" resultType="java.lang.Integer" >
+    select count(*) from subject_template_init
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.SubjectTemplateInit" >
+    update subject_template_init
+    <set >
+      <if test="templateName != null" >
+        template_name = #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectCode != null" >
+        subject_code = #{subjectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="methodType != null" >
+        method_type = #{methodType,jdbcType=BIGINT},
+      </if>
+      <if test="accountDirection != null" >
+        account_direction = #{accountDirection,jdbcType=BIGINT},
+      </if>
+      <if test="mininum != null" >
+        mininum = #{mininum,jdbcType=DECIMAL},
+      </if>
+      <if test="oddrule != null" >
+        oddRule = #{oddrule,jdbcType=DECIMAL},
+      </if>
+      <if test="groupNo != null" >
+        group_no = #{groupNo,jdbcType=BIGINT},
+      </if>
+      <if test="companyType != null" >
+        company_type = #{companyType,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.SubjectTemplateInit" >
+    update subject_template_init
+    set template_name = #{templateName,jdbcType=VARCHAR},
+      subject_code = #{subjectCode,jdbcType=VARCHAR},
+      method_type = #{methodType,jdbcType=BIGINT},
+      account_direction = #{accountDirection,jdbcType=BIGINT},
+      mininum = #{mininum,jdbcType=DECIMAL},
+      oddRule = #{oddrule,jdbcType=DECIMAL},
+      group_no = #{groupNo,jdbcType=BIGINT},
+      company_type = #{companyType,jdbcType=BIGINT}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

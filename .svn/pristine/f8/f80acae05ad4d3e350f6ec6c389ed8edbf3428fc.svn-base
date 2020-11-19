@@ -1,0 +1,266 @@
+package com.xiaoniu56.model.defaults;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class LogisticsPipeline {
+    private String id;
+
+    private String lineNo;
+
+    private Long lineVersion;
+
+    private Long departurePointId;
+
+    private Long arrivalPointId;
+
+    private String expectArrivalDate;
+
+    private String issuingOffice;
+
+    private String openingBank;
+
+    private BigDecimal heavyPrice;
+
+    private BigDecimal lightPrice;
+
+    private String comment;
+
+    private Long agingTypeId;
+
+    private Long transportTypeId;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private String companyId;
+
+    private BigDecimal deadWeightPrice;
+
+    private String authCode;
+
+    private Long isValid;
+
+    private Long isDelete;
+
+    private String appkey;
+
+    private Long inputMode;
+
+    private String ext1;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getLineNo() {
+        return lineNo;
+    }
+
+    public void setLineNo(String lineNo) {
+        this.lineNo = lineNo == null ? null : lineNo.trim();
+    }
+
+    public Long getLineVersion() {
+        return lineVersion;
+    }
+
+    public void setLineVersion(Long lineVersion) {
+        this.lineVersion = lineVersion;
+    }
+
+    public Long getDeparturePointId() {
+        return departurePointId;
+    }
+
+    public void setDeparturePointId(Long departurePointId) {
+        this.departurePointId = departurePointId;
+    }
+
+    public Long getArrivalPointId() {
+        return arrivalPointId;
+    }
+
+    public void setArrivalPointId(Long arrivalPointId) {
+        this.arrivalPointId = arrivalPointId;
+    }
+
+    public String getExpectArrivalDate() {
+        return expectArrivalDate;
+    }
+
+    public void setExpectArrivalDate(String expectArrivalDate) {
+        this.expectArrivalDate = expectArrivalDate == null ? null : expectArrivalDate.trim();
+    }
+
+    public String getIssuingOffice() {
+        return issuingOffice;
+    }
+
+    public void setIssuingOffice(String issuingOffice) {
+        this.issuingOffice = issuingOffice == null ? null : issuingOffice.trim();
+    }
+
+    public String getOpeningBank() {
+        return openingBank;
+    }
+
+    public void setOpeningBank(String openingBank) {
+        this.openingBank = openingBank == null ? null : openingBank.trim();
+    }
+
+    public BigDecimal getHeavyPrice() {
+        return heavyPrice;
+    }
+
+    public void setHeavyPrice(BigDecimal heavyPrice) {
+        this.heavyPrice = heavyPrice;
+    }
+
+    public BigDecimal getLightPrice() {
+        return lightPrice;
+    }
+
+    public void setLightPrice(BigDecimal lightPrice) {
+        this.lightPrice = lightPrice;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+
+    public Long getAgingTypeId() {
+        return agingTypeId;
+    }
+
+    public void setAgingTypeId(Long agingTypeId) {
+        this.agingTypeId = agingTypeId;
+    }
+
+    public Long getTransportTypeId() {
+        return transportTypeId;
+    }
+
+    public void setTransportTypeId(Long transportTypeId) {
+        this.transportTypeId = transportTypeId;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public BigDecimal getDeadWeightPrice() {
+        return deadWeightPrice;
+    }
+
+    public void setDeadWeightPrice(BigDecimal deadWeightPrice) {
+        this.deadWeightPrice = deadWeightPrice;
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode == null ? null : authCode.trim();
+    }
+
+    public Long getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Long isValid) {
+        this.isValid = isValid;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+
+    public Long getInputMode() {
+        return inputMode;
+    }
+
+    public void setInputMode(Long inputMode) {
+        this.inputMode = inputMode;
+    }
+
+    public String getExt1() {
+        return ext1;
+    }
+
+    public void setExt1(String ext1) {
+        this.ext1 = ext1 == null ? null : ext1.trim();
+    }
+}

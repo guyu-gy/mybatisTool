@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.ReceivePayDetail;
+import com.xiaoniu56.model.defaults.ReceivePayDetailExample;
+import java.util.List;
+
+public interface ReceivePayDetailMapper {
+    int countByExample(ReceivePayDetailExample example);
+
+    int deleteByExample(ReceivePayDetailExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(ReceivePayDetail record);
+
+    int insertSelective(ReceivePayDetail record);
+
+    List<ReceivePayDetail> selectByExample(ReceivePayDetailExample example);
+
+    ReceivePayDetail selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(ReceivePayDetail record);
+
+    int updateByPrimaryKey(ReceivePayDetail record);
+}

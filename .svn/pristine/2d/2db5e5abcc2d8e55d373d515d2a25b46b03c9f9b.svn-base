@@ -1,0 +1,155 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class InfLogHis {
+    private String id;
+
+    private String infName;
+
+    private String paramName;
+
+    private String infUrl;
+
+    private String operator;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long status;
+
+    private String comment;
+
+    private String infConfId;
+
+    private Long count;
+
+    private String appkey;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getInfName() {
+        return infName;
+    }
+
+    public void setInfName(String infName) {
+        this.infName = infName == null ? null : infName.trim();
+    }
+
+    public String getParamName() {
+        return paramName;
+    }
+
+    public void setParamName(String paramName) {
+        this.paramName = paramName == null ? null : paramName.trim();
+    }
+
+    public String getInfUrl() {
+        return infUrl;
+    }
+
+    public void setInfUrl(String infUrl) {
+        this.infUrl = infUrl == null ? null : infUrl.trim();
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator == null ? null : operator.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment == null ? null : comment.trim();
+    }
+
+    public String getInfConfId() {
+        return infConfId;
+    }
+
+    public void setInfConfId(String infConfId) {
+        this.infConfId = infConfId == null ? null : infConfId.trim();
+    }
+
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+}

@@ -1,0 +1,115 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class ApplicableRoute {
+    private String id;
+
+    private String chargeStrategyId;
+
+    private String deliveryCityName;
+
+    private Long deliveryCityCode;
+
+    private String arrivalCityName;
+
+    private Long arrivalCityCode;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getChargeStrategyId() {
+        return chargeStrategyId;
+    }
+
+    public void setChargeStrategyId(String chargeStrategyId) {
+        this.chargeStrategyId = chargeStrategyId == null ? null : chargeStrategyId.trim();
+    }
+
+    public String getDeliveryCityName() {
+        return deliveryCityName;
+    }
+
+    public void setDeliveryCityName(String deliveryCityName) {
+        this.deliveryCityName = deliveryCityName == null ? null : deliveryCityName.trim();
+    }
+
+    public Long getDeliveryCityCode() {
+        return deliveryCityCode;
+    }
+
+    public void setDeliveryCityCode(Long deliveryCityCode) {
+        this.deliveryCityCode = deliveryCityCode;
+    }
+
+    public String getArrivalCityName() {
+        return arrivalCityName;
+    }
+
+    public void setArrivalCityName(String arrivalCityName) {
+        this.arrivalCityName = arrivalCityName == null ? null : arrivalCityName.trim();
+    }
+
+    public Long getArrivalCityCode() {
+        return arrivalCityCode;
+    }
+
+    public void setArrivalCityCode(Long arrivalCityCode) {
+        this.arrivalCityCode = arrivalCityCode;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

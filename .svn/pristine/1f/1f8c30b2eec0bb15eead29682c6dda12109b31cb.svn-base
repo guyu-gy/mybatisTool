@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.DispatchMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Dispatch" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="parent_dispatch_id" property="parentDispatchId" jdbcType="CHAR" />
+    <result column="dispatch_code" property="dispatchCode" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="logistics_order_id" property="logisticsOrderId" jdbcType="CHAR" />
+    <result column="plan_departure_date" property="planDepartureDate" jdbcType="TIMESTAMP" />
+    <result column="plan_arrival_date" property="planArrivalDate" jdbcType="TIMESTAMP" />
+    <result column="real_departure_date" property="realDepartureDate" jdbcType="TIMESTAMP" />
+    <result column="real_arrival_date" property="realArrivalDate" jdbcType="TIMESTAMP" />
+    <result column="signed_time" property="signedTime" jdbcType="TIMESTAMP" />
+    <result column="signed_passwd" property="signedPasswd" jdbcType="VARCHAR" />
+    <result column="signed_comment" property="signedComment" jdbcType="VARCHAR" />
+    <result column="load_profile_photo_id" property="loadProfilePhotoId" jdbcType="CHAR" />
+    <result column="load_tail_photo_id" property="loadTailPhotoId" jdbcType="CHAR" />
+    <result column="unload_profile_photo_id" property="unloadProfilePhotoId" jdbcType="CHAR" />
+    <result column="unload_tail_photo_id" property="unloadTailPhotoId" jdbcType="CHAR" />
+    <result column="receipt_sign_photo_id" property="receiptSignPhotoId" jdbcType="CHAR" />
+    <result column="receipt_group_photo_id" property="receiptGroupPhotoId" jdbcType="CHAR" />
+    <result column="consignee_id" property="consigneeId" jdbcType="CHAR" />
+    <result column="send_address_id" property="sendAddressId" jdbcType="CHAR" />
+    <result column="receive_address_id" property="receiveAddressId" jdbcType="CHAR" />
+    <result column="dispatch_batch_id" property="dispatchBatchId" jdbcType="CHAR" />
+    <result column="is_destination" property="isDestination" jdbcType="BIGINT" />
+    <result column="sender_id" property="senderId" jdbcType="CHAR" />
+    <result column="delivery_mode" property="deliveryMode" jdbcType="BIGINT" />
+    <result column="code" property="code" jdbcType="CHAR" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="delivery_outlets_id" property="deliveryOutletsId" jdbcType="CHAR" />
+    <result column="arrival_outlets_id" property="arrivalOutletsId" jdbcType="CHAR" />
+    <result column="auth_code" property="authCode" jdbcType="VARCHAR" />
+    <result column="rht" property="rht" jdbcType="BIGINT" />
+    <result column="lft" property="lft" jdbcType="BIGINT" />
+    <result column="node_ver" property="nodeVer" jdbcType="BIGINT" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="is_registered" property="isRegistered" jdbcType="BIGINT" />
+    <result column="signed_user_name" property="signedUserName" jdbcType="VARCHAR" />
+    <result column="signed_id_card_no" property="signedIdCardNo" jdbcType="CHAR" />
+    <result column="signed_agent" property="signedAgent" jdbcType="INTEGER" />
+    <result column="register_id" property="registerId" jdbcType="CHAR" />
+    <result column="register_time" property="registerTime" jdbcType="TIMESTAMP" />
+    <result column="is_warn" property="isWarn" jdbcType="BIGINT" />
+    <result column="distance" property="distance" jdbcType="DECIMAL" />
+    <result column="is_more_photo" property="isMorePhoto" jdbcType="SMALLINT" />
+    <result column="dept_handover_mode" property="deptHandoverMode" jdbcType="SMALLINT" />
+    <result column="signed_handover_mode" property="signedHandoverMode" jdbcType="SMALLINT" />
+    <result column="dept_qrcode_id" property="deptQrcodeId" jdbcType="CHAR" />
+    <result column="sign_qrcode_id" property="signQrcodeId" jdbcType="CHAR" />
+    <result column="dept_lon_lat" property="deptLonLat" jdbcType="VARCHAR" />
+    <result column="signed_lon_lat" property="signedLonLat" jdbcType="VARCHAR" />
+    <result column="dept_lon_lat_addr" property="deptLonLatAddr" jdbcType="BIGINT" />
+    <result column="signed_lon_lat_addr" property="signedLonLatAddr" jdbcType="BIGINT" />
+    <result column="cost_price" property="costPrice" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, parent_dispatch_id, dispatch_code, create_time, logistics_order_id, plan_departure_date, 
+    plan_arrival_date, real_departure_date, real_arrival_date, signed_time, signed_passwd, 
+    signed_comment, load_profile_photo_id, load_tail_photo_id, unload_profile_photo_id, 
+    unload_tail_photo_id, receipt_sign_photo_id, receipt_group_photo_id, consignee_id, 
+    send_address_id, receive_address_id, dispatch_batch_id, is_destination, sender_id, 
+    delivery_mode, code, creater, modifier, modify_time, ver, delivery_outlets_id, arrival_outlets_id, 
+    auth_code, rht, lft, node_ver, appkey, is_registered, signed_user_name, signed_id_card_no, 
+    signed_agent, register_id, register_time, is_warn, distance, is_more_photo, dept_handover_mode, 
+    signed_handover_mode, dept_qrcode_id, sign_qrcode_id, dept_lon_lat, signed_lon_lat, 
+    dept_lon_lat_addr, signed_lon_lat_addr, cost_price
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.DispatchExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_dispatch
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_dispatch
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_dispatch
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.DispatchExample" >
+    delete from xn_m_dispatch
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Dispatch" >
+    insert into xn_m_dispatch (id, parent_dispatch_id, dispatch_code, 
+      create_time, logistics_order_id, plan_departure_date, 
+      plan_arrival_date, real_departure_date, 
+      real_arrival_date, signed_time, signed_passwd, 
+      signed_comment, load_profile_photo_id, load_tail_photo_id, 
+      unload_profile_photo_id, unload_tail_photo_id, receipt_sign_photo_id, 
+      receipt_group_photo_id, consignee_id, send_address_id, 
+      receive_address_id, dispatch_batch_id, is_destination, 
+      sender_id, delivery_mode, code, 
+      creater, modifier, modify_time, 
+      ver, delivery_outlets_id, arrival_outlets_id, 
+      auth_code, rht, lft, node_ver, 
+      appkey, is_registered, signed_user_name, 
+      signed_id_card_no, signed_agent, register_id, 
+      register_time, is_warn, distance, 
+      is_more_photo, dept_handover_mode, signed_handover_mode, 
+      dept_qrcode_id, sign_qrcode_id, dept_lon_lat, 
+      signed_lon_lat, dept_lon_lat_addr, signed_lon_lat_addr, 
+      cost_price)
+    values (#{id,jdbcType=CHAR}, #{parentDispatchId,jdbcType=CHAR}, #{dispatchCode,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{logisticsOrderId,jdbcType=CHAR}, #{planDepartureDate,jdbcType=TIMESTAMP}, 
+      #{planArrivalDate,jdbcType=TIMESTAMP}, #{realDepartureDate,jdbcType=TIMESTAMP}, 
+      #{realArrivalDate,jdbcType=TIMESTAMP}, #{signedTime,jdbcType=TIMESTAMP}, #{signedPasswd,jdbcType=VARCHAR}, 
+      #{signedComment,jdbcType=VARCHAR}, #{loadProfilePhotoId,jdbcType=CHAR}, #{loadTailPhotoId,jdbcType=CHAR}, 
+      #{unloadProfilePhotoId,jdbcType=CHAR}, #{unloadTailPhotoId,jdbcType=CHAR}, #{receiptSignPhotoId,jdbcType=CHAR}, 
+      #{receiptGroupPhotoId,jdbcType=CHAR}, #{consigneeId,jdbcType=CHAR}, #{sendAddressId,jdbcType=CHAR}, 
+      #{receiveAddressId,jdbcType=CHAR}, #{dispatchBatchId,jdbcType=CHAR}, #{isDestination,jdbcType=BIGINT}, 
+      #{senderId,jdbcType=CHAR}, #{deliveryMode,jdbcType=BIGINT}, #{code,jdbcType=CHAR}, 
+      #{creater,jdbcType=CHAR}, #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{deliveryOutletsId,jdbcType=CHAR}, #{arrivalOutletsId,jdbcType=CHAR}, 
+      #{authCode,jdbcType=VARCHAR}, #{rht,jdbcType=BIGINT}, #{lft,jdbcType=BIGINT}, #{nodeVer,jdbcType=BIGINT}, 
+      #{appkey,jdbcType=VARCHAR}, #{isRegistered,jdbcType=BIGINT}, #{signedUserName,jdbcType=VARCHAR}, 
+      #{signedIdCardNo,jdbcType=CHAR}, #{signedAgent,jdbcType=INTEGER}, #{registerId,jdbcType=CHAR}, 
+      #{registerTime,jdbcType=TIMESTAMP}, #{isWarn,jdbcType=BIGINT}, #{distance,jdbcType=DECIMAL}, 
+      #{isMorePhoto,jdbcType=SMALLINT}, #{deptHandoverMode,jdbcType=SMALLINT}, #{signedHandoverMode,jdbcType=SMALLINT}, 
+      #{deptQrcodeId,jdbcType=CHAR}, #{signQrcodeId,jdbcType=CHAR}, #{deptLonLat,jdbcType=VARCHAR}, 
+      #{signedLonLat,jdbcType=VARCHAR}, #{deptLonLatAddr,jdbcType=BIGINT}, #{signedLonLatAddr,jdbcType=BIGINT}, 
+      #{costPrice,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Dispatch" >
+    insert into xn_m_dispatch
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parentDispatchId != null" >
+        parent_dispatch_id,
+      </if>
+      <if test="dispatchCode != null" >
+        dispatch_code,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="logisticsOrderId != null" >
+        logistics_order_id,
+      </if>
+      <if test="planDepartureDate != null" >
+        plan_departure_date,
+      </if>
+      <if test="planArrivalDate != null" >
+        plan_arrival_date,
+      </if>
+      <if test="realDepartureDate != null" >
+        real_departure_date,
+      </if>
+      <if test="realArrivalDate != null" >
+        real_arrival_date,
+      </if>
+      <if test="signedTime != null" >
+        signed_time,
+      </if>
+      <if test="signedPasswd != null" >
+        signed_passwd,
+      </if>
+      <if test="signedComment != null" >
+        signed_comment,
+      </if>
+      <if test="loadProfilePhotoId != null" >
+        load_profile_photo_id,
+      </if>
+      <if test="loadTailPhotoId != null" >
+        load_tail_photo_id,
+      </if>
+      <if test="unloadProfilePhotoId != null" >
+        unload_profile_photo_id,
+      </if>
+      <if test="unloadTailPhotoId != null" >
+        unload_tail_photo_id,
+      </if>
+      <if test="receiptSignPhotoId != null" >
+        receipt_sign_photo_id,
+      </if>
+      <if test="receiptGroupPhotoId != null" >
+        receipt_group_photo_id,
+      </if>
+      <if test="consigneeId != null" >
+        consignee_id,
+      </if>
+      <if test="sendAddressId != null" >
+        send_address_id,
+      </if>
+      <if test="receiveAddressId != null" >
+        receive_address_id,
+      </if>
+      <if test="dispatchBatchId != null" >
+        dispatch_batch_id,
+      </if>
+      <if test="isDestination != null" >
+        is_destination,
+      </if>
+      <if test="senderId != null" >
+        sender_id,
+      </if>
+      <if test="deliveryMode != null" >
+        delivery_mode,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="deliveryOutletsId != null" >
+        delivery_outlets_id,
+      </if>
+      <if test="arrivalOutletsId != null" >
+        arrival_outlets_id,
+      </if>
+      <if test="authCode != null" >
+        auth_code,
+      </if>
+      <if test="rht != null" >
+        rht,
+      </if>
+      <if test="lft != null" >
+        lft,
+      </if>
+      <if test="nodeVer != null" >
+        node_ver,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="isRegistered != null" >
+        is_registered,
+      </if>
+      <if test="signedUserName != null" >
+        signed_user_name,
+      </if>
+      <if test="signedIdCardNo != null" >
+        signed_id_card_no,
+      </if>
+      <if test="signedAgent != null" >
+        signed_agent,
+      </if>
+      <if test="registerId != null" >
+        register_id,
+      </if>
+      <if test="registerTime != null" >
+        register_time,
+      </if>
+      <if test="isWarn != null" >
+        is_warn,
+      </if>
+      <if test="distance != null" >
+        distance,
+      </if>
+      <if test="isMorePhoto != null" >
+        is_more_photo,
+      </if>
+      <if test="deptHandoverMode != null" >
+        dept_handover_mode,
+      </if>
+      <if test="signedHandoverMode != null" >
+        signed_handover_mode,
+      </if>
+      <if test="deptQrcodeId != null" >
+        dept_qrcode_id,
+      </if>
+      <if test="signQrcodeId != null" >
+        sign_qrcode_id,
+      </if>
+      <if test="deptLonLat != null" >
+        dept_lon_lat,
+      </if>
+      <if test="signedLonLat != null" >
+        signed_lon_lat,
+      </if>
+      <if test="deptLonLatAddr != null" >
+        dept_lon_lat_addr,
+      </if>
+      <if test="signedLonLatAddr != null" >
+        signed_lon_lat_addr,
+      </if>
+      <if test="costPrice != null" >
+        cost_price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="parentDispatchId != null" >
+        #{parentDispatchId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchCode != null" >
+        #{dispatchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logisticsOrderId != null" >
+        #{logisticsOrderId,jdbcType=CHAR},
+      </if>
+      <if test="planDepartureDate != null" >
+        #{planDepartureDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planArrivalDate != null" >
+        #{planArrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="realDepartureDate != null" >
+        #{realDepartureDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="realArrivalDate != null" >
+        #{realArrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signedTime != null" >
+        #{signedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signedPasswd != null" >
+        #{signedPasswd,jdbcType=VARCHAR},
+      </if>
+      <if test="signedComment != null" >
+        #{signedComment,jdbcType=VARCHAR},
+      </if>
+      <if test="loadProfilePhotoId != null" >
+        #{loadProfilePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="loadTailPhotoId != null" >
+        #{loadTailPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="unloadProfilePhotoId != null" >
+        #{unloadProfilePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="unloadTailPhotoId != null" >
+        #{unloadTailPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="receiptSignPhotoId != null" >
+        #{receiptSignPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="receiptGroupPhotoId != null" >
+        #{receiptGroupPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="consigneeId != null" >
+        #{consigneeId,jdbcType=CHAR},
+      </if>
+      <if test="sendAddressId != null" >
+        #{sendAddressId,jdbcType=CHAR},
+      </if>
+      <if test="receiveAddressId != null" >
+        #{receiveAddressId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchBatchId != null" >
+        #{dispatchBatchId,jdbcType=CHAR},
+      </if>
+      <if test="isDestination != null" >
+        #{isDestination,jdbcType=BIGINT},
+      </if>
+      <if test="senderId != null" >
+        #{senderId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryMode != null" >
+        #{deliveryMode,jdbcType=BIGINT},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="deliveryOutletsId != null" >
+        #{deliveryOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="arrivalOutletsId != null" >
+        #{arrivalOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="authCode != null" >
+        #{authCode,jdbcType=VARCHAR},
+      </if>
+      <if test="rht != null" >
+        #{rht,jdbcType=BIGINT},
+      </if>
+      <if test="lft != null" >
+        #{lft,jdbcType=BIGINT},
+      </if>
+      <if test="nodeVer != null" >
+        #{nodeVer,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegistered != null" >
+        #{isRegistered,jdbcType=BIGINT},
+      </if>
+      <if test="signedUserName != null" >
+        #{signedUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="signedIdCardNo != null" >
+        #{signedIdCardNo,jdbcType=CHAR},
+      </if>
+      <if test="signedAgent != null" >
+        #{signedAgent,jdbcType=INTEGER},
+      </if>
+      <if test="registerId != null" >
+        #{registerId,jdbcType=CHAR},
+      </if>
+      <if test="registerTime != null" >
+        #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isWarn != null" >
+        #{isWarn,jdbcType=BIGINT},
+      </if>
+      <if test="distance != null" >
+        #{distance,jdbcType=DECIMAL},
+      </if>
+      <if test="isMorePhoto != null" >
+        #{isMorePhoto,jdbcType=SMALLINT},
+      </if>
+      <if test="deptHandoverMode != null" >
+        #{deptHandoverMode,jdbcType=SMALLINT},
+      </if>
+      <if test="signedHandoverMode != null" >
+        #{signedHandoverMode,jdbcType=SMALLINT},
+      </if>
+      <if test="deptQrcodeId != null" >
+        #{deptQrcodeId,jdbcType=CHAR},
+      </if>
+      <if test="signQrcodeId != null" >
+        #{signQrcodeId,jdbcType=CHAR},
+      </if>
+      <if test="deptLonLat != null" >
+        #{deptLonLat,jdbcType=VARCHAR},
+      </if>
+      <if test="signedLonLat != null" >
+        #{signedLonLat,jdbcType=VARCHAR},
+      </if>
+      <if test="deptLonLatAddr != null" >
+        #{deptLonLatAddr,jdbcType=BIGINT},
+      </if>
+      <if test="signedLonLatAddr != null" >
+        #{signedLonLatAddr,jdbcType=BIGINT},
+      </if>
+      <if test="costPrice != null" >
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.DispatchExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_dispatch
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Dispatch" >
+    update xn_m_dispatch
+    <set >
+      <if test="parentDispatchId != null" >
+        parent_dispatch_id = #{parentDispatchId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchCode != null" >
+        dispatch_code = #{dispatchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logisticsOrderId != null" >
+        logistics_order_id = #{logisticsOrderId,jdbcType=CHAR},
+      </if>
+      <if test="planDepartureDate != null" >
+        plan_departure_date = #{planDepartureDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planArrivalDate != null" >
+        plan_arrival_date = #{planArrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="realDepartureDate != null" >
+        real_departure_date = #{realDepartureDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="realArrivalDate != null" >
+        real_arrival_date = #{realArrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signedTime != null" >
+        signed_time = #{signedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signedPasswd != null" >
+        signed_passwd = #{signedPasswd,jdbcType=VARCHAR},
+      </if>
+      <if test="signedComment != null" >
+        signed_comment = #{signedComment,jdbcType=VARCHAR},
+      </if>
+      <if test="loadProfilePhotoId != null" >
+        load_profile_photo_id = #{loadProfilePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="loadTailPhotoId != null" >
+        load_tail_photo_id = #{loadTailPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="unloadProfilePhotoId != null" >
+        unload_profile_photo_id = #{unloadProfilePhotoId,jdbcType=CHAR},
+      </if>
+      <if test="unloadTailPhotoId != null" >
+        unload_tail_photo_id = #{unloadTailPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="receiptSignPhotoId != null" >
+        receipt_sign_photo_id = #{receiptSignPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="receiptGroupPhotoId != null" >
+        receipt_group_photo_id = #{receiptGroupPhotoId,jdbcType=CHAR},
+      </if>
+      <if test="consigneeId != null" >
+        consignee_id = #{consigneeId,jdbcType=CHAR},
+      </if>
+      <if test="sendAddressId != null" >
+        send_address_id = #{sendAddressId,jdbcType=CHAR},
+      </if>
+      <if test="receiveAddressId != null" >
+        receive_address_id = #{receiveAddressId,jdbcType=CHAR},
+      </if>
+      <if test="dispatchBatchId != null" >
+        dispatch_batch_id = #{dispatchBatchId,jdbcType=CHAR},
+      </if>
+      <if test="isDestination != null" >
+        is_destination = #{isDestination,jdbcType=BIGINT},
+      </if>
+      <if test="senderId != null" >
+        sender_id = #{senderId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryMode != null" >
+        delivery_mode = #{deliveryMode,jdbcType=BIGINT},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="deliveryOutletsId != null" >
+        delivery_outlets_id = #{deliveryOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="arrivalOutletsId != null" >
+        arrival_outlets_id = #{arrivalOutletsId,jdbcType=CHAR},
+      </if>
+      <if test="authCode != null" >
+        auth_code = #{authCode,jdbcType=VARCHAR},
+      </if>
+      <if test="rht != null" >
+        rht = #{rht,jdbcType=BIGINT},
+      </if>
+      <if test="lft != null" >
+        lft = #{lft,jdbcType=BIGINT},
+      </if>
+      <if test="nodeVer != null" >
+        node_ver = #{nodeVer,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="isRegistered != null" >
+        is_registered = #{isRegistered,jdbcType=BIGINT},
+      </if>
+      <if test="signedUserName != null" >
+        signed_user_name = #{signedUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="signedIdCardNo != null" >
+        signed_id_card_no = #{signedIdCardNo,jdbcType=CHAR},
+      </if>
+      <if test="signedAgent != null" >
+        signed_agent = #{signedAgent,jdbcType=INTEGER},
+      </if>
+      <if test="registerId != null" >
+        register_id = #{registerId,jdbcType=CHAR},
+      </if>
+      <if test="registerTime != null" >
+        register_time = #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isWarn != null" >
+        is_warn = #{isWarn,jdbcType=BIGINT},
+      </if>
+      <if test="distance != null" >
+        distance = #{distance,jdbcType=DECIMAL},
+      </if>
+      <if test="isMorePhoto != null" >
+        is_more_photo = #{isMorePhoto,jdbcType=SMALLINT},
+      </if>
+      <if test="deptHandoverMode != null" >
+        dept_handover_mode = #{deptHandoverMode,jdbcType=SMALLINT},
+      </if>
+      <if test="signedHandoverMode != null" >
+        signed_handover_mode = #{signedHandoverMode,jdbcType=SMALLINT},
+      </if>
+      <if test="deptQrcodeId != null" >
+        dept_qrcode_id = #{deptQrcodeId,jdbcType=CHAR},
+      </if>
+      <if test="signQrcodeId != null" >
+        sign_qrcode_id = #{signQrcodeId,jdbcType=CHAR},
+      </if>
+      <if test="deptLonLat != null" >
+        dept_lon_lat = #{deptLonLat,jdbcType=VARCHAR},
+      </if>
+      <if test="signedLonLat != null" >
+        signed_lon_lat = #{signedLonLat,jdbcType=VARCHAR},
+      </if>
+      <if test="deptLonLatAddr != null" >
+        dept_lon_lat_addr = #{deptLonLatAddr,jdbcType=BIGINT},
+      </if>
+      <if test="signedLonLatAddr != null" >
+        signed_lon_lat_addr = #{signedLonLatAddr,jdbcType=BIGINT},
+      </if>
+      <if test="costPrice != null" >
+        cost_price = #{costPrice,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Dispatch" >
+    update xn_m_dispatch
+    set parent_dispatch_id = #{parentDispatchId,jdbcType=CHAR},
+      dispatch_code = #{dispatchCode,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      logistics_order_id = #{logisticsOrderId,jdbcType=CHAR},
+      plan_departure_date = #{planDepartureDate,jdbcType=TIMESTAMP},
+      plan_arrival_date = #{planArrivalDate,jdbcType=TIMESTAMP},
+      real_departure_date = #{realDepartureDate,jdbcType=TIMESTAMP},
+      real_arrival_date = #{realArrivalDate,jdbcType=TIMESTAMP},
+      signed_time = #{signedTime,jdbcType=TIMESTAMP},
+      signed_passwd = #{signedPasswd,jdbcType=VARCHAR},
+      signed_comment = #{signedComment,jdbcType=VARCHAR},
+      load_profile_photo_id = #{loadProfilePhotoId,jdbcType=CHAR},
+      load_tail_photo_id = #{loadTailPhotoId,jdbcType=CHAR},
+      unload_profile_photo_id = #{unloadProfilePhotoId,jdbcType=CHAR},
+      unload_tail_photo_id = #{unloadTailPhotoId,jdbcType=CHAR},
+      receipt_sign_photo_id = #{receiptSignPhotoId,jdbcType=CHAR},
+      receipt_group_photo_id = #{receiptGroupPhotoId,jdbcType=CHAR},
+      consignee_id = #{consigneeId,jdbcType=CHAR},
+      send_address_id = #{sendAddressId,jdbcType=CHAR},
+      receive_address_id = #{receiveAddressId,jdbcType=CHAR},
+      dispatch_batch_id = #{dispatchBatchId,jdbcType=CHAR},
+      is_destination = #{isDestination,jdbcType=BIGINT},
+      sender_id = #{senderId,jdbcType=CHAR},
+      delivery_mode = #{deliveryMode,jdbcType=BIGINT},
+      code = #{code,jdbcType=CHAR},
+      creater = #{creater,jdbcType=CHAR},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      delivery_outlets_id = #{deliveryOutletsId,jdbcType=CHAR},
+      arrival_outlets_id = #{arrivalOutletsId,jdbcType=CHAR},
+      auth_code = #{authCode,jdbcType=VARCHAR},
+      rht = #{rht,jdbcType=BIGINT},
+      lft = #{lft,jdbcType=BIGINT},
+      node_ver = #{nodeVer,jdbcType=BIGINT},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      is_registered = #{isRegistered,jdbcType=BIGINT},
+      signed_user_name = #{signedUserName,jdbcType=VARCHAR},
+      signed_id_card_no = #{signedIdCardNo,jdbcType=CHAR},
+      signed_agent = #{signedAgent,jdbcType=INTEGER},
+      register_id = #{registerId,jdbcType=CHAR},
+      register_time = #{registerTime,jdbcType=TIMESTAMP},
+      is_warn = #{isWarn,jdbcType=BIGINT},
+      distance = #{distance,jdbcType=DECIMAL},
+      is_more_photo = #{isMorePhoto,jdbcType=SMALLINT},
+      dept_handover_mode = #{deptHandoverMode,jdbcType=SMALLINT},
+      signed_handover_mode = #{signedHandoverMode,jdbcType=SMALLINT},
+      dept_qrcode_id = #{deptQrcodeId,jdbcType=CHAR},
+      sign_qrcode_id = #{signQrcodeId,jdbcType=CHAR},
+      dept_lon_lat = #{deptLonLat,jdbcType=VARCHAR},
+      signed_lon_lat = #{signedLonLat,jdbcType=VARCHAR},
+      dept_lon_lat_addr = #{deptLonLatAddr,jdbcType=BIGINT},
+      signed_lon_lat_addr = #{signedLonLatAddr,jdbcType=BIGINT},
+      cost_price = #{costPrice,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

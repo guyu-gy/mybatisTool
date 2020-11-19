@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.IllegalDisposal;
+import com.xiaoniu56.model.defaults.IllegalDisposalExample;
+import java.util.List;
+
+public interface IllegalDisposalMapper {
+    int countByExample(IllegalDisposalExample example);
+
+    int deleteByExample(IllegalDisposalExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(IllegalDisposal record);
+
+    int insertSelective(IllegalDisposal record);
+
+    List<IllegalDisposal> selectByExample(IllegalDisposalExample example);
+
+    IllegalDisposal selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(IllegalDisposal record);
+
+    int updateByPrimaryKey(IllegalDisposal record);
+}

@@ -1,0 +1,135 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class LuguangSeat {
+    private String id;
+
+    private String paterId;
+
+    private String luguangId;
+
+    private String name;
+
+    private Date checkinDate;
+
+    private String companyId;
+
+    private String enableStatus;
+
+    private Long isDelete;
+
+    private Long ver;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getPaterId() {
+        return paterId;
+    }
+
+    public void setPaterId(String paterId) {
+        this.paterId = paterId == null ? null : paterId.trim();
+    }
+
+    public String getLuguangId() {
+        return luguangId;
+    }
+
+    public void setLuguangId(String luguangId) {
+        this.luguangId = luguangId == null ? null : luguangId.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public Date getCheckinDate() {
+        return checkinDate;
+    }
+
+    public void setCheckinDate(Date checkinDate) {
+        this.checkinDate = checkinDate;
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public String getEnableStatus() {
+        return enableStatus;
+    }
+
+    public void setEnableStatus(String enableStatus) {
+        this.enableStatus = enableStatus == null ? null : enableStatus.trim();
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+}

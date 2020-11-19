@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.GoodsSupplyMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.GoodsSupply" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="sender_id" property="senderId" jdbcType="CHAR" />
+    <result column="consignee_id" property="consigneeId" jdbcType="CHAR" />
+    <result column="split_package_type" property="splitPackageType" jdbcType="BIGINT" />
+    <result column="invoice_id" property="invoiceId" jdbcType="CHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="principal_user_id" property="principalUserId" jdbcType="CHAR" />
+    <result column="principal_company_id" property="principalCompanyId" jdbcType="CHAR" />
+    <result column="status" property="status" jdbcType="BIGINT" />
+    <result column="payment_mode" property="paymentMode" jdbcType="BIGINT" />
+    <result column="price_mode" property="priceMode" jdbcType="BIGINT" />
+    <result column="transport_charge_id" property="transportChargeId" jdbcType="CHAR" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="valuation_mode" property="valuationMode" jdbcType="BIGINT" />
+    <result column="auth_code" property="authCode" jdbcType="CHAR" />
+    <result column="public_goods" property="publicGoods" jdbcType="BIGINT" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="input_mode" property="inputMode" jdbcType="BIGINT" />
+    <result column="is_delete" property="isDelete" jdbcType="BIGINT" />
+    <result column="ext1" property="ext1" jdbcType="VARCHAR" />
+    <result column="vehicles_mode" property="vehiclesMode" jdbcType="BIGINT" />
+    <result column="origin_id" property="originId" jdbcType="CHAR" />
+    <result column="goods_type" property="goodsType" jdbcType="BIGINT" />
+    <result column="trader_user_id" property="traderUserId" jdbcType="CHAR" />
+    <result column="is_substitute" property="isSubstitute" jdbcType="BIGINT" />
+    <result column="outer_order_id" property="outerOrderId" jdbcType="VARCHAR" />
+    <result column="msg_push_num" property="msgPushNum" jdbcType="BIGINT" />
+    <result column="vehicle_quotation" property="vehicleQuotation" jdbcType="BIGINT" />
+    <result column="quotation_closing_time" property="quotationClosingTime" jdbcType="TIMESTAMP" />
+    <result column="is_total" property="isTotal" jdbcType="BIGINT" />
+    <result column="arrival_date" property="arrivalDate" jdbcType="TIMESTAMP" />
+    <result column="code" property="code" jdbcType="CHAR" />
+    <result column="loading_needs" property="loadingNeeds" jdbcType="VARCHAR" />
+    <result column="script_handle_desc" property="scriptHandleDesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, sender_id, consignee_id, split_package_type, invoice_id, comment, create_time, 
+    principal_user_id, principal_company_id, status, payment_mode, price_mode, transport_charge_id, 
+    creater, modifier, modify_time, ver, send_time, valuation_mode, auth_code, public_goods, 
+    appkey, input_mode, is_delete, ext1, vehicles_mode, origin_id, goods_type, trader_user_id, 
+    is_substitute, outer_order_id, msg_push_num, vehicle_quotation, quotation_closing_time, 
+    is_total, arrival_date, code, loading_needs, script_handle_desc
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_goods_supply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_goods_supply
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_goods_supply
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyExample" >
+    delete from xn_m_goods_supply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.GoodsSupply" >
+    insert into xn_m_goods_supply (id, sender_id, consignee_id, 
+      split_package_type, invoice_id, comment, 
+      create_time, principal_user_id, principal_company_id, 
+      status, payment_mode, price_mode, 
+      transport_charge_id, creater, modifier, 
+      modify_time, ver, send_time, 
+      valuation_mode, auth_code, public_goods, 
+      appkey, input_mode, is_delete, 
+      ext1, vehicles_mode, origin_id, 
+      goods_type, trader_user_id, is_substitute, 
+      outer_order_id, msg_push_num, vehicle_quotation, 
+      quotation_closing_time, is_total, arrival_date, 
+      code, loading_needs, script_handle_desc
+      )
+    values (#{id,jdbcType=CHAR}, #{senderId,jdbcType=CHAR}, #{consigneeId,jdbcType=CHAR}, 
+      #{splitPackageType,jdbcType=BIGINT}, #{invoiceId,jdbcType=CHAR}, #{comment,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{principalUserId,jdbcType=CHAR}, #{principalCompanyId,jdbcType=CHAR}, 
+      #{status,jdbcType=BIGINT}, #{paymentMode,jdbcType=BIGINT}, #{priceMode,jdbcType=BIGINT}, 
+      #{transportChargeId,jdbcType=CHAR}, #{creater,jdbcType=CHAR}, #{modifier,jdbcType=CHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT}, #{sendTime,jdbcType=TIMESTAMP}, 
+      #{valuationMode,jdbcType=BIGINT}, #{authCode,jdbcType=CHAR}, #{publicGoods,jdbcType=BIGINT}, 
+      #{appkey,jdbcType=VARCHAR}, #{inputMode,jdbcType=BIGINT}, #{isDelete,jdbcType=BIGINT}, 
+      #{ext1,jdbcType=VARCHAR}, #{vehiclesMode,jdbcType=BIGINT}, #{originId,jdbcType=CHAR}, 
+      #{goodsType,jdbcType=BIGINT}, #{traderUserId,jdbcType=CHAR}, #{isSubstitute,jdbcType=BIGINT}, 
+      #{outerOrderId,jdbcType=VARCHAR}, #{msgPushNum,jdbcType=BIGINT}, #{vehicleQuotation,jdbcType=BIGINT}, 
+      #{quotationClosingTime,jdbcType=TIMESTAMP}, #{isTotal,jdbcType=BIGINT}, #{arrivalDate,jdbcType=TIMESTAMP}, 
+      #{code,jdbcType=CHAR}, #{loadingNeeds,jdbcType=VARCHAR}, #{scriptHandleDesc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.GoodsSupply" >
+    insert into xn_m_goods_supply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="senderId != null" >
+        sender_id,
+      </if>
+      <if test="consigneeId != null" >
+        consignee_id,
+      </if>
+      <if test="splitPackageType != null" >
+        split_package_type,
+      </if>
+      <if test="invoiceId != null" >
+        invoice_id,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="principalUserId != null" >
+        principal_user_id,
+      </if>
+      <if test="principalCompanyId != null" >
+        principal_company_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="paymentMode != null" >
+        payment_mode,
+      </if>
+      <if test="priceMode != null" >
+        price_mode,
+      </if>
+      <if test="transportChargeId != null" >
+        transport_charge_id,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="valuationMode != null" >
+        valuation_mode,
+      </if>
+      <if test="authCode != null" >
+        auth_code,
+      </if>
+      <if test="publicGoods != null" >
+        public_goods,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="inputMode != null" >
+        input_mode,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="ext1 != null" >
+        ext1,
+      </if>
+      <if test="vehiclesMode != null" >
+        vehicles_mode,
+      </if>
+      <if test="originId != null" >
+        origin_id,
+      </if>
+      <if test="goodsType != null" >
+        goods_type,
+      </if>
+      <if test="traderUserId != null" >
+        trader_user_id,
+      </if>
+      <if test="isSubstitute != null" >
+        is_substitute,
+      </if>
+      <if test="outerOrderId != null" >
+        outer_order_id,
+      </if>
+      <if test="msgPushNum != null" >
+        msg_push_num,
+      </if>
+      <if test="vehicleQuotation != null" >
+        vehicle_quotation,
+      </if>
+      <if test="quotationClosingTime != null" >
+        quotation_closing_time,
+      </if>
+      <if test="isTotal != null" >
+        is_total,
+      </if>
+      <if test="arrivalDate != null" >
+        arrival_date,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="loadingNeeds != null" >
+        loading_needs,
+      </if>
+      <if test="scriptHandleDesc != null" >
+        script_handle_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="senderId != null" >
+        #{senderId,jdbcType=CHAR},
+      </if>
+      <if test="consigneeId != null" >
+        #{consigneeId,jdbcType=CHAR},
+      </if>
+      <if test="splitPackageType != null" >
+        #{splitPackageType,jdbcType=BIGINT},
+      </if>
+      <if test="invoiceId != null" >
+        #{invoiceId,jdbcType=CHAR},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="principalUserId != null" >
+        #{principalUserId,jdbcType=CHAR},
+      </if>
+      <if test="principalCompanyId != null" >
+        #{principalCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIGINT},
+      </if>
+      <if test="paymentMode != null" >
+        #{paymentMode,jdbcType=BIGINT},
+      </if>
+      <if test="priceMode != null" >
+        #{priceMode,jdbcType=BIGINT},
+      </if>
+      <if test="transportChargeId != null" >
+        #{transportChargeId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valuationMode != null" >
+        #{valuationMode,jdbcType=BIGINT},
+      </if>
+      <if test="authCode != null" >
+        #{authCode,jdbcType=CHAR},
+      </if>
+      <if test="publicGoods != null" >
+        #{publicGoods,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="inputMode != null" >
+        #{inputMode,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclesMode != null" >
+        #{vehiclesMode,jdbcType=BIGINT},
+      </if>
+      <if test="originId != null" >
+        #{originId,jdbcType=CHAR},
+      </if>
+      <if test="goodsType != null" >
+        #{goodsType,jdbcType=BIGINT},
+      </if>
+      <if test="traderUserId != null" >
+        #{traderUserId,jdbcType=CHAR},
+      </if>
+      <if test="isSubstitute != null" >
+        #{isSubstitute,jdbcType=BIGINT},
+      </if>
+      <if test="outerOrderId != null" >
+        #{outerOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="msgPushNum != null" >
+        #{msgPushNum,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleQuotation != null" >
+        #{vehicleQuotation,jdbcType=BIGINT},
+      </if>
+      <if test="quotationClosingTime != null" >
+        #{quotationClosingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isTotal != null" >
+        #{isTotal,jdbcType=BIGINT},
+      </if>
+      <if test="arrivalDate != null" >
+        #{arrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=CHAR},
+      </if>
+      <if test="loadingNeeds != null" >
+        #{loadingNeeds,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptHandleDesc != null" >
+        #{scriptHandleDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.GoodsSupplyExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_goods_supply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.GoodsSupply" >
+    update xn_m_goods_supply
+    <set >
+      <if test="senderId != null" >
+        sender_id = #{senderId,jdbcType=CHAR},
+      </if>
+      <if test="consigneeId != null" >
+        consignee_id = #{consigneeId,jdbcType=CHAR},
+      </if>
+      <if test="splitPackageType != null" >
+        split_package_type = #{splitPackageType,jdbcType=BIGINT},
+      </if>
+      <if test="invoiceId != null" >
+        invoice_id = #{invoiceId,jdbcType=CHAR},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="principalUserId != null" >
+        principal_user_id = #{principalUserId,jdbcType=CHAR},
+      </if>
+      <if test="principalCompanyId != null" >
+        principal_company_id = #{principalCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIGINT},
+      </if>
+      <if test="paymentMode != null" >
+        payment_mode = #{paymentMode,jdbcType=BIGINT},
+      </if>
+      <if test="priceMode != null" >
+        price_mode = #{priceMode,jdbcType=BIGINT},
+      </if>
+      <if test="transportChargeId != null" >
+        transport_charge_id = #{transportChargeId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valuationMode != null" >
+        valuation_mode = #{valuationMode,jdbcType=BIGINT},
+      </if>
+      <if test="authCode != null" >
+        auth_code = #{authCode,jdbcType=CHAR},
+      </if>
+      <if test="publicGoods != null" >
+        public_goods = #{publicGoods,jdbcType=BIGINT},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="inputMode != null" >
+        input_mode = #{inputMode,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="ext1 != null" >
+        ext1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclesMode != null" >
+        vehicles_mode = #{vehiclesMode,jdbcType=BIGINT},
+      </if>
+      <if test="originId != null" >
+        origin_id = #{originId,jdbcType=CHAR},
+      </if>
+      <if test="goodsType != null" >
+        goods_type = #{goodsType,jdbcType=BIGINT},
+      </if>
+      <if test="traderUserId != null" >
+        trader_user_id = #{traderUserId,jdbcType=CHAR},
+      </if>
+      <if test="isSubstitute != null" >
+        is_substitute = #{isSubstitute,jdbcType=BIGINT},
+      </if>
+      <if test="outerOrderId != null" >
+        outer_order_id = #{outerOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="msgPushNum != null" >
+        msg_push_num = #{msgPushNum,jdbcType=BIGINT},
+      </if>
+      <if test="vehicleQuotation != null" >
+        vehicle_quotation = #{vehicleQuotation,jdbcType=BIGINT},
+      </if>
+      <if test="quotationClosingTime != null" >
+        quotation_closing_time = #{quotationClosingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isTotal != null" >
+        is_total = #{isTotal,jdbcType=BIGINT},
+      </if>
+      <if test="arrivalDate != null" >
+        arrival_date = #{arrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=CHAR},
+      </if>
+      <if test="loadingNeeds != null" >
+        loading_needs = #{loadingNeeds,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptHandleDesc != null" >
+        script_handle_desc = #{scriptHandleDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.GoodsSupply" >
+    update xn_m_goods_supply
+    set sender_id = #{senderId,jdbcType=CHAR},
+      consignee_id = #{consigneeId,jdbcType=CHAR},
+      split_package_type = #{splitPackageType,jdbcType=BIGINT},
+      invoice_id = #{invoiceId,jdbcType=CHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      principal_user_id = #{principalUserId,jdbcType=CHAR},
+      principal_company_id = #{principalCompanyId,jdbcType=CHAR},
+      status = #{status,jdbcType=BIGINT},
+      payment_mode = #{paymentMode,jdbcType=BIGINT},
+      price_mode = #{priceMode,jdbcType=BIGINT},
+      transport_charge_id = #{transportChargeId,jdbcType=CHAR},
+      creater = #{creater,jdbcType=CHAR},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      valuation_mode = #{valuationMode,jdbcType=BIGINT},
+      auth_code = #{authCode,jdbcType=CHAR},
+      public_goods = #{publicGoods,jdbcType=BIGINT},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      input_mode = #{inputMode,jdbcType=BIGINT},
+      is_delete = #{isDelete,jdbcType=BIGINT},
+      ext1 = #{ext1,jdbcType=VARCHAR},
+      vehicles_mode = #{vehiclesMode,jdbcType=BIGINT},
+      origin_id = #{originId,jdbcType=CHAR},
+      goods_type = #{goodsType,jdbcType=BIGINT},
+      trader_user_id = #{traderUserId,jdbcType=CHAR},
+      is_substitute = #{isSubstitute,jdbcType=BIGINT},
+      outer_order_id = #{outerOrderId,jdbcType=VARCHAR},
+      msg_push_num = #{msgPushNum,jdbcType=BIGINT},
+      vehicle_quotation = #{vehicleQuotation,jdbcType=BIGINT},
+      quotation_closing_time = #{quotationClosingTime,jdbcType=TIMESTAMP},
+      is_total = #{isTotal,jdbcType=BIGINT},
+      arrival_date = #{arrivalDate,jdbcType=TIMESTAMP},
+      code = #{code,jdbcType=CHAR},
+      loading_needs = #{loadingNeeds,jdbcType=VARCHAR},
+      script_handle_desc = #{scriptHandleDesc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

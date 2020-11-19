@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.IntegralRuleMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.IntegralRule" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="probability" property="probability" jdbcType="BIGINT" />
+    <result column="min" property="min" jdbcType="BIGINT" />
+    <result column="max" property="max" jdbcType="BIGINT" />
+    <result column="limit_value" property="limitValue" jdbcType="BIGINT" />
+    <result column="number" property="number" jdbcType="BIGINT" />
+    <result column="cycle" property="cycle" jdbcType="BIGINT" />
+    <result column="max_number" property="maxNumber" jdbcType="BIGINT" />
+    <result column="begin_time" property="beginTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="activate" property="activate" jdbcType="BIGINT" />
+    <result column="share_title" property="shareTitle" jdbcType="VARCHAR" />
+    <result column="share_content" property="shareContent" jdbcType="VARCHAR" />
+    <result column="share_img_url" property="shareImgUrl" jdbcType="VARCHAR" />
+    <result column="share_link" property="shareLink" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, code, name, probability, min, max, limit_value, number, cycle, max_number, begin_time, 
+    end_time, activate, share_title, share_content, share_img_url, share_link, remark, 
+    ver, creater, create_time, modifier, modify_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.IntegralRuleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_integral_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_integral_rule
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_integral_rule
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.IntegralRuleExample" >
+    delete from xn_m_integral_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.IntegralRule" >
+    insert into xn_m_integral_rule (id, code, name, 
+      probability, min, max, 
+      limit_value, number, cycle, 
+      max_number, begin_time, end_time, 
+      activate, share_title, share_content, 
+      share_img_url, share_link, remark, 
+      ver, creater, create_time, 
+      modifier, modify_time)
+    values (#{id,jdbcType=CHAR}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{probability,jdbcType=BIGINT}, #{min,jdbcType=BIGINT}, #{max,jdbcType=BIGINT}, 
+      #{limitValue,jdbcType=BIGINT}, #{number,jdbcType=BIGINT}, #{cycle,jdbcType=BIGINT}, 
+      #{maxNumber,jdbcType=BIGINT}, #{beginTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{activate,jdbcType=BIGINT}, #{shareTitle,jdbcType=VARCHAR}, #{shareContent,jdbcType=VARCHAR}, 
+      #{shareImgUrl,jdbcType=VARCHAR}, #{shareLink,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{ver,jdbcType=BIGINT}, #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.IntegralRule" >
+    insert into xn_m_integral_rule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="probability != null" >
+        probability,
+      </if>
+      <if test="min != null" >
+        min,
+      </if>
+      <if test="max != null" >
+        max,
+      </if>
+      <if test="limitValue != null" >
+        limit_value,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="cycle != null" >
+        cycle,
+      </if>
+      <if test="maxNumber != null" >
+        max_number,
+      </if>
+      <if test="beginTime != null" >
+        begin_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="activate != null" >
+        activate,
+      </if>
+      <if test="shareTitle != null" >
+        share_title,
+      </if>
+      <if test="shareContent != null" >
+        share_content,
+      </if>
+      <if test="shareImgUrl != null" >
+        share_img_url,
+      </if>
+      <if test="shareLink != null" >
+        share_link,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="probability != null" >
+        #{probability,jdbcType=BIGINT},
+      </if>
+      <if test="min != null" >
+        #{min,jdbcType=BIGINT},
+      </if>
+      <if test="max != null" >
+        #{max,jdbcType=BIGINT},
+      </if>
+      <if test="limitValue != null" >
+        #{limitValue,jdbcType=BIGINT},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=BIGINT},
+      </if>
+      <if test="cycle != null" >
+        #{cycle,jdbcType=BIGINT},
+      </if>
+      <if test="maxNumber != null" >
+        #{maxNumber,jdbcType=BIGINT},
+      </if>
+      <if test="beginTime != null" >
+        #{beginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activate != null" >
+        #{activate,jdbcType=BIGINT},
+      </if>
+      <if test="shareTitle != null" >
+        #{shareTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="shareContent != null" >
+        #{shareContent,jdbcType=VARCHAR},
+      </if>
+      <if test="shareImgUrl != null" >
+        #{shareImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="shareLink != null" >
+        #{shareLink,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.IntegralRuleExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_integral_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.IntegralRule" >
+    update xn_m_integral_rule
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="probability != null" >
+        probability = #{probability,jdbcType=BIGINT},
+      </if>
+      <if test="min != null" >
+        min = #{min,jdbcType=BIGINT},
+      </if>
+      <if test="max != null" >
+        max = #{max,jdbcType=BIGINT},
+      </if>
+      <if test="limitValue != null" >
+        limit_value = #{limitValue,jdbcType=BIGINT},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=BIGINT},
+      </if>
+      <if test="cycle != null" >
+        cycle = #{cycle,jdbcType=BIGINT},
+      </if>
+      <if test="maxNumber != null" >
+        max_number = #{maxNumber,jdbcType=BIGINT},
+      </if>
+      <if test="beginTime != null" >
+        begin_time = #{beginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="activate != null" >
+        activate = #{activate,jdbcType=BIGINT},
+      </if>
+      <if test="shareTitle != null" >
+        share_title = #{shareTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="shareContent != null" >
+        share_content = #{shareContent,jdbcType=VARCHAR},
+      </if>
+      <if test="shareImgUrl != null" >
+        share_img_url = #{shareImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="shareLink != null" >
+        share_link = #{shareLink,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.IntegralRule" >
+    update xn_m_integral_rule
+    set code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      probability = #{probability,jdbcType=BIGINT},
+      min = #{min,jdbcType=BIGINT},
+      max = #{max,jdbcType=BIGINT},
+      limit_value = #{limitValue,jdbcType=BIGINT},
+      number = #{number,jdbcType=BIGINT},
+      cycle = #{cycle,jdbcType=BIGINT},
+      max_number = #{maxNumber,jdbcType=BIGINT},
+      begin_time = #{beginTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      activate = #{activate,jdbcType=BIGINT},
+      share_title = #{shareTitle,jdbcType=VARCHAR},
+      share_content = #{shareContent,jdbcType=VARCHAR},
+      share_img_url = #{shareImgUrl,jdbcType=VARCHAR},
+      share_link = #{shareLink,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      ver = #{ver,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

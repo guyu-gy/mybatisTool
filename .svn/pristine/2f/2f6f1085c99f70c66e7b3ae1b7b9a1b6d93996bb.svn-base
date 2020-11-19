@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.OtherPhoto;
+import com.xiaoniu56.model.defaults.OtherPhotoExample;
+import java.util.List;
+
+public interface OtherPhotoMapper {
+    int countByExample(OtherPhotoExample example);
+
+    int deleteByExample(OtherPhotoExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(OtherPhoto record);
+
+    int insertSelective(OtherPhoto record);
+
+    List<OtherPhoto> selectByExample(OtherPhotoExample example);
+
+    OtherPhoto selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(OtherPhoto record);
+
+    int updateByPrimaryKey(OtherPhoto record);
+}

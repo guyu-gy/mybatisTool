@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.FreightSettlementMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.FreightSettlement" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="order_id" property="orderId" jdbcType="CHAR" />
+    <result column="record_settle_price" property="recordSettlePrice" jdbcType="DECIMAL" />
+    <result column="oilcard_settle_price" property="oilcardSettlePrice" jdbcType="DECIMAL" />
+    <result column="cash_settled_price" property="cashSettledPrice" jdbcType="DECIMAL" />
+    <result column="ratio" property="ratio" jdbcType="DECIMAL" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="payment_status" property="paymentStatus" jdbcType="BIGINT" />
+    <result column="payment_type" property="paymentType" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, order_id, record_settle_price, oilcard_settle_price, cash_settled_price, ratio, 
+    description, payment_status, payment_type, creater, create_time, modifier, modify_time, 
+    ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.FreightSettlementExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_freight_settlement
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_freight_settlement
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_freight_settlement
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.FreightSettlementExample" >
+    delete from xn_m_freight_settlement
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.FreightSettlement" >
+    insert into xn_m_freight_settlement (id, order_id, record_settle_price, 
+      oilcard_settle_price, cash_settled_price, ratio, 
+      description, payment_status, payment_type, 
+      creater, create_time, modifier, 
+      modify_time, ver)
+    values (#{id,jdbcType=CHAR}, #{orderId,jdbcType=CHAR}, #{recordSettlePrice,jdbcType=DECIMAL}, 
+      #{oilcardSettlePrice,jdbcType=DECIMAL}, #{cashSettledPrice,jdbcType=DECIMAL}, #{ratio,jdbcType=DECIMAL}, 
+      #{description,jdbcType=VARCHAR}, #{paymentStatus,jdbcType=BIGINT}, #{paymentType,jdbcType=BIGINT}, 
+      #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{ver,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.FreightSettlement" >
+    insert into xn_m_freight_settlement
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="recordSettlePrice != null" >
+        record_settle_price,
+      </if>
+      <if test="oilcardSettlePrice != null" >
+        oilcard_settle_price,
+      </if>
+      <if test="cashSettledPrice != null" >
+        cash_settled_price,
+      </if>
+      <if test="ratio != null" >
+        ratio,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="paymentStatus != null" >
+        payment_status,
+      </if>
+      <if test="paymentType != null" >
+        payment_type,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=CHAR},
+      </if>
+      <if test="recordSettlePrice != null" >
+        #{recordSettlePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="oilcardSettlePrice != null" >
+        #{oilcardSettlePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="cashSettledPrice != null" >
+        #{cashSettledPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="ratio != null" >
+        #{ratio,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentStatus != null" >
+        #{paymentStatus,jdbcType=BIGINT},
+      </if>
+      <if test="paymentType != null" >
+        #{paymentType,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.FreightSettlementExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_freight_settlement
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.FreightSettlement" >
+    update xn_m_freight_settlement
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=CHAR},
+      </if>
+      <if test="recordSettlePrice != null" >
+        record_settle_price = #{recordSettlePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="oilcardSettlePrice != null" >
+        oilcard_settle_price = #{oilcardSettlePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="cashSettledPrice != null" >
+        cash_settled_price = #{cashSettledPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="ratio != null" >
+        ratio = #{ratio,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentStatus != null" >
+        payment_status = #{paymentStatus,jdbcType=BIGINT},
+      </if>
+      <if test="paymentType != null" >
+        payment_type = #{paymentType,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.FreightSettlement" >
+    update xn_m_freight_settlement
+    set order_id = #{orderId,jdbcType=CHAR},
+      record_settle_price = #{recordSettlePrice,jdbcType=DECIMAL},
+      oilcard_settle_price = #{oilcardSettlePrice,jdbcType=DECIMAL},
+      cash_settled_price = #{cashSettledPrice,jdbcType=DECIMAL},
+      ratio = #{ratio,jdbcType=DECIMAL},
+      description = #{description,jdbcType=VARCHAR},
+      payment_status = #{paymentStatus,jdbcType=BIGINT},
+      payment_type = #{paymentType,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

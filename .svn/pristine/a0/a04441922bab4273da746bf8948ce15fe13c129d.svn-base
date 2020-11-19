@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.CompanySettingMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.CompanySetting" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="company_id" property="companyId" jdbcType="CHAR" />
+    <result column="quotation_limit" property="quotationLimit" jdbcType="BIGINT" />
+    <result column="quotation_closing_time" property="quotationClosingTime" jdbcType="BIGINT" />
+    <result column="quotation_display" property="quotationDisplay" jdbcType="BIGINT" />
+    <result column="ec_fence_loading" property="ecFenceLoading" jdbcType="SMALLINT" />
+    <result column="ec_fence_loading_km" property="ecFenceLoadingKm" jdbcType="REAL" />
+    <result column="ec_fence_sign" property="ecFenceSign" jdbcType="SMALLINT" />
+    <result column="ec_fence_sign_km" property="ecFenceSignKm" jdbcType="REAL" />
+    <result column="ec_fence_arr_forecast_km" property="ecFenceArrForecastKm" jdbcType="REAL" />
+    <result column="other_pub_subject" property="otherPubSubject" jdbcType="BIGINT" />
+    <result column="driver_quotation" property="driverQuotation" jdbcType="BIGINT" />
+    <result column="is_my_goods" property="isMyGoods" jdbcType="BIGINT" />
+    <result column="plat_logo_file_id" property="platLogoFileId" jdbcType="CHAR" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="other_order_subject" property="otherOrderSubject" jdbcType="SMALLINT" />
+    <result column="trustor_mobile_show" property="trustorMobileShow" jdbcType="BIGINT" />
+    <result column="abandon_tender_setting" property="abandonTenderSetting" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, company_id, quotation_limit, quotation_closing_time, quotation_display, ec_fence_loading, 
+    ec_fence_loading_km, ec_fence_sign, ec_fence_sign_km, ec_fence_arr_forecast_km, other_pub_subject, 
+    driver_quotation, is_my_goods, plat_logo_file_id, creater, create_time, modifier, 
+    modify_time, ver, other_order_subject, trustor_mobile_show, abandon_tender_setting
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.CompanySettingExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_company_setting
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_company_setting
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_company_setting
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.CompanySettingExample" >
+    delete from xn_m_company_setting
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.CompanySetting" >
+    insert into xn_m_company_setting (id, company_id, quotation_limit, 
+      quotation_closing_time, quotation_display, ec_fence_loading, 
+      ec_fence_loading_km, ec_fence_sign, ec_fence_sign_km, 
+      ec_fence_arr_forecast_km, other_pub_subject, driver_quotation, 
+      is_my_goods, plat_logo_file_id, creater, 
+      create_time, modifier, modify_time, 
+      ver, other_order_subject, trustor_mobile_show, 
+      abandon_tender_setting)
+    values (#{id,jdbcType=CHAR}, #{companyId,jdbcType=CHAR}, #{quotationLimit,jdbcType=BIGINT}, 
+      #{quotationClosingTime,jdbcType=BIGINT}, #{quotationDisplay,jdbcType=BIGINT}, #{ecFenceLoading,jdbcType=SMALLINT}, 
+      #{ecFenceLoadingKm,jdbcType=REAL}, #{ecFenceSign,jdbcType=SMALLINT}, #{ecFenceSignKm,jdbcType=REAL}, 
+      #{ecFenceArrForecastKm,jdbcType=REAL}, #{otherPubSubject,jdbcType=BIGINT}, #{driverQuotation,jdbcType=BIGINT}, 
+      #{isMyGoods,jdbcType=BIGINT}, #{platLogoFileId,jdbcType=CHAR}, #{creater,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{otherOrderSubject,jdbcType=SMALLINT}, #{trustorMobileShow,jdbcType=BIGINT}, 
+      #{abandonTenderSetting,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.CompanySetting" >
+    insert into xn_m_company_setting
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="quotationLimit != null" >
+        quotation_limit,
+      </if>
+      <if test="quotationClosingTime != null" >
+        quotation_closing_time,
+      </if>
+      <if test="quotationDisplay != null" >
+        quotation_display,
+      </if>
+      <if test="ecFenceLoading != null" >
+        ec_fence_loading,
+      </if>
+      <if test="ecFenceLoadingKm != null" >
+        ec_fence_loading_km,
+      </if>
+      <if test="ecFenceSign != null" >
+        ec_fence_sign,
+      </if>
+      <if test="ecFenceSignKm != null" >
+        ec_fence_sign_km,
+      </if>
+      <if test="ecFenceArrForecastKm != null" >
+        ec_fence_arr_forecast_km,
+      </if>
+      <if test="otherPubSubject != null" >
+        other_pub_subject,
+      </if>
+      <if test="driverQuotation != null" >
+        driver_quotation,
+      </if>
+      <if test="isMyGoods != null" >
+        is_my_goods,
+      </if>
+      <if test="platLogoFileId != null" >
+        plat_logo_file_id,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="otherOrderSubject != null" >
+        other_order_subject,
+      </if>
+      <if test="trustorMobileShow != null" >
+        trustor_mobile_show,
+      </if>
+      <if test="abandonTenderSetting != null" >
+        abandon_tender_setting,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="quotationLimit != null" >
+        #{quotationLimit,jdbcType=BIGINT},
+      </if>
+      <if test="quotationClosingTime != null" >
+        #{quotationClosingTime,jdbcType=BIGINT},
+      </if>
+      <if test="quotationDisplay != null" >
+        #{quotationDisplay,jdbcType=BIGINT},
+      </if>
+      <if test="ecFenceLoading != null" >
+        #{ecFenceLoading,jdbcType=SMALLINT},
+      </if>
+      <if test="ecFenceLoadingKm != null" >
+        #{ecFenceLoadingKm,jdbcType=REAL},
+      </if>
+      <if test="ecFenceSign != null" >
+        #{ecFenceSign,jdbcType=SMALLINT},
+      </if>
+      <if test="ecFenceSignKm != null" >
+        #{ecFenceSignKm,jdbcType=REAL},
+      </if>
+      <if test="ecFenceArrForecastKm != null" >
+        #{ecFenceArrForecastKm,jdbcType=REAL},
+      </if>
+      <if test="otherPubSubject != null" >
+        #{otherPubSubject,jdbcType=BIGINT},
+      </if>
+      <if test="driverQuotation != null" >
+        #{driverQuotation,jdbcType=BIGINT},
+      </if>
+      <if test="isMyGoods != null" >
+        #{isMyGoods,jdbcType=BIGINT},
+      </if>
+      <if test="platLogoFileId != null" >
+        #{platLogoFileId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="otherOrderSubject != null" >
+        #{otherOrderSubject,jdbcType=SMALLINT},
+      </if>
+      <if test="trustorMobileShow != null" >
+        #{trustorMobileShow,jdbcType=BIGINT},
+      </if>
+      <if test="abandonTenderSetting != null" >
+        #{abandonTenderSetting,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.CompanySettingExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_company_setting
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.CompanySetting" >
+    update xn_m_company_setting
+    <set >
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="quotationLimit != null" >
+        quotation_limit = #{quotationLimit,jdbcType=BIGINT},
+      </if>
+      <if test="quotationClosingTime != null" >
+        quotation_closing_time = #{quotationClosingTime,jdbcType=BIGINT},
+      </if>
+      <if test="quotationDisplay != null" >
+        quotation_display = #{quotationDisplay,jdbcType=BIGINT},
+      </if>
+      <if test="ecFenceLoading != null" >
+        ec_fence_loading = #{ecFenceLoading,jdbcType=SMALLINT},
+      </if>
+      <if test="ecFenceLoadingKm != null" >
+        ec_fence_loading_km = #{ecFenceLoadingKm,jdbcType=REAL},
+      </if>
+      <if test="ecFenceSign != null" >
+        ec_fence_sign = #{ecFenceSign,jdbcType=SMALLINT},
+      </if>
+      <if test="ecFenceSignKm != null" >
+        ec_fence_sign_km = #{ecFenceSignKm,jdbcType=REAL},
+      </if>
+      <if test="ecFenceArrForecastKm != null" >
+        ec_fence_arr_forecast_km = #{ecFenceArrForecastKm,jdbcType=REAL},
+      </if>
+      <if test="otherPubSubject != null" >
+        other_pub_subject = #{otherPubSubject,jdbcType=BIGINT},
+      </if>
+      <if test="driverQuotation != null" >
+        driver_quotation = #{driverQuotation,jdbcType=BIGINT},
+      </if>
+      <if test="isMyGoods != null" >
+        is_my_goods = #{isMyGoods,jdbcType=BIGINT},
+      </if>
+      <if test="platLogoFileId != null" >
+        plat_logo_file_id = #{platLogoFileId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="otherOrderSubject != null" >
+        other_order_subject = #{otherOrderSubject,jdbcType=SMALLINT},
+      </if>
+      <if test="trustorMobileShow != null" >
+        trustor_mobile_show = #{trustorMobileShow,jdbcType=BIGINT},
+      </if>
+      <if test="abandonTenderSetting != null" >
+        abandon_tender_setting = #{abandonTenderSetting,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.CompanySetting" >
+    update xn_m_company_setting
+    set company_id = #{companyId,jdbcType=CHAR},
+      quotation_limit = #{quotationLimit,jdbcType=BIGINT},
+      quotation_closing_time = #{quotationClosingTime,jdbcType=BIGINT},
+      quotation_display = #{quotationDisplay,jdbcType=BIGINT},
+      ec_fence_loading = #{ecFenceLoading,jdbcType=SMALLINT},
+      ec_fence_loading_km = #{ecFenceLoadingKm,jdbcType=REAL},
+      ec_fence_sign = #{ecFenceSign,jdbcType=SMALLINT},
+      ec_fence_sign_km = #{ecFenceSignKm,jdbcType=REAL},
+      ec_fence_arr_forecast_km = #{ecFenceArrForecastKm,jdbcType=REAL},
+      other_pub_subject = #{otherPubSubject,jdbcType=BIGINT},
+      driver_quotation = #{driverQuotation,jdbcType=BIGINT},
+      is_my_goods = #{isMyGoods,jdbcType=BIGINT},
+      plat_logo_file_id = #{platLogoFileId,jdbcType=CHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      other_order_subject = #{otherOrderSubject,jdbcType=SMALLINT},
+      trustor_mobile_show = #{trustorMobileShow,jdbcType=BIGINT},
+      abandon_tender_setting = #{abandonTenderSetting,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

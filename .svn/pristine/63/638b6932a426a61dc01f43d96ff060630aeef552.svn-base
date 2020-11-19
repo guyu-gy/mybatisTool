@@ -1,0 +1,125 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class AdvImg {
+    private String id;
+
+    private String fileId;
+
+    private String advId;
+
+    private Long isValid;
+
+    private Long seq;
+
+    private Long exeCount;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long isDelete;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(String fileId) {
+        this.fileId = fileId == null ? null : fileId.trim();
+    }
+
+    public String getAdvId() {
+        return advId;
+    }
+
+    public void setAdvId(String advId) {
+        this.advId = advId == null ? null : advId.trim();
+    }
+
+    public Long getIsValid() {
+        return isValid;
+    }
+
+    public void setIsValid(Long isValid) {
+        this.isValid = isValid;
+    }
+
+    public Long getSeq() {
+        return seq;
+    }
+
+    public void setSeq(Long seq) {
+        this.seq = seq;
+    }
+
+    public Long getExeCount() {
+        return exeCount;
+    }
+
+    public void setExeCount(Long exeCount) {
+        this.exeCount = exeCount;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+}

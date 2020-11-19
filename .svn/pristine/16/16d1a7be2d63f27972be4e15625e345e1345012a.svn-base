@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.FkConstraint;
+import com.xiaoniu56.model.defaults.FkConstraintExample;
+import java.util.List;
+
+public interface FkConstraintMapper {
+    int countByExample(FkConstraintExample example);
+
+    int deleteByExample(FkConstraintExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(FkConstraint record);
+
+    int insertSelective(FkConstraint record);
+
+    List<FkConstraint> selectByExample(FkConstraintExample example);
+
+    FkConstraint selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(FkConstraint record);
+
+    int updateByPrimaryKey(FkConstraint record);
+}

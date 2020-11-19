@@ -1,0 +1,215 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class Outlets {
+    private String id;
+
+    private String outletsName;
+
+    private String outletsNo;
+
+    private String companyId;
+
+    private String deptId;
+
+    private String addressId;
+
+    private String contactId;
+
+    private String businessHours;
+
+    private String outletsMobile;
+
+    private String outletsFax;
+
+    private String introduction;
+
+    private Long version;
+
+    private Long openingStatus;
+
+    private Long outletsType;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    private Long isDelete;
+
+    private String appkey;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getOutletsName() {
+        return outletsName;
+    }
+
+    public void setOutletsName(String outletsName) {
+        this.outletsName = outletsName == null ? null : outletsName.trim();
+    }
+
+    public String getOutletsNo() {
+        return outletsNo;
+    }
+
+    public void setOutletsNo(String outletsNo) {
+        this.outletsNo = outletsNo == null ? null : outletsNo.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public String getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(String deptId) {
+        this.deptId = deptId == null ? null : deptId.trim();
+    }
+
+    public String getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(String addressId) {
+        this.addressId = addressId == null ? null : addressId.trim();
+    }
+
+    public String getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(String contactId) {
+        this.contactId = contactId == null ? null : contactId.trim();
+    }
+
+    public String getBusinessHours() {
+        return businessHours;
+    }
+
+    public void setBusinessHours(String businessHours) {
+        this.businessHours = businessHours == null ? null : businessHours.trim();
+    }
+
+    public String getOutletsMobile() {
+        return outletsMobile;
+    }
+
+    public void setOutletsMobile(String outletsMobile) {
+        this.outletsMobile = outletsMobile == null ? null : outletsMobile.trim();
+    }
+
+    public String getOutletsFax() {
+        return outletsFax;
+    }
+
+    public void setOutletsFax(String outletsFax) {
+        this.outletsFax = outletsFax == null ? null : outletsFax.trim();
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction == null ? null : introduction.trim();
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    public Long getOpeningStatus() {
+        return openingStatus;
+    }
+
+    public void setOpeningStatus(Long openingStatus) {
+        this.openingStatus = openingStatus;
+    }
+
+    public Long getOutletsType() {
+        return outletsType;
+    }
+
+    public void setOutletsType(Long outletsType) {
+        this.outletsType = outletsType;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+
+    public Long getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey == null ? null : appkey.trim();
+    }
+}

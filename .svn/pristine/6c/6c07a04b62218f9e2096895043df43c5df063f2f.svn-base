@@ -1,0 +1,25 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.CompanyMergerStatus;
+import com.xiaoniu56.model.defaults.CompanyMergerStatusExample;
+import java.util.List;
+
+public interface CompanyMergerStatusMapper {
+    int countByExample(CompanyMergerStatusExample example);
+
+    int deleteByExample(CompanyMergerStatusExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(CompanyMergerStatus record);
+
+    int insertSelective(CompanyMergerStatus record);
+
+    List<CompanyMergerStatus> selectByExample(CompanyMergerStatusExample example);
+
+    CompanyMergerStatus selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(CompanyMergerStatus record);
+
+    int updateByPrimaryKey(CompanyMergerStatus record);
+}

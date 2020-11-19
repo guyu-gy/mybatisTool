@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.OilcardMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.Oilcard" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="parent_id" property="parentId" jdbcType="CHAR" />
+    <result column="bind_status" property="bindStatus" jdbcType="BIGINT" />
+    <result column="agent_id" property="agentId" jdbcType="CHAR" />
+    <result column="total_inpour_price" property="totalInpourPrice" jdbcType="DECIMAL" />
+    <result column="max_inpour" property="maxInpour" jdbcType="DECIMAL" />
+    <result column="is_delete" property="isDelete" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+    <result column="oilcard_no" property="oilcardNo" jdbcType="VARCHAR" />
+    <result column="oil_station_name" property="oilStationName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, parent_id, bind_status, agent_id, total_inpour_price, max_inpour, is_delete, 
+    user_id, creater, create_time, modifier, modify_time, ver, oilcard_no, oil_station_name
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.OilcardExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_oilcard
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_oilcard
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_oilcard
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.OilcardExample" >
+    delete from xn_m_oilcard
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.Oilcard" >
+    insert into xn_m_oilcard (id, parent_id, bind_status, 
+      agent_id, total_inpour_price, max_inpour, 
+      is_delete, user_id, creater, 
+      create_time, modifier, modify_time, 
+      ver, oilcard_no, oil_station_name
+      )
+    values (#{id,jdbcType=CHAR}, #{parentId,jdbcType=CHAR}, #{bindStatus,jdbcType=BIGINT}, 
+      #{agentId,jdbcType=CHAR}, #{totalInpourPrice,jdbcType=DECIMAL}, #{maxInpour,jdbcType=DECIMAL}, 
+      #{isDelete,jdbcType=BIGINT}, #{userId,jdbcType=CHAR}, #{creater,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT}, #{oilcardNo,jdbcType=VARCHAR}, #{oilStationName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.Oilcard" >
+    insert into xn_m_oilcard
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="bindStatus != null" >
+        bind_status,
+      </if>
+      <if test="agentId != null" >
+        agent_id,
+      </if>
+      <if test="totalInpourPrice != null" >
+        total_inpour_price,
+      </if>
+      <if test="maxInpour != null" >
+        max_inpour,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+      <if test="oilcardNo != null" >
+        oilcard_no,
+      </if>
+      <if test="oilStationName != null" >
+        oil_station_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=CHAR},
+      </if>
+      <if test="bindStatus != null" >
+        #{bindStatus,jdbcType=BIGINT},
+      </if>
+      <if test="agentId != null" >
+        #{agentId,jdbcType=CHAR},
+      </if>
+      <if test="totalInpourPrice != null" >
+        #{totalInpourPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="maxInpour != null" >
+        #{maxInpour,jdbcType=DECIMAL},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="oilcardNo != null" >
+        #{oilcardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oilStationName != null" >
+        #{oilStationName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.OilcardExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_oilcard
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.Oilcard" >
+    update xn_m_oilcard
+    <set >
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=CHAR},
+      </if>
+      <if test="bindStatus != null" >
+        bind_status = #{bindStatus,jdbcType=BIGINT},
+      </if>
+      <if test="agentId != null" >
+        agent_id = #{agentId,jdbcType=CHAR},
+      </if>
+      <if test="totalInpourPrice != null" >
+        total_inpour_price = #{totalInpourPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="maxInpour != null" >
+        max_inpour = #{maxInpour,jdbcType=DECIMAL},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+      <if test="oilcardNo != null" >
+        oilcard_no = #{oilcardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oilStationName != null" >
+        oil_station_name = #{oilStationName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.Oilcard" >
+    update xn_m_oilcard
+    set parent_id = #{parentId,jdbcType=CHAR},
+      bind_status = #{bindStatus,jdbcType=BIGINT},
+      agent_id = #{agentId,jdbcType=CHAR},
+      total_inpour_price = #{totalInpourPrice,jdbcType=DECIMAL},
+      max_inpour = #{maxInpour,jdbcType=DECIMAL},
+      is_delete = #{isDelete,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=CHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT},
+      oilcard_no = #{oilcardNo,jdbcType=VARCHAR},
+      oil_station_name = #{oilStationName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

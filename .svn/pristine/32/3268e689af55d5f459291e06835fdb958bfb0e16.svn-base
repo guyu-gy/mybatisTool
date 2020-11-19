@@ -1,0 +1,165 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class DocumentCodeRule {
+    private String id;
+
+    private String companyId;
+
+    private Long documentType;
+
+    private Long codeRuleId;
+
+    private String fixedText;
+
+    private Long restartVal;
+
+    private Long dateRuleId;
+
+    private Long serialNumberLength;
+
+    private Long serialNumberRuleId;
+
+    private Long currVal;
+
+    private Long orderNo;
+
+    private String creater;
+
+    private Date createTime;
+
+    private String modifier;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId == null ? null : companyId.trim();
+    }
+
+    public Long getDocumentType() {
+        return documentType;
+    }
+
+    public void setDocumentType(Long documentType) {
+        this.documentType = documentType;
+    }
+
+    public Long getCodeRuleId() {
+        return codeRuleId;
+    }
+
+    public void setCodeRuleId(Long codeRuleId) {
+        this.codeRuleId = codeRuleId;
+    }
+
+    public String getFixedText() {
+        return fixedText;
+    }
+
+    public void setFixedText(String fixedText) {
+        this.fixedText = fixedText == null ? null : fixedText.trim();
+    }
+
+    public Long getRestartVal() {
+        return restartVal;
+    }
+
+    public void setRestartVal(Long restartVal) {
+        this.restartVal = restartVal;
+    }
+
+    public Long getDateRuleId() {
+        return dateRuleId;
+    }
+
+    public void setDateRuleId(Long dateRuleId) {
+        this.dateRuleId = dateRuleId;
+    }
+
+    public Long getSerialNumberLength() {
+        return serialNumberLength;
+    }
+
+    public void setSerialNumberLength(Long serialNumberLength) {
+        this.serialNumberLength = serialNumberLength;
+    }
+
+    public Long getSerialNumberRuleId() {
+        return serialNumberRuleId;
+    }
+
+    public void setSerialNumberRuleId(Long serialNumberRuleId) {
+        this.serialNumberRuleId = serialNumberRuleId;
+    }
+
+    public Long getCurrVal() {
+        return currVal;
+    }
+
+    public void setCurrVal(Long currVal) {
+        this.currVal = currVal;
+    }
+
+    public Long getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(Long orderNo) {
+        this.orderNo = orderNo;
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}

@@ -1,0 +1,29 @@
+package com.xiaoniu56.dao;
+
+import com.xiaoniu56.model.defaults.SmsSend;
+import com.xiaoniu56.model.defaults.SmsSendExample;
+import java.util.List;
+
+public interface SmsSendMapper {
+    int countByExample(SmsSendExample example);
+
+    int deleteByExample(SmsSendExample example);
+
+    int deleteByPrimaryKey(String id);
+
+    int insert(SmsSend record);
+
+    int insertSelective(SmsSend record);
+
+    List<SmsSend> selectByExampleWithBLOBs(SmsSendExample example);
+
+    List<SmsSend> selectByExample(SmsSendExample example);
+
+    SmsSend selectByPrimaryKey(String id);
+
+    int updateByPrimaryKeySelective(SmsSend record);
+
+    int updateByPrimaryKeyWithBLOBs(SmsSend record);
+
+    int updateByPrimaryKey(SmsSend record);
+}

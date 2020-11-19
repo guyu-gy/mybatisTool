@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu56.dao.TieredPricingMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu56.model.defaults.TieredPricing" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="charge_strategy_id" property="chargeStrategyId" jdbcType="CHAR" />
+    <result column="account_subject_id" property="accountSubjectId" jdbcType="CHAR" />
+    <result column="lower_limit" property="lowerLimit" jdbcType="DECIMAL" />
+    <result column="upper_limit" property="upperLimit" jdbcType="DECIMAL" />
+    <result column="unit_price" property="unitPrice" jdbcType="DECIMAL" />
+    <result column="define_unit" property="defineUnit" jdbcType="VARCHAR" />
+    <result column="order_no" property="orderNo" jdbcType="BIGINT" />
+    <result column="creater" property="creater" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modifier" property="modifier" jdbcType="CHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="ver" property="ver" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, charge_strategy_id, account_subject_id, lower_limit, upper_limit, unit_price, 
+    define_unit, order_no, creater, create_time, modifier, modify_time, ver
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiaoniu56.model.defaults.TieredPricingExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from xn_m_tiered_pricing
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from xn_m_tiered_pricing
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xn_m_tiered_pricing
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiaoniu56.model.defaults.TieredPricingExample" >
+    delete from xn_m_tiered_pricing
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu56.model.defaults.TieredPricing" >
+    insert into xn_m_tiered_pricing (id, charge_strategy_id, account_subject_id, 
+      lower_limit, upper_limit, unit_price, 
+      define_unit, order_no, creater, 
+      create_time, modifier, modify_time, 
+      ver)
+    values (#{id,jdbcType=CHAR}, #{chargeStrategyId,jdbcType=CHAR}, #{accountSubjectId,jdbcType=CHAR}, 
+      #{lowerLimit,jdbcType=DECIMAL}, #{upperLimit,jdbcType=DECIMAL}, #{unitPrice,jdbcType=DECIMAL}, 
+      #{defineUnit,jdbcType=VARCHAR}, #{orderNo,jdbcType=BIGINT}, #{creater,jdbcType=CHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifier,jdbcType=CHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{ver,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu56.model.defaults.TieredPricing" >
+    insert into xn_m_tiered_pricing
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="chargeStrategyId != null" >
+        charge_strategy_id,
+      </if>
+      <if test="accountSubjectId != null" >
+        account_subject_id,
+      </if>
+      <if test="lowerLimit != null" >
+        lower_limit,
+      </if>
+      <if test="upperLimit != null" >
+        upper_limit,
+      </if>
+      <if test="unitPrice != null" >
+        unit_price,
+      </if>
+      <if test="defineUnit != null" >
+        define_unit,
+      </if>
+      <if test="orderNo != null" >
+        order_no,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifier != null" >
+        modifier,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="ver != null" >
+        ver,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="chargeStrategyId != null" >
+        #{chargeStrategyId,jdbcType=CHAR},
+      </if>
+      <if test="accountSubjectId != null" >
+        #{accountSubjectId,jdbcType=CHAR},
+      </if>
+      <if test="lowerLimit != null" >
+        #{lowerLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="upperLimit != null" >
+        #{upperLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="unitPrice != null" >
+        #{unitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="defineUnit != null" >
+        #{defineUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiaoniu56.model.defaults.TieredPricingExample" resultType="java.lang.Integer" >
+    select count(*) from xn_m_tiered_pricing
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu56.model.defaults.TieredPricing" >
+    update xn_m_tiered_pricing
+    <set >
+      <if test="chargeStrategyId != null" >
+        charge_strategy_id = #{chargeStrategyId,jdbcType=CHAR},
+      </if>
+      <if test="accountSubjectId != null" >
+        account_subject_id = #{accountSubjectId,jdbcType=CHAR},
+      </if>
+      <if test="lowerLimit != null" >
+        lower_limit = #{lowerLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="upperLimit != null" >
+        upper_limit = #{upperLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="unitPrice != null" >
+        unit_price = #{unitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="defineUnit != null" >
+        define_unit = #{defineUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null" >
+        order_no = #{orderNo,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifier != null" >
+        modifier = #{modifier,jdbcType=CHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        ver = #{ver,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu56.model.defaults.TieredPricing" >
+    update xn_m_tiered_pricing
+    set charge_strategy_id = #{chargeStrategyId,jdbcType=CHAR},
+      account_subject_id = #{accountSubjectId,jdbcType=CHAR},
+      lower_limit = #{lowerLimit,jdbcType=DECIMAL},
+      upper_limit = #{upperLimit,jdbcType=DECIMAL},
+      unit_price = #{unitPrice,jdbcType=DECIMAL},
+      define_unit = #{defineUnit,jdbcType=VARCHAR},
+      order_no = #{orderNo,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modifier = #{modifier,jdbcType=CHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      ver = #{ver,jdbcType=BIGINT}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

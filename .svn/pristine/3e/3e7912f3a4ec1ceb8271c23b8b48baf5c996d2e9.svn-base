@@ -1,0 +1,95 @@
+package com.xiaoniu56.model.defaults;
+
+import java.util.Date;
+
+public class DispatchResult {
+    private String id;
+
+    private String dispatchId;
+
+    private Long dispatchResultDescId;
+
+    private String desp;
+
+    private String creater;
+
+    private String modifier;
+
+    private Date createTime;
+
+    private Date modifyTime;
+
+    private Long ver;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
+    }
+
+    public String getDispatchId() {
+        return dispatchId;
+    }
+
+    public void setDispatchId(String dispatchId) {
+        this.dispatchId = dispatchId == null ? null : dispatchId.trim();
+    }
+
+    public Long getDispatchResultDescId() {
+        return dispatchResultDescId;
+    }
+
+    public void setDispatchResultDescId(Long dispatchResultDescId) {
+        this.dispatchResultDescId = dispatchResultDescId;
+    }
+
+    public String getDesp() {
+        return desp;
+    }
+
+    public void setDesp(String desp) {
+        this.desp = desp == null ? null : desp.trim();
+    }
+
+    public String getCreater() {
+        return creater;
+    }
+
+    public void setCreater(String creater) {
+        this.creater = creater == null ? null : creater.trim();
+    }
+
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier == null ? null : modifier.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
+    public Long getVer() {
+        return ver;
+    }
+
+    public void setVer(Long ver) {
+        this.ver = ver;
+    }
+}
